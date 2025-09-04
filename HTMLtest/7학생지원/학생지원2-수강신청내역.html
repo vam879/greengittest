@@ -6,7 +6,54 @@
     <title>Document</title>
     <link rel="stylesheet" href="./학생지원_공통.css">
     <style>
-        
+        /* 수강신청내역 상단 */
+        .page-title { margin: 0; font-size: 28px; font-weight: 700; }
+        .section-bar { height: 0; border-top: 3px solid #000; margin: 12px 0 18px; }
+
+        .apply-head {
+        display: flex; justify-content: space-between; align-items: center;
+        margin-bottom: 14px;
+        }
+        .apply-head .filters { display: flex; align-items: center; gap: 6px; }
+        .apply-head .filters .sel {
+        height: 34px; padding: 0 10px; border: 1px solid #ccc; background: #fff;
+        }
+        .apply-head .filters .year { width: 110px; }
+        .apply-head .filters .term { width: 70px; text-align: center; }
+        .apply-head .filters .suffix { margin: 0 6px 0 2px; color: #333; }
+
+        .apply-head .summary {
+        display: flex; align-items: center; gap: 10px;
+        color: #333; font-weight: 600;
+        }
+        .apply-head .summary img { width: 32px; height: 32px; }
+
+        /* 표 - 헤더 연한회색, 행은 아래쪽 선만 */
+        .enroll-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+        .enroll-table thead th {
+        background: #f3f5f7; color: #666; font-weight: 600; font-size: 14px;
+        padding: 14px 12px; text-align: center; border-bottom: 1px solid #dedede;
+        }
+        .enroll-table tbody td {
+        padding: 16px 12px; text-align: center; border-bottom: 1px solid #e5e5e5;
+        font-size: 15px; color: #333;
+        }
+        /* 과목명만 좌측 정렬 */
+        .enroll-table tbody td.subject { text-align: left; }
+
+        /* 취소 버튼 */
+        .btn-cancel {
+        background: #8f2727; color: #fff; border: 0; border-radius: 4px;
+        padding: 6px 12px; font-size: 14px; cursor: pointer;
+        }
+        .btn-cancel:hover { filter: brightness(0.95); }
+
+        /* 접근성 보조 라벨 숨김 */
+        .sr-only {
+        position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+        overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+        }
+
     </style>
 </head>
 <body>
@@ -112,9 +159,131 @@
             </ul>
         </aside>
         <main class="content">
-            <h2>학생회 소개</h2>
-            <hr style="border: none; border-top: 3px solid #000; margin: 5px 0 20px 0;">
-            <p>콘텐츠 내용 꾸미기</p>
+            
+            <h2 class="page-title">수강신청내역</h2>
+<div class="section-bar"></div>
+
+<div class="apply-head">
+  <div class="filters">
+    <label for="year" class="sr-only">년도</label>
+    <select id="year" class="sel year">
+      <option selected>2025</option>
+      <option>2024</option>
+      <option>2023</option>
+    </select>
+    <span class="suffix">년</span>
+
+    <label for="term" class="sr-only">학기</label>
+    <select id="term" class="sel term">
+      <option selected>1</option>
+      <option>2</option>
+    </select>
+    <span class="suffix">학기</span>
+  </div>
+
+  <div class="summary">
+    <img src="./images/mascot.png" alt="" />
+    <strong>신청과목수 6과목, 총 신청학점 18학점</strong>
+  </div>
+</div>
+
+<table class="enroll-table">
+  <colgroup>
+    <col style="width:120px" />
+    <col /> <!-- 과목명: 가변 -->
+    <col style="width:100px" />
+    <col style="width:100px" />
+    <col style="width:70px" />
+    <col style="width:90px" />
+    <col style="width:140px" />
+    <col style="width:120px" />
+    <col style="width:80px" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>교과목코드</th>
+      <th>과목명</th>
+      <th>대상학년</th>
+      <th>담당교수</th>
+      <th>학점</th>
+      <th>이수구분</th>
+      <th>강의시간</th>
+      <th>강의장</th>
+      <th>관리</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>830003</td>
+      <td class="subject">자바 프로그래밍</td>
+      <td>2학년</td>
+      <td>김자바</td>
+      <td>3</td>
+      <td>전공</td>
+      <td>화 1,2,3</td>
+      <td>컴퓨터실</td>
+      <td><button class="btn-cancel">취소</button></td>
+    </tr>
+    <tr>
+      <td>830003</td>
+      <td class="subject">자료구조</td>
+      <td>2학년</td>
+      <td>김자료</td>
+      <td>3</td>
+      <td>전공</td>
+      <td>화 1,2,3</td>
+      <td>컴퓨터실</td>
+      <td><button class="btn-cancel">취소</button></td>
+    </tr>
+    <tr>
+      <td>830003</td>
+      <td class="subject">대학영어</td>
+      <td>2학년</td>
+      <td>김영어</td>
+      <td>3</td>
+      <td>교양</td>
+      <td>화 1,2,3</td>
+      <td>강의장1</td>
+      <td><button class="btn-cancel">취소</button></td>
+    </tr>
+    <tr>
+      <td>830003</td>
+      <td class="subject">알고리즘</td>
+      <td>2학년</td>
+      <td>김자바</td>
+      <td>3</td>
+      <td>전공</td>
+      <td>화 1,2,3</td>
+      <td>컴퓨터실</td>
+      <td><button class="btn-cancel">취소</button></td>
+    </tr>
+    <tr>
+      <td>830003</td>
+      <td class="subject">세계의역사</td>
+      <td>2학년</td>
+      <td>김역사</td>
+      <td>3</td>
+      <td>교양</td>
+      <td>화 1,2,3</td>
+      <td>강의실2</td>
+      <td><button class="btn-cancel">취소</button></td>
+    </tr>
+    <tr>
+      <td>830003</td>
+      <td class="subject">데이터베이스</td>
+      <td>2학년</td>
+      <td>김디비</td>
+      <td>3</td>
+      <td>전공</td>
+      <td>화 1,2,3</td>
+      <td>컴퓨터실</td>
+      <td><button class="btn-cancel">취소</button></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
         </main>
     </div>
 

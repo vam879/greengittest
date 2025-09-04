@@ -6,6 +6,70 @@
     <title>Document</title>
     <link rel="stylesheet" href="./학생지원_공통.css">
     <style>
+
+        /* 타이틀/상단 굵은 바 + 중앙 아이콘 */
+        .page-title { margin: 0; font-size: 28px; font-weight: 700; }
+        .section-bar {
+        height: 0; border-top: 3px solid #000; margin: 12px 0 18px; position: relative;
+        }
+        .section-bar.has-icon img {
+        position: absolute; left: 50%; top: -18px; transform: translateX(-50%);
+        width: 32px; height: 32px;
+        }
+
+        /* 상단 필터 & 요약 */
+        .grade-head {
+        display: flex; justify-content: space-between; align-items: center;
+        margin-bottom: 14px;
+        }
+        .grade-head .filters { display: flex; align-items: center; gap: 6px; }
+        .grade-head .filters .sel {
+        height: 34px; padding: 0 10px; border: 1px solid #ccc; background: #fff;
+        }
+        .grade-head .filters .year { width: 110px; }
+        .grade-head .filters .term { width: 70px; text-align: center; }
+        .grade-head .filters .suffix { margin: 0 6px 0 2px; color: #333; }
+
+        .grade-summary { color: #333; font-weight: 600; }
+        .grade-summary .emph { color: #c91515; }
+
+        /* 표 */
+        .grade-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+        .grade-table thead th {
+        background: #f3f5f7; color: #666; font-weight: 600; font-size: 14px;
+        padding: 14px 12px; text-align: center; border-bottom: 1px solid #dedede;
+        }
+        .grade-table tbody td {
+        padding: 18px 12px; text-align: center; border-bottom: 1px solid #e9ecef;
+        font-size: 15px; color: #333; background: #fff;
+        }
+        /* 과목명은 좌측 정렬 */
+        .grade-table tbody td.subject { text-align: left; }
+
+        /* 세로줄(가장자리 제외) */
+        .grade-table thead th:not(:last-child),
+        .grade-table tbody td:not(:last-child) {
+        border-right: 1px solid #e1e6ee;
+        }
+
+        /* 상세확인 버튼 */
+        .btn-detail {
+        background: #1b3c6a; color: #fff; border: 0; border-radius: 6px;
+        padding: 7px 12px; font-size: 14px; cursor: pointer;
+        }
+        .btn-detail:hover { filter: brightness(0.95); }
+
+        /* 안내문 */
+        .grade-note {
+        margin-top: 14px; font-size: 13px; color: #9aa1a9;
+        }
+
+        /* 접근성 보조라벨 숨김 */
+        .sr-only {
+        position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+        overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+        }
+
         
     </style>
 </head>
@@ -112,9 +176,136 @@
             </ul>
         </aside>
         <main class="content">
-            <h2>학생회 소개</h2>
-            <hr style="border: none; border-top: 3px solid #000; margin: 5px 0 20px 0;">
-            <p>콘텐츠 내용 꾸미기</p>
+           <!-- 성적조회 -->
+        <h2 class="page-title">성적조회</h2>
+        <div class="section-bar has-icon">
+        <img src="./images/mascot.png" alt="">
+        </div>
+
+        <div class="grade-head">
+        <div class="filters">
+            <label for="grade-year" class="sr-only">년도</label>
+            <select id="grade-year" class="sel year">
+            <option selected>2025</option>
+            <option>2024</option>
+            <option>2023</option>
+            </select>
+            <span class="suffix">년</span>
+
+            <label for="grade-term" class="sr-only">학기</label>
+            <select id="grade-term" class="sel term">
+            <option selected>1</option>
+            <option>2</option>
+            </select>
+            <span class="suffix">학기</span>
+        </div>
+
+        <div class="grade-summary">
+            <strong>이수과목수 5과목, 총 취득학점 <span class="emph">15</span>학점</strong>
+        </div>
+        </div>
+
+        <table class="grade-table">
+        <colgroup>
+            <col style="width:120px">
+            <col> <!-- 과목명 -->
+            <col style="width:100px">
+            <col style="width:100px">
+            <col style="width:90px">
+            <col style="width:90px">
+            <col style="width:90px">
+            <col style="width:100px">
+            <col style="width:110px">
+        </colgroup>
+        <thead>
+            <tr>
+            <th>교과목코드</th>
+            <th>과목명</th>
+            <th>대상학년</th>
+            <th>담당교수</th>
+            <th>이수구분</th>
+            <th>점수</th>
+            <th>등급</th>
+            <th>취득학점</th>
+            <th>기타</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td>830003</td>
+            <td class="subject">자바 프로그래밍</td>
+            <td>2학년</td>
+            <td>김자바</td>
+            <td>전공</td>
+            <td>99.0</td>
+            <td>A+</td>
+            <td>3</td>
+            <td><button class="btn-detail">상세확인</button></td>
+            </tr>
+            <tr>
+            <td>830003</td>
+            <td class="subject">자료구조</td>
+            <td>2학년</td>
+            <td>김자료</td>
+            <td>전공</td>
+            <td>86.2</td>
+            <td>B</td>
+            <td>3</td>
+            <td><button class="btn-detail">상세확인</button></td>
+            </tr>
+            <tr>
+            <td>830003</td>
+            <td class="subject">대학영어</td>
+            <td>2학년</td>
+            <td>김영어</td>
+            <td>교양</td>
+            <td>92.6</td>
+            <td>A</td>
+            <td>3</td>
+            <td><button class="btn-detail">상세확인</button></td>
+            </tr>
+            <tr>
+            <td>830003</td>
+            <td class="subject">알고리즘</td>
+            <td>2학년</td>
+            <td>김자바</td>
+            <td>전공</td>
+            <td>56.2</td>
+            <td>F</td>
+            <td>0</td>
+            <td><button class="btn-detail">상세확인</button></td>
+            </tr>
+            <tr>
+            <td>830003</td>
+            <td class="subject">세계의역사</td>
+            <td>2학년</td>
+            <td>김역사</td>
+            <td>교양</td>
+            <td>80.0</td>
+            <td>B</td>
+            <td>3</td>
+            <td><button class="btn-detail">상세확인</button></td>
+            </tr>
+            <tr>
+            <td>830003</td>
+            <td class="subject">데이터베이스</td>
+            <td>2학년</td>
+            <td>김디비</td>
+            <td>전공</td>
+            <td>88.8</td>
+            <td>B+</td>
+            <td>3</td>
+            <td><button class="btn-detail">상세확인</button></td>
+            </tr>
+        </tbody>
+        </table>
+
+        <p class="grade-note">※ 점수 이의신청은 학생지원실에 문의하시기 바랍니다.</p>
+
+                
+                    
+
+
         </main>
     </div>
 

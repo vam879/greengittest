@@ -6,7 +6,53 @@
     <title>Document</title>
     <link rel="stylesheet" href="./학생지원_공통.css">
     <style>
-        
+                /* 섹션 타이틀/아이콘 바 (앞서 만들어둔 페이지도 함께 사용 가능) */
+        .page-title { margin: 0; font-size: 28px; font-weight: 700; }
+        .section-bar { height: 0; border-top: 3px solid #000; margin: 12px 0 18px; position: relative; }
+        .section-bar.has-icon img {
+        position: absolute; left: 50%; top: -18px; transform: translateX(-50%);
+        width: 32px; height: 32px; border-radius: 50%;
+        }
+
+        /* 소제목 (파란 세로바) */
+        .subsec-title {
+        display: inline-flex; align-items: center; gap: 8px;
+        font-size: 16px; font-weight: 700; color: #222; margin: 12px 0 8px;
+        }
+        .subsec-title::before {
+        content: ""; display: inline-block; width: 6px; height: 18px; background: #2a7be4;
+        border-radius: 2px;
+        }
+
+        /* 교과과정 표 */
+        .curriculum-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+        .curriculum-table thead th {
+        background: #eaf0f7; color: #333; font-weight: 600; font-size: 14px;
+        padding: 12px 10px; text-align: center; border-bottom: 1px solid #cfd8e3;
+        }
+        .curriculum-table tbody td {
+        padding: 13px 10px; font-size: 15px; color: #333; text-align: center;
+        border-bottom: 1px solid #e8edf2; background: #fff;
+        }
+        .curriculum-table tbody td.subject { text-align: left; }
+        .curriculum-table tbody td.year {
+        vertical-align: top; font-weight: 600; color: #222; padding-top: 14px;
+        }
+
+        /* 두 번째 표와의 시각적 간격 */
+        .curriculum-table + .subsec-title { margin-top: 24px; }
+
+        /* 옵션: 표 바깥 윤곽을 살짝 강조하고 싶을 때 */
+        .curriculum-table.alt thead th,
+        .curriculum-table.alt { border-top: 1px solid #cfd8e3; }
+        /* 교과과정 표 - 세로줄(가장자리 제외) */
+        .curriculum-table thead th:not(:last-child),
+        .curriculum-table tbody td:not(:last-child) {
+        border-right: 1px solid #e1e6ee; /* 연한 회색, 이미지 느낌 */
+        }
+
+
+
     </style>
 </head>
 <body>
@@ -112,9 +158,123 @@
             </ul>
         </aside>
         <main class="content">
-            <h2>학생회 소개</h2>
-            <hr style="border: none; border-top: 3px solid #000; margin: 5px 0 20px 0;">
-            <p>콘텐츠 내용 꾸미기</p>
+            
+            <!-- 교과과정 -->
+<h2 class="page-title">교과과정</h2>
+<div class="section-bar has-icon">
+  <img src="./images/mascot.png" alt="" />
+</div>
+
+<section class="curriculum">
+
+  <!-- 필수과목(전공) -->
+  <h3 class="subsec-title">공통과목(전공)</h3>
+
+  <table class="curriculum-table">
+    <colgroup>
+      <col style="width:80px" />   <!-- 학년 -->
+      <col style="width:110px" />  <!-- 코드번호 -->
+      <col style="width:90px" />   <!-- 이수구분 -->
+      <col />                      <!-- 교과목명 -->
+      <col style="width:70px" />   <!-- 학점 -->
+    </colgroup>
+    <thead>
+      <tr>
+        <th>학년</th>
+        <th>코드번호</th>
+        <th>이수구분</th>
+        <th>교과목명</th>
+        <th>학점</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- 1학년 -->
+      <tr>
+        <td class="year" rowspan="8">1</td>
+        <td>G01940</td>
+        <td>공통</td>
+        <td class="subject">C언어</td>
+        <td>3</td>
+      </tr>
+      <tr><td>G01940</td><td>공통</td><td class="subject">프로그래밍이론</td><td>3</td></tr>
+      <tr><td>G01940</td><td>공통</td><td class="subject">컴퓨터구조개론</td><td>3</td></tr>
+      <tr><td>G01940</td><td>공통</td><td class="subject">이산수학</td><td>3</td></tr>
+      <tr><td>G01940</td><td>공통</td><td class="subject">인터넷기초</td><td>3</td></tr>
+      <tr><td>G01940</td><td>공통</td><td class="subject">컴퓨터사고와인공지능</td><td>3</td></tr>
+      <tr><td>G01940</td><td>공통</td><td class="subject">자바프로그래밍</td><td>3</td></tr>
+      <tr><td>G01940</td><td>공통</td><td class="subject">자료구조</td><td>3</td></tr>
+
+      <!-- 2학년 -->
+      <tr>
+        <td class="year" rowspan="6">2</td>
+        <td>G01940</td><td>공통</td><td class="subject">컴퓨터구조</td><td>3</td>
+      </tr>
+      <tr><td>G01940</td><td>공통</td><td class="subject">선형대수</td><td>3</td></tr>
+      <tr><td>G01940</td><td>공통</td><td class="subject">알고리즘</td><td>3</td></tr>
+      <tr><td>G01940</td><td>공통</td><td class="subject">HTML/CSS/JavaScript</td><td>3</td></tr>
+      <tr><td>G01940</td><td>공통</td><td class="subject">웹프로그래밍</td><td>3</td></tr>
+      <tr><td>G01940</td><td>공통</td><td class="subject">프로그래밍이론(심화)</td><td>3</td></tr>
+
+      <!-- 3학년 -->
+      <tr>
+        <td class="year" rowspan="6">3</td>
+        <td>G01940</td><td>공통</td><td class="subject">컴퓨터구조개론</td><td>3</td>
+      </tr>
+      <tr><td>G01940</td><td>공통</td><td class="subject">이산수학</td><td>3</td></tr>
+      <tr><td>G01940</td><td>공통</td><td class="subject">인터넷기초</td><td>3</td></tr>
+      <tr><td>G01940</td><td>공통</td><td class="subject">컴퓨터사고와인공지능</td><td>3</td></tr>
+      <tr><td>G01940</td><td>공통</td><td class="subject">C언어</td><td>3</td></tr>
+      <tr><td>G01940</td><td>공통</td><td class="subject">프로그래밍이론</td><td>3</td></tr>
+
+      <!-- 4학년 -->
+      <tr>
+        <td class="year" rowspan="5">4</td>
+        <td>G01940</td><td>공통</td><td class="subject">컴퓨터구조개론</td><td>3</td>
+      </tr>
+      <tr><td>G01940</td><td>공통</td><td class="subject">이산수학</td><td>3</td></tr>
+      <tr><td>G01940</td><td>공통</td><td class="subject">인터넷기초</td><td>3</td></tr>
+      <tr><td>G01940</td><td>공통</td><td class="subject">컴퓨터사고와인공지능</td><td>3</td></tr>
+      <tr><td>G01940</td><td>공통</td><td class="subject">캡스톤디자인</td><td>3</td></tr>
+    </tbody>
+  </table>
+
+  <!-- 선택과목(교양) -->
+  <h3 class="subsec-title" style="margin-top:28px;">선택과목(교양)</h3>
+
+  <table class="curriculum-table alt">
+    <colgroup>
+      <col style="width:80px" />   <!-- 수준 -->
+      <col style="width:110px" />
+      <col style="width:90px" />
+      <col />
+      <col style="width:70px" />
+    </colgroup>
+    <thead>
+      <tr>
+        <th>수준</th>
+        <th>코드번호</th>
+        <th>이수구분</th>
+        <th>교과목명</th>
+        <th>학점</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="year" rowspan="6">1</td>
+        <td>G01940</td><td>공통</td><td class="subject">대학영어</td><td>3</td>
+      </tr>
+      <tr><td>G01940</td><td>공통</td><td class="subject">세계의역사</td><td>2</td></tr>
+      <tr><td>G01940</td><td>공통</td><td class="subject">교양과 토론</td><td>2</td></tr>
+      <tr><td>G01940</td><td>공통</td><td class="subject">컴퓨터사고와인공지능</td><td>2</td></tr>
+      <tr><td>G01940</td><td>공통</td><td class="subject">인성과 철학</td><td>2</td></tr>
+      <tr><td>G01940</td><td>공통</td><td class="subject">기술과 의사소통</td><td>2</td></tr>
+    </tbody>
+  </table>
+
+</section>
+
+
+
         </main>
     </div>
 
