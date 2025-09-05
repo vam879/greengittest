@@ -177,6 +177,7 @@
             padding: 0 30px;
             display: flex;
             flex-direction: column;
+            margin-left: -50px;
         }
         .content h2 {
             margin-top: 0;
