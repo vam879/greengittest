@@ -6,105 +6,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="./학사안내_공통.css">
     <style>
-
-    .content {
-    width: 100%;    
-    max-width: 990px;
-    margin: 0;
-    box-sizing: border-box;    
-    }
-
-    .divider {
-        border: 0;
-        border-bottom: 3px solid #333;        
-    }     
-
-    .faq-a {
-    text-decoration: none;    
-    color: #145074;          
-    display: inline-flex;    
-    align-items: center;     
-    }
-
-    a .icon {
-    margin-right: 4px;    
-    vertical-align: middle;   
-    }
-
-    a .link-text {
-    font-size: 14px;
-    color: #145074;         
-    }   
-       
-    .faq-box {
-    width: 930px;
-    height: auto;            
-    margin: 20px auto;   
-    box-sizing: border-box;     
-    }
-
-    .faq-top {
-    padding: 0;
-    margin: 0;
-    }
-
-    .faq-top a {
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-    color: #3F97F6;
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0;
-    }
-
-    .faq-top .icon {
-    margin-right: 6px;
-    }
-
-    .faq-row {
-    width: 100%;
-    height: 67px;
-    border-bottom: 1px solid #D8D8D8;
-    display: flex;
-    align-items: center;
-    padding: 0 10px;
-    box-sizing: border-box;
-    }
-    
-    .faq-row .q {
-    display: inline-flex;           
-    justify-content: center;        
-    align-items: center;            
-    width: 30px;                    
-    height: 30px;                   
-    background-color: #3282D3;     
-    color: #FFFFFF;                
-    font-weight: bold;
-    font-size: 14px;                
-    margin-right: 8px;       
-    }
-
-    .faq-row .a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 30px;
-    height: 30px;
-    background-color: #999999;
-    color: #FFFFFF;
-    font-weight: bold;
-    font-size: 14px;
-    margin-right: 8px;
-    }
-
-    .faq-row .txt {
-    flex: 1;
-    font-size: 14px;
-    color: #333;
-    }        
+        
     </style>
-
 </head>
 <body>
     <div class="topbar">
@@ -189,11 +92,11 @@
             </span>
             <span class="path-divider"> > </span>
             <br>
-            <a href="#">학생지원</a>
+            <a href="./학사안내1-공지사항.html">학사안내</a>
             <br>
             <span class="path-divider"> > </span>
             <br>
-            <a href="#">자주묻는질문</a>
+            <a href="#">수료 및 졸업</a>
         </div>
     </div>
 
@@ -208,111 +111,169 @@
                 <a href="./학사안내2-학사일정.html"><li>학사일정</li></a>
                 <a href="./학사안내3-수강신청.html"><li>수강신청</li></a>
                 <a href="./학사안내4-성적.html"><li>성적</li></a>
-                <a href="./학사안내5-수료 및 졸업.html"><li>수료 및 졸업</li></a>
-                <a href="./학사안내6-자주하는질문.html"><li class="highlight">자주하는 질문</li></a>
+                <a href="./학사안내5-수료 및 졸업.html"><li class="highlight">수료 및 졸업</li></a>
+                <a href="./학사안내6-자주하는질문.html"><li>자주하는 질문</li></a>
             </ul>
         </aside>
-
         <main class="content">
-            <h2>자주묻는질문</h2>
-            <hr class="divider"> <br>
-
-            <div class="faq-box">
-                <div class="faq-top">
-                <a class="faq-a">
-                    <img src="images/bullet-h4.png" alt="아이콘" class="icon">
-                    <span>휴·복학 관련</span>
-                </a> <hr class="divider">
+            <h2>수료 및 졸업</h2>
+            <hr style="border: none; border-top: 3px solid #000; margin: 5px 0 20px 0;">
+            <p>
+                <br>
+                <div class="heading4">
+                    <img src="./images/bullet-h4.png" alt="">
+                    <div>수료기준</div>
                 </div>
 
-                <div class="faq-row">
-                    <span class="q">Q</span>
-                    <span class="txt">일반휴학 연장은 몇 학기까지 가능한가요?</span>
+                <table class="department-table" >
+                    <tr>
+                        <th rowspan="2" style="width: 276px;">구분</th>
+                        <th rowspan="2" style="width: 91px">총 취득학점</th>
+                        <th colspan="4">수료학점</th>
+                        
+                    </tr>
+                    <tr>
+                        <th style="border-top: 1px solid gray; width: 137px;">1학년</th>
+                        <th style="border-top: 1px solid gray; width: 137px;">2학년</th>
+                        <th style="border-top: 1px solid gray; width: 137px;">3학년</th>
+                        <th style="border-top: 1px solid gray; width: 137px;">4학년</th>
+                    </tr>
+                    <tr>
+                        <td>인문사회대학</td>
+                        <td>130이상</td>
+                        <td>33</td>
+                        <td>66</td>
+                        <td>99</td>
+                        <td>130</td>
+                    </tr>
+                    <tr>
+                        <td>자연과학대학</td>
+                        <td>130이상</td>
+                        <td>33</td>
+                        <td>66</td>
+                        <td>99</td>
+                        <td>130</td>
+                    </tr>
+                    <tr>
+                        <td>공과대학</td>
+                        <td>130이상</td>
+                        <td>33</td>
+                        <td>66</td>
+                        <td>99</td>
+                        <td>130</td>
+                    </tr>
+                    <tr>
+                        <td>사범대학</td>
+                        <td>130이상</td>
+                        <td>33</td>
+                        <td>66</td>
+                        <td>99</td>
+                        <td>130</td>
+                    </tr>
+                    
+                </table>
+
+                <div class="gray-script">
+                    <div>- 수료기준 : 졸업학점에 따라 학년별 수료학점이 다르며, 각 학년별 수료학점을 취득한 경우 해당 학년에 대한 ‘수료증명서’를 발급 가능</div>
+                </div>
+                <br>
+                <div class="heading4">
+                    <img src="./images/bullet-h4.png" alt="">
+                    <div>조기졸업</div>
                 </div>
 
-                <div class="faq-row">
-                    <span class="a">A</span>
-                    <span class="txt">휴학연장은 1회에 2학기 가능하고 총 6학기 휴학 가능합니다.</span>
+                <table class="department-table" style="left: 0px;">
+                    <tr>
+                        <th colspan="3" style="width: 648px;">자격</th>
+                        <th rowspan="2" style="width: 276px">신청절차</th>
+                        
+                    </tr>
+                    <tr>
+                        <th style="border-top: 1px solid gray; width: 276px;">이수학기</th>
+                        <th style="border-top: 1px solid gray; width: 184px; ">평점평균</th>
+                        <th style="border-top: 1px solid gray; width: 184px;">취득학점</th>
+                        
+                    </tr>
+                    <tr>
+                        <td style=" padding: 15px;">6학기 또는 7학기 이수자로서 해당학기
+                            이수로 모든 졸업요건의 충족이 가능한 자.
+                        </td>
+                        <td>4.00 이상</td>
+                        <td>정규졸업 요구학점과 동일</td>
+                        <td>졸업을 원하는 학기초 30일 이내에 “조기
+                            졸업신청서”를 교무팀에 제출
+                        </td>
+
+                    </tr>
+
+                </table>
+
+                <div class="gray-script">
+                    <div>※ 편입생 제외</div>
+                </div>
+                <br>
+
+
+                <div class="heading4">
+                    <img src="./images/bullet-h4.png" alt="">
+                    <div>졸업</div>
                 </div>
 
-                <div class="faq-row">
-                    <span class="q">Q</span>
-                    <span class="txt">복학하려고 하는데 어떻게 신청하나요?</span>
+                <table class="department-table" style="left: 0px;">
+                    <tr>
+                        <th rowspan="2" style="width: 276px;">소속 단과대학</th>
+                        <th rowspan="2" style="width: 137px;">총 취득학점</th>
+                        <th colspan="3" style="width: 507px;">전공 이수 학점</th>
+                    </tr>
+                    <tr>
+                        <th style="border-top: 1px solid gray; width: 137px;">복수전공(제1전공 기준동일)</th>
+                        <th style="border-top: 1px solid gray; width: 137px;">단일전공</th>
+                        <th style="border-top: 1px solid gray; width: 229px;">부전공</th>
+                        
+                    </tr>
+                    <tr>
+                        <td>인문사회대학</td>
+                        <td>130이상</td>
+                        <td>33</td>
+                        <td>60</td>
+                        <td>제1전공42 / 부전공21</td>
+                    </tr>
+
+                    <tr>
+                        <td>자연과학대학</td>
+                        <td>130이상</td>
+                        <td>33</td>
+                        <td>60</td>
+                        <td>제1전공42 / 부전공21</td>
+                    </tr>
+                    <tr>
+                        <td>공과대학</td>
+                        <td>130이상</td>
+                        <td>33</td>
+                        <td>60</td>
+                        <td>제1전공42 / 부전공21</td>
+                    </tr>
+                    <tr>
+                        <td>사범대학</td>
+                        <td>130이상</td>
+                        <td>33</td>
+                        <td>60</td>
+                        <td>제1전공42 / 부전공21</td>
+                    </tr>
+
+                </table>
+
+                <div class="gray-script">
+                    <div>- 등록학기 : 8학기 이상, 의과대학 의학과는 12학기 이상</div>
+                    <div>- 총 성적평점평균 : 2.00 이상</div>
+                    <div>- 졸업논문(또는 졸업종합시험) : 합격</div>
                 </div>
+                <br>
 
-                <div class="faq-row">
-                    <span class="q">Q</span>
-                    <span class="txt">등록금을 납부해서 등록 후 일반 휴학 가능한가요? 환불은 언제 되나요?</span>
-                </div>
 
-                <div class="faq-row">
-                    <span class="q">Q</span>
-                    <span class="txt">군휴학 내려면 입영통지서 외에 어떤 서류가 필요한가요?</span>
-                </div>
-            </div>        
-
-            <div class="faq-box">
-                <div class="faq-top">
-                <a class="faq-a">
-                    <img src="images/bullet-h4.png" alt="아이콘" class="icon">
-                    <span>교과 및 학사 관련</span>
-                </a> <hr class="divider">
-                </div>
-
-                <div class="faq-row">
-                    <span class="q">Q</span>
-                    <span class="txt">학과별 교과과정과 학사안내를 확인하고 싶은데, 어떻게 확인할 수 있나요??</span>
-                </div>
-
-                <div class="faq-row">
-                    <span class="a">A</span>
-                    <span class="txt">홈페이지 내 대학요람(대학생활 안내)를 통해 해당 입학년도, 해당학과의 교과과정과 학사안내를 확인하세요.</span>
-                </div>
-
-                <div class="faq-row">
-                    <span class="q">Q</span>
-                    <span class="txt">복수전공 취소 또는 부전공 전환 신청은 어떻게 하나요?</span>
-                </div>
-
-                <div class="faq-row">
-                    <span class="q">Q</span>
-                    <span class="txt">수강 신청은 어떻게 하나요?</span>
-                </div>
-                
-            </div>        
-
-            <div class="faq-box">
-                <div class="faq-top">
-                <a class="faq-a">
-                    <img src="images/bullet-h4.png" alt="아이콘" class="icon">
-                    <span>수강신청 관련</span>
-                </a> <hr class="divider">
-                </div>
-
-                <div class="faq-row">
-                    <span class="q">Q</span>
-                    <span class="txt">4학년 2학기에도 최소 12학점을 수강해야 하나요?</span>
-                </div>
-
-                <div class="faq-row">
-                    <span class="q">Q</span>
-                    <span class="txt">9학기 이상 등록자는 수강신청학점에 따라 등록금이 달라지나요?</span>
-                </div>
-
-                <div class="faq-row">
-                    <span class="q">Q</span>
-                    <span class="txt">수강 신청은 어떻게 하나요?</span>
-                </div>
-
-                <div class="faq-row">
-                    <span class="a">A</span>
-                    <span class="txt">수강신청 안내를 참고하시기 바랍니다.</span>
-                </div>     
-
-            </div>         
-            </div>
+            </p>
         </main>
-    </div>    
+    </div>
 
     <footer>
         <div class="footer-top">
