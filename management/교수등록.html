@@ -2,8 +2,11 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8" />
-    <title>학생등록</title>
-    <link rel="stylesheet" href="학생,교수등록.css">
+    <title>교수등록</title>
+    <link rel="stylesheet" href="./학생_교수등록.css">
+    <style>
+        
+    </style>
 </head>
 <body>
     <div class="site">
@@ -104,34 +107,35 @@
                     </div>
                     <div class="info-container">
                         <div class="info-section">
-                            <h2 class="section-title">기본정보 입력</h2>
+                            <div class="heading4">
+                                <img src="./images/bullet-h4.png" alt="">
+                                <div>기본정보 입력</div>                    
+                            </div>
                             <table class="info-table">
                                 <tbody>
                                     <tr>
                                         <td rowspan="4" class="profile-cell">
                                             <div class="profile-image-section">
-                                                <div class="profile-icon">
-                                                    <img src="./images/icon-avatar.png" alt="게시판 관리">
-                                                </div>
+                                                
+                                                <img src="./images/icon-avatar.png" alt="게시판 관리" style="width: 110px; height: 110px;">
+
                                             </div>
-                                            <div class="profile-empty-section"></div>
+                                            
                                         </td>
                                         <th>교수번호</th>
-                                        <td>
-                                            <div class="flex-container">
-                                                <input type="text" placeholder="연도 + 학과 코드 + 순번 조합 자동 생성" readonly>
-                                            </div>
+                                        <td style="color: rgb(187, 5, 5);">
+                                            연도 + 학과 코드 + 순번 조합 자동생성
                                         </td>
                                         <th>주민등록번호</th>
                                         <td>
-                                            <input type="text" placeholder="- 포함 14자리 입력">
+                                            <input type="text" placeholder="- 포함 14자리 입력"  class="input-box2">
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>이름</th>
-                                        <td><input type="text" placeholder="학생 이름 입력"></td>
+                                        <td><input type="text" placeholder="교수 이름 입력" class="input-box"></td>
                                         <th>영문명</th>
-                                        <td><input type="text" placeholder="여권 등과 동일한 영문 이름"></td>
+                                        <td><input type="text" placeholder="여권 등과 동일한 영문 이름"  class="input-box2"></td>
                                     </tr>
                                     <tr>
                                         <th>성별</th>
@@ -143,25 +147,26 @@
                                         </td>
                                         <th>국적</th>
                                         <td>
-                                            <select>
+                                            <select class="input-box">
                                                 <option>선택</option>
+                                                <option>대한민국</option>
                                             </select>
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>휴대폰</th>
-                                        <td><input type="text" placeholder="휴대폰 번호 입력"></td>
+                                        <td><input type="text" placeholder="휴대폰 번호 입력" class="input-box"></td>
                                         <th>이메일</th>
-                                        <td><input type="email" placeholder="이메일 입력"></td>
+                                        <td><input type="email" placeholder="이메일 입력" class="input-box"></td>
                                     </tr>
                                     <tr>
                                         <td colspan="1"></td>
                                         <th>주소</th>
                                         <td colspan="3">
-                                            <div class="address-group">
-                                                <input type="text" placeholder="우편번호 선택">
-                                                <input type="text" placeholder="기본주소 선택">
-                                                <input type="text" placeholder="상세주소 입력">
+                                            <div>
+                                                <input type="text" placeholder="우편번호 선택" class="input-box"> <br>
+                                                <input type="text" placeholder="기본주소 선택" class="input-box_주소"> <br>
+                                                <input type="text" placeholder="상세주소 입력" class="input-box_주소">
                                             </div>
                                         </td>
                                     </tr>
@@ -169,29 +174,35 @@
                             </table>
                         </div>
                         <div class="info-section">
-                            <h2 class="section-title">학적 정보 입력</h2>
-                            <table class="info-table">
-                                <tbody>
+                            <div class="heading4">
+                                <img src="./images/bullet-h4.png" alt="">
+                                <div>학적정보 입력</div>                    
+                            </div>
+                            <table class="info-table" style="border: none;">
+                                <tbody style="border: none;">
                                     <tr>
                                         <th>졸업대학</th>
                                         <td>
-                                            <select><option>선택</option></select>
+                                            <input type="text" class="input-box2" placeholder="대학교 이름 입력">
                                         </td>
                                         <th>학문 분야(전공)</th>
                                         <td>
-                                            <select><option>선택</option></select>
+                                            <input type="text" class="input-box2" placeholder="전공 입력">
                                         </td>
                                     </tr>
                                     <tr>
                                         <th>졸업일</th>
                                         <td>
-                                            <select><option>mm/dd/yyyy</option></select>
+                                            <input type="date"  class="input-box2">
                                         </td>
                                         <th>학위</th>
                                         <td>
                                             <div class="combo-box-group">
-                                                <select><option>석사</option></select>
-                                                <select><option>박사</option></select>
+                                                <select class="input-box">
+                                                    <option>석사</option>
+                                                    <option>박사</option>
+                                                </select>
+                                                
                                             </div>
                                         </td>
                                     </tr>
@@ -199,24 +210,30 @@
                                         <th>담당학과</th>
                                         <td>
                                             <div class="combo-box-group">
-                                                <select><option>인문사회대학</option></select>
-                                                <select><option>자연과학대학</option></select>
-                                                <select><option>공과대학</option></select>
-                                                <select><option>사범대학</option></select>
+                                                <select class="input-box">
+                                                    <option>인문사회대학</option>
+                                                    <option>공과대학</option>
+                                                </select>
+                                                <select class="input-box">
+                                                    <option>영어영문학과</option>
+                                                    <option>컴퓨터공학과</option>
+                                                </select>
+                                                
                                             </div>
                                         </td>
                                         <th>임용일</th>
                                         <td>
-                                            <select><option>mm/dd/yyyy</option></select>
+                                            <input type="date"  class="input-box2">
                                         </td>
+                                    </tr>
+                                    <tr style="border: none;">
+                                        <td colspan="4" style="padding: 0px; border: none; padding-top: 15px;"><input type="submit" value="등록" class="등록버튼"></td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                    <div class="button-group">
-                        <button type="submit" class="submit-button">등록</button>
-                    </div>
+                    
                 </div>
             </section>
         </div>
