@@ -270,9 +270,12 @@
 			border-bottom: 1px solid #eee;
 			vertical-align: middle;
 			word-break: break-word;
-			text-align: left;
+			
 			/* 제목 등 긴 텍스트 줄바꿈 */
 		}
+        main .left-list{
+            text-align: left;
+        }
         .status.answered {
             color: #008000;
             font-weight: bold;
