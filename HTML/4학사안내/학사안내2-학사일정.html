@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>학사일정</title>
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="./학사안내_공통.css">
-    <style>
-        
-    </style>
+    
+    
+
 </head>
 <body>
     <div class="topbar">
-        <a href="#">HOME</a>
+        <a href="../mainpage/main.html">HOME</a>
         <a href="#">사이트맵</a>
-        <a href="#">로그인</a>
-        <a href="#">학생지원</a>
+        <a href="../8회원/회원1-로그인.html">로그인</a>
+        <a href="../7학생지원/학생지원1-수강신청.html ">학생지원</a>
     </div>
 
     <header>
@@ -34,11 +36,11 @@
                 </li>
                 <li>입학안내
                     <ul>
-                        <li><a href="../2입학안내/입사안내1-공지사항.html">공지사항</a></li>
-                        <li><a href="../2입학안내/입사안내2-수시모집.html">수시모집</a></li>
-                        <li><a href="../2입학안내/입사안내3-정시모집.html">정시모집</a></li>
-                        <li><a href="../2입학안내/입사안내4-편입학.html">편입학</a></li>
-                        <li><a href="../2입학안내/입사안내5-입학상담.html">입학상담</a></li>
+                        <li><a href="../2입학안내/입학안내1-공지사항.html">공지사항</a></li>
+                        <li><a href="../2입학안내/입학안내2-수시모집.html">수시모집</a></li>
+                        <li><a href="../2입학안내/입학안내3-정시모집.html">정시모집</a></li>
+                        <li><a href="../2입학안내/입학안내4-편입학.html">편입학</a></li>
+                        <li><a href="../2입학안내/입학안내5-입학상담.html">입학상담</a></li>
                     </ul>
                 </li>
                 <li>대학·대학원
@@ -84,16 +86,19 @@
     <div class="breadcrumb-bar">
         <div class="breadcrumb-content">
             <span class="home-icon">
-                <a href="#">
+                <a href="../mainpage/main.html">
                     <svg xmlns="./images/ico-home.png" height="16" viewBox="0 -960 960 960" width="16" fill="#333333">
                         <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/>
                     </svg>
                 </a>
             </span>
             <span class="path-divider"> > </span>
-            <a href="#">학생지원</a>
+            <p></p>
+            <a href="./학사안내1-공지사항.html">학사안내</a> 
+            <p></p>
             <span class="path-divider"> > </span>
-            <a href="#">학사일정</a>
+            <p></p>
+            <a href="">학사일정</a>
         </div>
     </div>
 
@@ -113,20 +118,44 @@
             </ul>
         </aside>
         <main class="content">
-            <h2>학생회 소개</h2>
+            <h2>학사일정</h2>
             <hr style="border: none; border-top: 3px solid #000; margin: 5px 0 20px 0;">
-            <p>콘텐츠 내용 꾸미기</p>
+            <div id="calendar"></div>
+
+
+            <p class="notice-text">※ 자세한 일정 내용은 공지사항을 참고하시기 바랍니다.</p>
         </main>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.17/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.17/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@6.1.17/index.global.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var calendarEl = document.getElementById('calendar');
+
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        locale: 'ko',
+        headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'dayGridMonth'
+        }        
+      });
+
+      calendar.render();
+    });
+  </script>
+
 
     <footer>
         <div class="footer-top">
             <ul>
                 <li><a href="#">개인정보처리방침</a></li>
                 <li><a href="#">통합정보시스템</a></li>
-                <li><a href="#">학사일정</a></li>
+                <li><a href="./학사안내2-학사일정.html ">학사일정</a></li>
                 <li><a href="#">주요업무 연락</a></li>
-                <li><a href="#">교내공지사항</a></li>
+                <li><a href="./학사안내1-공지사항.html">교내공지사항</a></li>
             </ul>
         </div>
         <div class="footer-mid">
@@ -146,7 +175,7 @@
                     <div class="arrow"></div>
                 </div>
                 <ul class="family-site-list">
-                    <li><a href="#">그린대학교</a></li>
+                    <li><a href="../mainpage/main.html">그린대학교</a></li>
                     <li><a href="#">컴퓨터과학과</a></li>
                     <li><a href="#">학생지원센터</a></li>
                 </ul>

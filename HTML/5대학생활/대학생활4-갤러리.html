@@ -6,8 +6,50 @@
     <title>Document</title>
     <link rel="stylesheet" href="./대학생활_공통.css">
     <style>
-        
-    </style>
+        .img-container{
+            width: 930px;
+            
+        }
+        .img-list{
+            width: 297px;
+            height: 300px;
+            display: inline-block;
+        }
+        .img-list img{
+            width: 296px;
+            height: 220px;
+        }
+        .img-bold{
+ 
+            margin-top: 6px;
+        }
+        .img-gray{
+            font-size: 13px;
+            color:#afafaf;
+            margin: 0px 3px;
+            margin-top: 5px;
+            
+            display: inline-block;
+        }
+
+        .list {
+            height: 62px;
+        }
+        .list > .page {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .list > .page > a {
+            display: inline-block;
+            padding: 5px 8px;
+            border: 1px solid #dbdbdb;
+            color: gray;
+        }
+
+        .page a img {
+            width: 10px;
+            height: 14px;
+        }
     </style>
 </head>
 <body>
@@ -64,7 +106,7 @@
                 <li>대학생활
                     <ul>
                         <li><a href="../5대학생활/대학생활1-학생회소개.html">학생회소개</a></li>
-                        <li><a href="../5대학생활/대학생활2-스터디.html">스터디</a></li>
+                        <li><a href="../5대학생활/대학생활2-스터디.html">동아리/스터디</a></li>
                         <li><a href="../5대학생활/대학생활3-식단안내.html">식단안내</a></li>
                         <li><a href="../5대학생활/대학생활4-갤러리.html">갤러리</a></li>
                     </ul>
@@ -94,7 +136,7 @@
             <br><span class="path-divider"> > </span><br>
             <a href="./대학생활1-학생회소개.html">대학생활</a><br>
             <span class="path-divider"> > </span><br>
-            <a href="">동아리/스터디</a>
+            <a href="">갤러리</a>
         </div>
     </div>
 
@@ -106,15 +148,98 @@
             <h2>대학생활</h2>
             <ul>
                 <a href="./대학생활1-학생회소개.html"><li>학생회소개</li></a>
-                <a href="./대학생활2-스터디.html"><li class="highlight">동아리/스터디</li></a>
+                <a href="./대학생활2-스터디.html"><li>동아리/스터디</li></a>
                 <a href="./대학생활3-식단안내.html"><li>식단안내</li></a>
-                <a href="./대학생활4-갤러리.html"><li>갤러리</li></a>
+                <a href="./대학생활4-갤러리.html"><li class="highlight">갤러리</li></a>
             </ul>
         </aside>
         <main class="content">
-            <h2>동아리/스터디</h2>
+            <h2>갤러리</h2>
             <hr style="border: none; border-top: 3px solid #000; margin: 5px 0 20px 0;">
-            <p>콘텐츠 내용 꾸미기</p>
+            <p>
+                <div id="img-container" style="width: 930px;">
+                    <ul class="img-list" style="margin-right: 15px;">
+                        <li>
+                            <img src="./images/gallary_sample1.jpg" alt="">
+                        </li>
+                        <li class="img-bold">제40회 1995학년도 학위수여식</li>
+                        <li class="img-gray">조회수 23</li>
+                        <li class="img-gray">|</li>
+                        <li class="img-gray">글로벌...</li>
+                        <li class="img-gray">|</li>
+                        <li class="img-gray">25.02.20</li>
+                        
+                    </ul>
+
+                    <ul class="img-list" style="margin-right: 15px;">
+                        <li>
+                            <img src="./images/gallary_sample2.jpg" alt="">
+                        </li>
+                        <li class="img-bold">제40회 1995학년도 학위수여식</li>
+                        <li class="img-gray">조회수 23</li>
+                        <li class="img-gray">|</li>
+                        <li class="img-gray">글로벌...</li>
+                        <li class="img-gray">|</li>
+                        <li class="img-gray">25.02.20</li>
+                        
+                    </ul>
+
+                    <ul class="img-list" >
+                        <li>
+                            <img src="./images/gallary_sample3.jpg" alt="">
+                        </li>
+                        <li class="img-bold">제40회 1995학년도 학위수여식</li>
+                        <li class="img-gray">조회수 23</li>
+                        <li class="img-gray">|</li>
+                        <li class="img-gray">글로벌...</li>
+                        <li class="img-gray">|</li>
+                        <li class="img-gray">25.02.20</li>
+                        
+                    </ul>
+
+                    <ul class="img-list" style="margin-right: 15px;">
+                        <li>
+                            <img src="./images/gallary_sample4.png" alt="">
+                        </li>
+                        <li class="img-bold">제40회 1995학년도 학위수여식</li>
+                        <li class="img-gray">조회수 23</li>
+                        <li class="img-gray">|</li>
+                        <li class="img-gray">글로벌...</li>
+                        <li class="img-gray">|</li>
+                        <li class="img-gray">25.02.20</li>
+                        
+                    </ul>
+                    <ul class="img-list">
+                        <li>
+                            <img src="./images/gallary_sample5.jpg" alt="">
+                        </li>
+                        <li class="img-bold">제40회 1995학년도 학위수여식</li>
+                        <li class="img-gray">조회수 23</li>
+                        <li class="img-gray">|</li>
+                        <li class="img-gray">글로벌...</li>
+                        <li class="img-gray">|</li>
+                        <li class="img-gray">25.02.20</li>
+                        
+                    </ul>
+                    <br><br>
+
+                    <div class="page-wrapper">
+                        <div class="page">
+                            <img src="./images/btn-first-page.png" alt="첫 페이지" class="pagination-arrow first">
+                            <img src="./images/btn-prev-page.png" alt="이전 페이지" class="pagination-arrow prev">
+                                <button class="page-btn active">1</button>
+                                <button class="page-btn">2</button>
+                                <button class="page-btn">3</button>
+                            <img src="./images/btn-next-page.png" alt="다음 페이지" class="pagination-arrow next">
+                            <img src="./images/btn-last-page.png" alt="마지막 페이지" class="pagination-arrow last">
+                            <p></p>
+                        </div>
+                    </div>       
+                </div>
+                <br>
+                
+
+            </p>
         </main>
     </div>
 
