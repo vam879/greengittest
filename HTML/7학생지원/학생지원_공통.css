@@ -1,4 +1,4 @@
-<style>
+
         /* ===========================
           전체 공통
         ============================ */
@@ -19,9 +19,9 @@
             background: #3F97F6;
             color: #fff;
             display: flex;
-            justify-content: flex-end;
+            justify-content: right;
             gap: 30px;
-            padding: 0px 60px;
+            padding: 0px 295px;
             font-size: 14px;
             height: 27px;
             align-items: center;
@@ -48,6 +48,10 @@
             font-weight: bold;
             margin-left: 200px;
 
+        }
+        .highlight {
+            background-color: #3F97F6; /* 배경색을 파란색으로 */
+            color: white; /* 글꼴 색상을 흰색으로 */
         }
         .logo img { height: 50px; }
         nav {
@@ -102,12 +106,11 @@
         ============================ */
         .breadcrumb-bar {
             background-color: #ECF2F6;
-            height: 42px;
-            width: 1920px;
+            height: 42px;            
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            padding-right: 60px;
+            padding-right: 0px;
             min-width: 1200px;
             box-sizing: border-box;
             margin-right: 0px;
@@ -117,6 +120,7 @@
             display: flex;
             align-items: center;
             font-size: 14px;
+            padding-right: 290px;
             color: #555;
             gap: 8px;
         }
@@ -279,4 +283,3 @@
         .family-site-wrap:hover .family-site-list {
             display: block;
         }
-    </style>
