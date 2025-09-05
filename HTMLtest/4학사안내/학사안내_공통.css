@@ -491,6 +491,8 @@
             top: 30px;
             border-bottom: 1px #DEDEDE solid;
             border-collapse: collapse;
+
+            margin-bottom: 40px;
         }
 
         .department-table tr{
