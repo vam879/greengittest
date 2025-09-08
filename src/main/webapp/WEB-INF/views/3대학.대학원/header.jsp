@@ -7,6 +7,5 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/greendae/resource/css/회원_공통.css">
+    <link rel="stylesheet" href="/Green/resource/css/대학대학원_공통.css">
 </head>
-<%@ include file="./header.jsp" %>
