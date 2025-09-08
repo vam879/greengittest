@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>학사관리시스템 메인</title>
-  <link rel="stylesheet" href="../학사관리main.css">
+  <link rel="stylesheet" href="/greendae/resource/css/학사관리main.css">
   <style>
     
 

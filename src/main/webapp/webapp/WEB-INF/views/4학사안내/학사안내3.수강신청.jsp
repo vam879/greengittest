@@ -1,23 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./학사안내_공통.css">
-    <style>
-        .신청버튼{
-   
-            padding: 10px 20px;
-            border: 1px solid #a1a1a1;
-            font-weight: bold;
-            font-size: 16px;
-            background-color: #f0f0f0;
-        }
-    </style>
-</head>
+
+
+<%@ include file="./header.jsp" %>
+
 <body>
     <div class="topbar">
         <a href="../main.html">HOME</a>

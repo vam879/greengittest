@@ -1,77 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./학생지원_공통.css">
-    <style>
 
-        /* 타이틀/상단 굵은 바 + 중앙 아이콘 */
-        .page-title { margin: 0; font-size: 28px; font-weight: 700; }
-        .section-bar {
-        height: 0; border-top: 3px solid #000; margin: 12px 0 18px; position: relative;
-        }
-        .section-bar.has-icon img {
-        position: absolute; left: 50%; top: -18px; transform: translateX(-50%);
-        width: 32px; height: 32px;
-        }
 
-        /* 상단 필터 & 요약 */
-        .grade-head {
-        display: flex; justify-content: space-between; align-items: center;
-        margin-bottom: 14px;
-        }
-        .grade-head .filters { display: flex; align-items: center; gap: 6px; }
-        .grade-head .filters .sel {
-        height: 34px; padding: 0 10px; border: 1px solid #ccc; background: #fff;
-        }
-        .grade-head .filters .year { width: 110px; }
-        .grade-head .filters .term { width: 70px; text-align: center; }
-        .grade-head .filters .suffix { margin: 0 6px 0 2px; color: #333; }
+<%@ include file="./header.jsp" %>
 
-        .grade-summary { color: #333; font-weight: 600; }
-        .grade-summary .emph { color: #c91515; }
 
-        /* 표 */
-        .grade-table {
-             width: 100%; border-collapse: collapse; table-layout: fixed; 
-             border-top: solid 3px #000;
-            }
-        .grade-table thead th {
-        background: #f3f5f7; color: #666; font-weight: 600; font-size: 14px;
-        padding: 14px 12px; text-align: center; border-bottom: 1px solid #dedede;
-        }
-        .grade-table tbody td {
-        padding: 18px 12px; text-align: center; border-bottom: 1px solid #e9ecef;
-        font-size: 15px; color: #333; background: #fff;
-        }
 
-        
-
-        /* 상세확인 버튼 */
-        .btn-detail {
-        background: #1b3c6a; color: #fff; border: 0; border-radius: 6px;
-        padding: 7px 12px; font-size: 14px; cursor: pointer;
-        }
-        .btn-detail:hover { filter: brightness(0.95); }
-
-        /* 안내문 */
-        .grade-note {
-        margin-top: 14px; font-size: 13px; color: #9aa1a9;
-        }
-
-        /* 접근성 보조라벨 숨김 */
-        .sr-only {
-        position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
-        overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
-        }
-
-        
-    </style>
-</head>
 <body>
     <div class="topbar">
         <a href="../mainpage/main.html">HOME</a>
@@ -177,7 +111,7 @@
         <main class="content">
            <!-- 성적조회 -->
         <h2 class="page-title">성적조회</h2>
-        <div class="section-bar has-icon">
+        <div class="cur-section-bar has-icon">
         
         </div>
 

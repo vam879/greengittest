@@ -1,65 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./학생지원_공통.css">
-    <style>
-                /* 섹션 타이틀/아이콘 바 (앞서 만들어둔 페이지도 함께 사용 가능) */
-        .page-title { margin: 0; font-size: 28px; font-weight: 700; }
-        .section-bar { height: 0; border-top: 3px solid #000; margin: 12px 0 18px; position: relative; }
-        .section-bar.has-icon img {
-        position: absolute; left: 50%; top: -18px; transform: translateX(-50%);
-        width: 32px; height: 32px; border-radius: 50%;
-        }
 
-        /* 소제목 (파란 세로바) */
-        .subsec-title {
-        display: inline-flex; align-items: center; gap: 8px;
-        font-size: 16px; font-weight: 700; color: #222; margin: 12px 0 8px;
-        }
-        .subsec-title::before {
-        content: ""; display: inline-block; width: 6px; height: 18px; background: #2a7be4;
-        border-radius: 2px;
-        }
 
-        /* 교과과정 표 */
-        .curriculum-table { 
-            width: 100%; border-collapse: collapse; table-layout: fixed;
-            border-top:1px solid #000;      
-         }
-        .curriculum-table thead th {
-        background: #fff; color: #333; font-weight: 600; font-size: 14px;
-        padding: 12px 10px; text-align: center; border-bottom: 1px solid #cfd8e3;
-        }
-        .curriculum-table tbody td {
-        padding: 13px 10px; font-size: 15px; color: #333; text-align: center;
-        border-bottom: 1px solid #e8edf2; background: #fff;
-        }
-        .curriculum-table tbody td.subject { text-align: center; }
-        .curriculum-table tbody td.year {
-        font-weight: 600; color: #222; padding-top: 14px;
-        }
-
-        /* 두 번째 표와의 시각적 간격 */
-        .curriculum-table + .subsec-title { margin-top: 24px; }
-
-        /* 옵션: 표 바깥 윤곽을 살짝 강조하고 싶을 때 */
-        .curriculum-table.alt thead th,
-        .curriculum-table.alt { border-top: 2px solid #000; }
-        /* 교과과정 표 - 세로줄(가장자리 제외) */
-        .curriculum-table thead th:not(:last-child),
-        .curriculum-table tbody td:not(:last-child) {
-        border-right: 1px solid #e1e6ee; /* 연한 회색, 이미지 느낌 */
-        }
+<%@ include file="./header.jsp" %>
 
 
 
-    </style>
-</head>
 <body>
     <div class="topbar">
         <a href="../mainpage/main.html">HOME</a>
@@ -166,7 +112,7 @@
             
             <!-- 교과과정 -->
 <h2 class="page-title">교과과정</h2>
-<div class="section-bar">  
+<div class="cur-section-bar">  
 </div>
 
 <section class="curriculum">

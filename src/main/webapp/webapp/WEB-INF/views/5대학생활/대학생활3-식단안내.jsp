@@ -1,54 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./대학생활_공통.css">
-    <style>
-        .date-navigation {
-            display: flex;
-            /* 자식 요소를 가로로 배치 */
-            justify-content: center;
-            /* 자식 요소를 가로축 중앙에 정렬 */
-            align-items: center;
-            /* 자식 요소를 세로축 중앙에 정렬 */
-            font-size: 32px;
-            font-weight: 700;
-            color: #084a87;
-            padding: 20px;
-        }
+   
+    
+<%@ include file="./header.jsp" %>
 
-        .arrow {
-            cursor: pointer;
-            font-size: 30px; /* 화살표 크기를 글자보다 크게 설정 */
-            user-select: none; /* 드래그 방지 */
-            padding: 0 15px; /* 화살표와 텍스트 사이 간격 */
-        }
 
-        .date-text {
-            margin: 0 10px; /* 텍스트와 화살표 사이 간격 */
-        }
-        .container table tbody tr {
-            border-bottom: 1px solid #ddd;
-            table, th, td {
-             border: 1px solid #ccc; /* 1px 두께의 회색 실선 경계선 */
-             /* line-height: 0.6; */
-}
-        }
-        .container table tbody tr.tr1 {
-            height: 100px;
-        }
-        .container table tbody tr.tr2 {
-            height: 100px;
-        }
-        .container table tbody tr.tr3 {
-            height: 100px;
-        }
-    </style>
-</head>
 <body>
     <div class="topbar">
         <a href="../main.html">HOME</a>
@@ -140,7 +96,7 @@
     <!-- ===========================
          본문 (대학생활 사이드바 + 콘텐츠)
     ============================ -->
-    <div class="container">
+    <div class="not-container">
         <aside class="sidebar">
             <h2>대학생활</h2>
             <ul>

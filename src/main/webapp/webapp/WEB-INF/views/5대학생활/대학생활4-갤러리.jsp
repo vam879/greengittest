@@ -1,59 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./대학생활_공통.css">
-    <style>
-        .img-container{
-            width: 930px;
-            
-        }
-        .img-list{
-            width: 297px;
-            height: 300px;
-            display: inline-block;
-        }
-        .img-list img{
-            width: 296px;
-            height: 220px;
-        }
-        .img-bold{
- 
-            margin-top: 6px;
-        }
-        .img-gray{
-            font-size: 13px;
-            color:#afafaf;
-            margin: 0px 3px;
-            margin-top: 5px;
-            
-            display: inline-block;
-        }
+   
+    
+<%@ include file="./header.jsp" %>
 
-        .list {
-            height: 62px;
-        }
-        .list > .page {
-            text-align: center;
-            margin-top: 10px;
-        }
-        .list > .page > a {
-            display: inline-block;
-            padding: 5px 8px;
-            border: 1px solid #dbdbdb;
-            color: gray;
-        }
 
-        .page a img {
-            width: 10px;
-            height: 14px;
-        }
-    </style>
-</head>
 <body>
     <div class="topbar">
         <a href="../main.html">HOME</a>
@@ -226,7 +177,7 @@
                     <br><br>
 
                     <div class="page-wrapper">
-                        <div class="page">
+                        <div class="gal-page">
                             <img src="./images/btn-first-page.png" alt="첫 페이지" class="pagination-arrow first">
                             <img src="./images/btn-prev-page.png" alt="이전 페이지" class="pagination-arrow prev">
                                 <button class="page-btn active">1</button>

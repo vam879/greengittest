@@ -1,66 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./학생지원_공통.css">
-    <style>
-        /* 수강신청내역 상단 */
-        .page-title { margin: 0; font-size: 28px; font-weight: 700; }
-        .section-bar { height: 0; border-top: 3px solid #000; margin: 12px 0 18px; }
 
-        .apply-head {
-        display: flex; justify-content: space-between; align-items: center;
-        margin-bottom: 14px;
-        }
-        .apply-head .filters { display: flex; align-items: center; gap: 6px; }
-        .apply-head .filters .sel {
-        height: 34px; padding: 0 10px; border: 1px solid #ccc; background: #fff;
-        }
-        .apply-head .filters .year { width: 110px; }
-        .apply-head .filters .term { width: 70px; text-align: center; }
-        .apply-head .filters .suffix { margin: 0 6px 0 2px; color: #333; }
 
-        .apply-head .summary {
-        display: flex; align-items: center; gap: 10px;
-        color: #333; font-weight: 600;
-        }
-        .apply-head .summary img { width: 32px; height: 32px; }
+<%@ include file="./header.jsp" %>
 
-        /* 표 - 헤더 연한회색, 행은 아래쪽 선만 */
-        .enroll-table {
-            width: 100%; border-collapse: collapse; table-layout: fixed;
-            border-top:3px solid #000;         /* 상단 굵은 라인 */
-         }
-        .enroll-table thead th {
-        background: #f3f5f7; color: #666; font-weight: 600; font-size: 14px;
-        padding: 14px 12px; text-align: center; border-bottom: 1px solid #dedede;
-        }
-        .enroll-table tbody td {
-        padding: 16px 12px; text-align: center; border-bottom: 1px solid #e5e5e5;
-        font-size: 15px; color: #333;
-        }
-        /* 과목명만 좌측 정렬 */
-        .enroll-table tbody td.subject { text-align: left; }
 
-        /* 취소 버튼 */
-        .btn-cancel {
-        background: #8f2727; color: #fff; border: 0; border-radius: 4px;
-        padding: 6px 12px; font-size: 14px; cursor: pointer;
-        }
-        .btn-cancel:hover { filter: brightness(0.95); }
 
-        /* 접근성 보조 라벨 숨김 */
-        .sr-only {
-        position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
-        overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
-        }
-
-    </style>
-</head>
 <body>
     <div class="topbar">
         <a href="../mainpage/main.html">HOME</a>
