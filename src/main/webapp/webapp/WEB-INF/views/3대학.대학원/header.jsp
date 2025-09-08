@@ -9,4 +9,3 @@
     <title>Document</title>
     <link rel="stylesheet" href="/greendae/resource/css/대학대학원_공통.css">
 </head>
-<%@ include file="./header.jsp" %>

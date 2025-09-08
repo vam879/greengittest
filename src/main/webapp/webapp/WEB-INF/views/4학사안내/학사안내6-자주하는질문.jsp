@@ -1,113 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./학사안내_공통.css">
-    <style>
-
-    .content {
-    width: 100%;    
-    max-width: 990px;
-    margin: 0;
-    box-sizing: border-box;    
-    }
-
-    .divider {
-        border: 0;
-        border-bottom: 3px solid #333;        
-    }     
-
-    .faq-a {
-    text-decoration: none;    
-    color: #145074;          
-    display: inline-flex;    
-    align-items: center;     
-    }
-
-    a .icon {
-    margin-right: 4px;    
-    vertical-align: middle;   
-    }
-
-    a .link-text {
-    font-size: 14px;
-    color: #145074;         
-    }   
-       
-    .faq-box {
-    width: 930px;
-    height: auto;            
-    margin: 20px auto;   
-    box-sizing: border-box;     
-    }
-
-    .faq-top {
-    padding: 0;
-    margin: 0;
-    }
-
-    .faq-top a {
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-    color: #3F97F6;
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0;
-    }
-
-    .faq-top .icon {
-    margin-right: 6px;
-    }
-
-    .faq-row {
-    width: 100%;
-    height: 67px;
-    border-bottom: 1px solid #D8D8D8;
-    display: flex;
-    align-items: center;
-    padding: 0 10px;
-    box-sizing: border-box;
-    }
     
-    .faq-row .q {
-    display: inline-flex;           
-    justify-content: center;        
-    align-items: center;            
-    width: 30px;                    
-    height: 30px;                   
-    background-color: #3282D3;     
-    color: #FFFFFF;                
-    font-weight: bold;
-    font-size: 14px;                
-    margin-right: 8px;       
-    }
+    
+<%@ include file="./header.jsp" %>
 
-    .faq-row .a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 30px;
-    height: 30px;
-    background-color: #999999;
-    color: #FFFFFF;
-    font-weight: bold;
-    font-size: 14px;
-    margin-right: 8px;
-    }
-
-    .faq-row .txt {
-    flex: 1;
-    font-size: 14px;
-    color: #333;
-    }        
-    </style>
-
-</head>
 <body>
     <div class="topbar">
         <a href="../main.html">HOME</a>
@@ -215,16 +111,16 @@
             </ul>
         </aside>
 
-        <main class="content">
+        <main class="req-content">
             <h2>자주묻는질문</h2>
-            <hr class="divider"> <br>
+            <hr class="req-divider"> <br>
 
             <div class="faq-box">
                 <div class="faq-top">
                 <a class="faq-a">
                     <img src="images/bullet-h4.png" alt="아이콘" class="icon">
                     <span>휴·복학 관련</span>
-                </a> <hr class="divider">
+                </a> <hr class="req-divider">
                 </div>
 
                 <div class="faq-row">
@@ -258,7 +154,7 @@
                 <a class="faq-a">
                     <img src="images/bullet-h4.png" alt="아이콘" class="icon">
                     <span>교과 및 학사 관련</span>
-                </a> <hr class="divider">
+                </a> <hr class="req-divider">
                 </div>
 
                 <div class="faq-row">
@@ -288,7 +184,7 @@
                 <a class="faq-a">
                     <img src="images/bullet-h4.png" alt="아이콘" class="icon">
                     <span>수강신청 관련</span>
-                </a> <hr class="divider">
+                </a> <hr class="req-divider">
                 </div>
 
                 <div class="faq-row">

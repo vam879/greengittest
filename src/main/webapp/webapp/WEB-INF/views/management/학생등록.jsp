@@ -5,7 +5,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>학생등록</title>
-	<link rel="stylesheet" href="학생_교수등록.css">
+	<link rel="stylesheet" href="/greendae/resource/css/학생_교수등록.css">
 
 </head>
 <body>

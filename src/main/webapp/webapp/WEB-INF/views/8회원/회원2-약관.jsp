@@ -1,135 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./회원_공통.css">
-    <style>               
-        .container {
-        width: 1200px;
-        margin: 30px auto;        
-        padding: 30px 40px;        
-        background: #fff;
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        }
 
-        .container .header {
-        margin-left: 200px; /* 원하는 만큼 오른쪽으로 밀기 */
-        }
-        
-        .container .header {
-        margin-bottom: 20px; 
-        position: relative;  
-        width: 100%;
-        padding: 0;
-        }
+<%@ include file="./header.jsp" %>
 
-        .container .header h2 {
-        font-size: 22px;
-        margin-bottom: 10px;
-        color: #3F97F6;
-        }
 
-        .container .header p {
-        font-size: 14px;
-        line-height: 22px;
-        color: #3F97F6;
-        margin: 0;
-        }
-        
-        .derpartemet-table {
-        border-collapse: collapse;
-        width: 990px;
-        margin: 0 auto; 
-        border: 1px soli d#ddd;        
-        }
 
-        .derpartemet-table .terms-title {
-        width: 198px;
-        height: 226px;
-        background: #F4F8FC;
-        text-align: center;
-        vertical-align: middle;
-        font-weight: bold;
-        color: #000;
-        border-right: 1px solid #ddd;
-        border-bottom: 1px solid #ddd;        
-        padding: 10px;
-        }
-
-        .derpartemet-table .terms-content {
-        width: 792px;
-        height: 226px;
-        border-bottom: 1px solid #dedede;
-        padding: 10px;
-        }
-
-        .derpartemet-table .terms-content textarea {
-        width: 100%;
-        height: 100%;
-        border: 1px solid #ccc;
-        resize: none;
-        font-size: 14px;
-        font-family: 20px;
-        line-height: 20px;
-        padding: 10px;
-        
-        box-sizing: border-box;
-        }
-
-        .derpartemet-table .terms-check {
-        padding: 10px;
-        font-size: 14px;
-        border: none;
-        }
-
-        .derpartemet-table .terms-buttons {
-        text-align: right;
-        padding: 15px 10px;
-        border: none;
-        }
-
-        .derpartemet-table .terms-buttons .btn-cancel,
-        .derpartemet-table .terms-buttons .btn-next {
-        width: 80px;      
-        height: 45px;     
-        font-size: 15px;  
-        font-weight: bold;
-        border: none;
-        border-radius: 3px;
-        cursor: pointer;
-        }
-
-        .derpartemet-table .terms-buttons .btn-cancel {
-        background: #888;
-        color: #fff;
-        margin-right: 5px;
-        }
-
-        .derpartemet-table .terms-buttons .btn-next {
-        background: #3F97F6;
-        color: #fff;
-        }
-
-        .derpartemet-table .terms-content textarea::placeholder {
-        font-weight: bold;   
-        color: #333;         
-        }
-
-        .divider {
-        border: 0;
-        border-top: 6px solid #333; 
-        margin: 20px 0;             
-        }
-
-    </style>
-</head>
 <body>
     <div class="topbar">
 
@@ -225,7 +101,7 @@
          본문 (대학생활 사이드바 + 콘텐츠)
     ============================ -->
     <!-- 회원가입 -->
-    <div class="container">    
+    <div class="term-container">    
     <div class="header">
         <h2 style="color:#3F97F6;">약관 안내</h2>
         <p style="color:#3F97F6;">※ 대학구성원(학생, 교직원)은 회원가입 없이 학번, 교번(사번) 아이디를 사용하여 로그인할 수 있습니다</p>

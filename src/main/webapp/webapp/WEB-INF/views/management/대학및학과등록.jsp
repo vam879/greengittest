@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>대학 및 학과 등록</title>
-  <link rel="stylesheet" href="./학사관리main.css">
+  <link rel="stylesheet" href="/greendae/resource/css/학사관리main.css">
   <style>
     /* ===== 공통 레이아웃 ===== */  
 

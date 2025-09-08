@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>그린대학교 컴퓨터과학과</title>
 
-    <link rel="stylesheet" href="./resources/css/main.style.css">
+    <link rel="stylesheet" href="/greendae/resource/css/main.style.css">
     
     </head>
 
@@ -21,7 +21,7 @@
 
     <header>
         <div class="logo">
-            <span><img src="./resources/images/header_logo.png" alt="그린대학교 로고"></span>
+            <span><img src="./images/header_logo.png" alt="그린대학교 로고"></span>
         </div>
         <nav>
             <ul>
@@ -84,7 +84,7 @@
     </header>
 
     <section class="main-visual">
-        <img src="./resources/images/bg-main-vi01.jpg" alt="배너">
+        <img src="./images/bg-main-vi01.jpg" alt="배너">
         <div class="text">
             <h2>IT 기술로 세상을 변화시키는 인재를 양성</h2>
             <h1>그린대학교 컴퓨터과학과</h1>
@@ -94,17 +94,17 @@
 
  
         <!-- 왼쪽 화살표 -->
-        <img src="./resources/images/btn-prev01.png" alt="이전" class="custom-img left">
+        <img src="./images/btn-prev01.png" alt="이전" class="custom-img left">
         <!-- 오른쪽 화살표 -->
-        <img src="./resources/images/btn-next01.png" alt="다음" class="custom-img right">
+        <img src="./images/btn-next01.png" alt="다음" class="custom-img right">
     </section>
 
     <div class="notice-wrap">
         <div class="board">
             <h3>학사안내</h3>
             <ul>
-                <li><span>교과목 폐지 및 신설 안내 <img src="./resources/images/ico-new01.gif"></span> <span>2019.05.29</span></li>
-                <li><span>2019-2학기 진로취업 프로그램 <img src="./resources/images/ico-new01.gif"></span> <span>2019.05.29</span></li>
+                <li><span>교과목 폐지 및 신설 안내 <img src="./images/ico-new01.gif"></span> <span>2019.05.29</span></li>
+                <li><span>2019-2학기 진로취업 프로그램 <img src="./images/ico-new01.gif"></span> <span>2019.05.29</span></li>
                 <li><span>제8회 KNDA 학술논문상 공모</span> <span>2019.05.29</span></li>
                 <li><span>대학 진로취업지원 현황 조사</span> <span>2019.05.29</span></li>
             </ul>

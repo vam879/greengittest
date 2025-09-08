@@ -1,18 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>학사일정</title>
-    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.19/index.global.min.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="./학사안내_공통.css">
-    
-    
 
-</head>
+
+<%@ include file="./header.jsp" %>
+
+
 <body>
     <div class="topbar">
         <a href="../main.html">HOME</a>

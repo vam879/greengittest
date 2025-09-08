@@ -1,75 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./학생지원_공통.css">
-    <style>
-        /* --- 기본정보 카드 --- */
-        .basic-info {
-        display: grid;
-        grid-template-columns: 160px 1fr;
-        gap: 18px;
-        align-items: stretch;
-        margin-top: 8px;
-        }
-        .basic-info .avatar {
-        display: flex; align-items: center; justify-content: center;
-        background: #f2f4f7; border: 1px solid #e5e9ef; border-radius: 6px;
-        }
-        .basic-info .avatar img {
-        width: 120px; height: 120px; object-fit: cover; border-radius: 50%;
-        }
 
-        /* key-value 표 (기본정보 우측) */
-        .kv-table { width: 100%; border-collapse: collapse; table-layout: fixed; background:#fff; }
-        .kv-table th.label {
-        background: #f6f8fb; color: #555; font-weight: 600; text-align: center;
-        }
-        .kv-table th, .kv-table td {
-        padding: 14px 12px; border-bottom: 1px solid #e6ebf2; font-size: 15px; color:#333;
-        text-align:center;
-        }
-        /* 가장자리 제외 세로줄 */
-        .kv-table th:not(:last-child), .kv-table td:not(:last-child) { border-right: 1px solid #dedede; }
 
-        /* 상태 색상 */
-        .status-ok { color: #2aa300; font-weight: 600; }
+<%@ include file="./header.jsp" %>
 
-        /* --- 취득학점현황 --- */
-        .stat-table { width: 100%; border-collapse: collapse; table-layout: fixed; margin-top: 8px; }
-        .stat-table thead th {
-        background: white; color:#333; font-weight:600; font-size:14px;
-        padding:10px; border-bottom: 1px solid #cfd8e3; text-align: center;
-        }
-        .stat-table tbody td, .stat-table tbody th.row-title {
-        padding: 12px 10px; border-bottom: 1px solid #e8edf2; text-align: center; background:#fff;
-        }
-        .stat-table tbody th.row-title { background:#f6f8fb; color:#555; font-weight:600; }
-        /* 세로줄(가장자리 제외) */
-        .stat-table thead th:not(:last-child),
-        .stat-table tbody td:not(:last-child),
-        .stat-table tbody th.row-title { border-right: 1px solid #dedded; }
-        .small-note { margin-top: 8px; font-size: 13px; color: #9aa1a9; }
 
-        /* --- 년도/학기별 --- */
-        .year-table { width:100%; border-collapse: collapse; table-layout: fixed; margin-top: 8px; }
-        .year-table thead th {
-        background:white; color:#333; font-weight:600; font-size:14px;
-        padding:12px 10px; border-bottom:1px solid #cfd8e3; text-align:center;
-        }
-        .year-table tbody td {
-        padding:13px 10px; border-bottom:1px solid #e8edf2; text-align:center; background:#fff;
-        }
-        /* 세로줄(가장자리 제외) */
-        .year-table thead th:not(:last-child),
-        .year-table tbody td:not(:last-child) { border-right: 1px solid #dedede; }
 
-    </style>
-</head>
 <body>
     <div class="topbar">
         <a href="../mainpage/main.html">HOME</a>

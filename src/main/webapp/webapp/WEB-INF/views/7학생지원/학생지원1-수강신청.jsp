@@ -1,136 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./학생지원_공통.css">
-    <style>
-       /* ───────── 수강신청 메인 UI (content 범위) ───────── */
 
-        /* 검색 박스 */
-        .content .search-box{
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        gap:8px;
-       
-        margin-left: 550px;
-        }
-        .content .search-box select,
-        .content .search-box input[type="text"]{
-        height:40px;
-        padding:0 12px;
-        border:1px solid #D5D9DC;
-        border-radius:4px;
-        font-size:14px;
-        box-sizing:border-box;
-        }
-        .content .search-box select{ width:140px; }
-        .content .search-box input[type="text"]{ width:340px; }
-        .content .search-box button{
-        height:40px;
-        min-width:72px;
-        padding:0 14px;
-        border:none;
-        border-radius:4px;
-        background:#3F97F6;
-        color:#fff;
-        font-size:14px;
-        cursor:pointer;
-        }
-        .content .search-box button:hover{ filter:brightness(0.95); }
 
-        /* 테이블 */
-        .content .course-table{
-        width:100%;
-        border-collapse:collapse;
-        table-layout:fixed;
-        margin-top:6px;
-        border-top:3px solid #000;         /* 상단 굵은 라인 */
-        }
-        .content .course-table th,
-        .content .course-table td{
-        border:none;
-        border-bottom:1px solid #E6E8EB;   /* 아래쪽만 라인 */
-        text-align:center;
-        padding:12px 8px;
-        font-size:14px;
-        color:#333;
-        height:52px;
-        box-sizing:border-box;
-        }
-        .content .course-table thead th{
-        background:#FAFBFC;
-        font-weight:700;
-        height:46px;
-        border-bottom:1px solid #000;      /* 헤더 하단 진한 라인 */
-        }
-        
-        .content .course-table tbody tr:hover{ background:#F6FAFF; }
+<%@ include file="./header.jsp" %>
 
-        /* 신청 버튼 */
-        .content .apply-btn{
-        min-width:60px;
-        height:30px;
-        padding:0 12px;
-        border:none;
-        border-radius:4px;
-        background:#0B2C5F;
-        color:#fff;
-        font-size:13px;
-        cursor:pointer;
-        }
-        .content .apply-btn:hover{ background:#144080; }
-        .content .apply-btn:disabled{
-        opacity:.55;
-        cursor:not-allowed;
-        }
 
-        /* 페이지네이션 */
-        .content .pagination{
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        gap:6px;
-        margin:22px 0;
-        }
-        .content .pagination button{
-        width:34px;
-        height:34px;
-        border:1px solid #CDD3D8;
-        background:#fff;
-        color:#333;
-        border-radius:4px;
-        cursor:pointer;
-        }
-        .content .pagination button.active{
-        background:#145074;
-        color:#fff;
-        border-color:#145074;
-        font-weight:700;
-        }
-        .content .pagination button:not(.active):hover{ background:#F3F6FB; }
-        .content .pagination button[disabled]{
-        opacity:.45;
-        cursor:not-allowed;
-        }
 
-        /* 포커스 접근성 */
-        .content .search-box select:focus,
-        .content .search-box input[type="text"]:focus,
-        .content .search-box button:focus,
-        .content .pagination button:focus,
-        .content .apply-btn:focus{
-        outline:2px solid rgba(63,151,246,.55);
-        outline-offset:1px;
-        }
-
-    </style>
-    
-</head>
 <body>
     <div class="topbar">
         <a href="../mainpage/main.html">HOME</a>
@@ -237,7 +112,7 @@
         
            
        
-        <main class="content">
+        <main class="reg-content">
         <h2>수강신청</h2>
         <hr style="border: none; border-top: 3px solid #000; margin: 6px 0 14px;">
 

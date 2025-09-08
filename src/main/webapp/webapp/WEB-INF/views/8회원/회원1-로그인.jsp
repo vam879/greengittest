@@ -1,84 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./회원_공통.css">
-    <style>
-        .blue{
-            color: #3f97f6;
-        }
 
 
-        input[type="checkbox"]{
-            border-radius: 50%;
-            appearance: none;
-            width: 22px;
-            height: 22px;
-          
-            cursor: pointer;
-            background-color: #DFDFDF;
-        }
-
-        .check-box {
-            display: inline-block;
-            margin-right: 3px;
-        }
-        .check-box label{
-            position: relative;
-            top: -7px;
-        }
-
-        input[type="checkbox"]:checked{
-            background-color: gray;
-        }
-
-        .login-form > input{
-            padding-left: 10px; 
-            border: 1px solid #d4d2d2; 
-            height: 47px; 
-            width: 495px; 
-            font-size: 16px; 
-            box-sizing: border-box; 
-            margin: 6px 0px;
-        }
+<%@ include file="./header.jsp" %>
 
 
-        .heading4{
-            height: 24px;
-            width: 930px;
 
-        }
-
-        .heading4 div{
-            position: relative;
-            font-weight: 500;
-            display: inline-block;
-            height: 20px;
-            font-size: 18px;
-            color: #145074;
-            top: -1px;
-            left: 3px;
-        }
-
-        /* 연한 본문 글씨 */ 
-        .gray-script{
-            color: #666666;
-            font-weight: 350;
-            margin-top: 15px;
-            margin-bottom: 30px;
-        }
-        .gray-script div{
-            margin: 4px 0px;
-        }
-
-        
-
-    </style>
-</head>
 <body>
     <div class="topbar">
 
