@@ -7,5 +7,5 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/greendae/resource/css/대학생활_공통.css">
+    <link rel="stylesheet" href="/Green/resource/css/학생지원_공통.css">
 </head>
