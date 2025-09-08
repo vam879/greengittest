@@ -1,4 +1,4 @@
-<style>
+
         /* ===========================
           전체 공통
         ============================ */
@@ -22,16 +22,14 @@
             background: #3F97F6;
             color: #fff;
             display: flex;
-            /*justify-content: flex-end;*/
+            justify-content: flex-end;
             gap: 30px;
-            padding: 0px 60px;
+            padding: 0px 370px;
             font-size: 14px;
             height: 27px;
             align-items: center;
             box-sizing: border-box;
-            padding-left: 1250px;
 
-            
         }
 
         /* ===========================
@@ -51,7 +49,7 @@
             gap: 15px;
             font-size: 22px;
             font-weight: bold;
-            margin-left: 200px;
+           	margin-left: 200px;
             padding-left: 120px;
 
         }
@@ -297,7 +295,7 @@
         .bottom-section {
             display: flex;
             justify-content: center;
-            /*align-items: stretch;*/s
+            /*align-items: stretch;*/
             padding: 40px 60px;
             gap: 0px;
         }
@@ -502,4 +500,3 @@
         .family-site-wrap:hover .family-site-list {
             display: block;
         }
-</style>
