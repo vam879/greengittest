@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+		header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0px 60px;
+            border-bottom: 1px solid #ddd;
+            height: 77px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            margin-left: 200px;
+
+        }
+        .logo img { height: 50px; }
+        nav {
+            background: white;
+            box-shadow: none;
+        }
+        nav ul {
+            display: flex;
+            gap: 40px;
+            font-size: 16px;
+            font-weight: 500;
+            margin-right: 235px;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav > ul > li {
+            padding: 15px 0;
+            cursor: pointer;
+        }
+        nav ul li:hover {
+            background: none;
+            color: #3F97F6;
+        }
+        /* 드롭다운 */
+        nav ul li ul {
+            position: absolute;
+            top: 100%;
+            left: -20px;
+            background: #2a7be4;
+            display: none;
+            min-width: 180px;
+            padding: 0;
+            z-index: 1000;
+            flex-direction: column;
+            gap: 0;
+        }
+        nav ul li ul li {
+            padding: 10px 20px;
+            color: white;
+            white-space: nowrap;
+        }
+        nav ul li ul li:hover {
+            background: #1f5cbf;
+        }
+        nav ul li:hover ul {
+            display: flex;
+        }
