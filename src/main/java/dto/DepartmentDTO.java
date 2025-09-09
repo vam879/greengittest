@@ -9,6 +9,34 @@ public class DepartmentDTO {
 	private String dep_king;
 	private String dep_hp;
 	private String dep_office;
+	
+	
+	/* 학과 목록용 추가 필드 */
+	private int pro_num;
+	private int std_num;
+	private int cs_num;
+	
+	
+	public int getCs_num() {
+		return cs_num;
+	}
+	public void setCs_num(int cs_num) {
+		this.cs_num = cs_num;
+	}
+	public int getPro_num() {
+		return pro_num;
+	}
+	public void setPro_num(int pro_num) {
+		this.pro_num = pro_num;
+	}
+	public int getStd_num() {
+		return std_num;
+	}
+	public void setStd_num(int std_num) {
+		this.std_num = std_num;
+	}
+	
+	
 	public int getDep_no() {
 		return dep_no;
 	}
