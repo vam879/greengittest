@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <%@ include file="./header.jsp" %>
 
 
 <body>
     <div class="topbar">
-        <a href="../main.html">HOME</a>
+        <a href="/">HOME</a>
         <a href="../main.html">사이트맵</a>
         <a href="../8회원/회원1-로그인.html">로그인</a>
         <a href="../7학생지원/학생지원1-수강신청.html">학생지원</a>
@@ -15,7 +15,7 @@
 
     <header>
         <div class="logo">
-            <span><img src="./images/header_logo.png" alt="그린대학교 로고"></span>
+            <span><img src="/Green/resource/images/header_logo.png" alt="그린대학교 로고"></span>
         </div>
         <nav>
             <ul>
@@ -39,11 +39,11 @@
                 </li>
                 <li>대학·대학원
                     <ul>
-                        <li><a href="./대학대학원1-인문사회대학.html">인문사회대학</a></li>
-                        <li><a href="./대학대학원2-자연과학대학.html">자연과학대학</a></li>
-                        <li><a href="./대학대학원3-공과대학.html">공과대학</a></li>
-                        <li><a href="./대학대학원4-사범대학.html">사범대학</a></li>
-                        <li><a href="./대학대학원5-대학원.html">대학원</a></li>
+                        <li><a href="/Green/department/view.do?college=인문사회대학">인문사회대학</a></li>
+                        <li><a href="/Green/department/view.do?college=자연과학대학">자연과학대학</a></li>
+                        <li><a href="/Green/department/view.do?college=공과대학">공과대학</a></li>
+                        <li><a href="/Green/department/view.do?college=사범대학">사범대학</a></li>
+                        <li><a href="/Green/department/view.do?college=대학원">대학원</a></li>
                     </ul>
                 </li>
                 <li>학사안내
@@ -81,7 +81,7 @@
         <div class="breadcrumb-content">
             <span class="home-icon">
                 <a href="#">
-                    <svg xmlns="./images/ico-home.png" height="16" viewBox="0 -960 960 960" width="16" fill="#333333">
+                    <svg xmlns="/Green/resource/images/ico-home.png" height="16" viewBox="0 -960 960 960" width="16" fill="#333333">
                         <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/>
                     </svg>
                 </a>
@@ -100,11 +100,11 @@
         <aside class="sidebar">
             <h2>대학·대학원</h2>
             <ul>
-                <li><a href="./대학대학원1-인문사회대학.html">인문사회대학</a></li>
-                <li><a href="./대학대학원2-자연과학대학.html">자연과학대학</a></li>
-                <li><a href="./대학대학원3-공과대학.html">공과대학</a></li>
-                <li class="highlight"><a href="./대학대학원4-사범대학.html">사범대학</a></li>
-                <li><a href="./대학대학원5-대학원.html">대학원</a></li>
+                <li><a href="/Green/department/view.do?college=인문사회대학">인문사회대학</a></li>
+                <li><a href="/Green/department/view.do?college=자연과학대학">자연과학대학</a></li>
+                <li><a href="/Green/department/view.do?college=공과대학">공과대학</a></li>
+                <li class="highlight"><a href="/Green/department/view.do?college=사범대학">사범대학</a></li>
+                <li><a href="/Green/department/view.do?college=대학원">대학원</a></li>
             </ul>
         </aside>
         <main class="content">
@@ -112,7 +112,7 @@
             <hr style="border: none; border-top: 3px solid #000; margin: 5px 0 20px 0;">
             <p>
                 <div class="container1">
-                    <img src="images/college-introduce-4.jpg" alt="">
+                    <img src="/Green/resource/images/college-introduce-4.jpg" alt="">
                     <div class="gray">Education</div><br>
                     <div class="blue">미래를 움직이는 큰 인재, 세계의 주역!</div><br>
                     <div class="college-text">전공영역은 물론 현대 교육에 대한 학문적 탐구의 자질 및 인격 도야에 
@@ -123,7 +123,7 @@
                 </div>
 
                 <div class="heading4">
-                    <img src="./images/bullet-h4.png" alt="">
+                    <img src="/Green/resource/images/bullet-h4.png" alt="">
                     <div>학부 및 학과</div>
                 </div>
 
@@ -134,15 +134,18 @@
                         <th>학과 사무실 번호</th>
                         <th>비고</th>
                     </tr>
+                    <c:forEach var="dto" items="${departments }">
                     <tr>
-                        <td>학과1 
-                            <img src="./images/ico_link.png" alt="">
+                        <td>${dto.dep_name } 
+                            <img src="/Green/resource/images/ico_link.png" alt="">
                         </td>
-                        <td>홍길동</td>
-                        <td>051-222-2222</td>
+                        <td>${dto.dep_king }</td>
+                        <td>${dto.dep_hp }</td>
                         <td></td>
                     </tr>
+                    </c:forEach>
                 </table>
+                <br><br>
             </p>
         </main>
     </div>
@@ -160,7 +163,7 @@
         <div class="footer-mid">
             <div class="footer-info">
                 <div class="logo">
-                    <img src="./images/footer_logo.png" alt="그린대학교 로고">
+                    <img src="/Green/resource/images/footer_logo.png" alt="그린대학교 로고">
                 </div>
                 <div class="address-info">
                     <span>그린대학교</span>
