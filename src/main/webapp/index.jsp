@@ -28,7 +28,7 @@
                 <li>대학소개
                     <ul>
                     <li><a href="/Green/1대학소개/대학소개1-총장인사말.do">총장 인사말</a></li>
-                    <li><a href="/Green/1대학소개/대학소개1-교육이념.do">교육이념</a></li>
+                    <li><a href="/Green/1대학소개/대학소개2-교육이념.do">교육이념</a></li>
                     <li><a href="../1대학소개/대학소개3-연혁.html">연혁</a></li>
                     <li><a href="../1대학소개/대학소개4-조직도.html">조직도</a></li>
                     <li><a href="../1대학소개/대학소개5-오시는길.html">오시는길</a></li>
@@ -45,11 +45,11 @@
                 </li>
                 <li>대학·대학원
                     <ul>
-                        <li><a href="../3대학.대학원/대학대학원1-인문사회대학.html">인문사회대학</a></li>
-                        <li><a href="../3대학.대학원/대학대학원2-자연과학대학.html">자연과학대학</a></li>
-                        <li><a href="../3대학.대학원/대학대학원3-공과대학.html">공과대학</a></li>
-                        <li><a href="../3대학.대학원/대학대학원4-사범대학.html">사범대학</a></li>
-                        <li><a href="../3대학.대학원/대학대학원5-대학원.html">대학원</a></li>
+                        <li><a href="/Green/department/view.do?college=인문사회대학">인문사회대학</a></li>
+                        <li><a href="/Green/department/view.do?college=자연과학대학">자연과학대학</a></li>
+                        <li><a href="/Green/department/view.do?college=공과대학">공과대학</a></li>
+                        <li><a href="/Green/department/view.do?college=사범대학">사범대학</a></li>
+                        <li><a href="/Green/department/view.do?college=대학원">대학원</a></li>
                     </ul>
                 </li>
                 <li>학사안내
