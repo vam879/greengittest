@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>대학 및 학과 등록</title>
-  <link rel="stylesheet" href="/greendae/resource/css/학사관리main.css">
+  <link rel="stylesheet" href="/Green/resource/css/학사관리main.css">
   <style>
     /* ===== 공통 레이아웃 ===== */  
 
@@ -202,7 +202,7 @@
     <div class="header">
       <div class="header-bg">
         <a href="./학사관리main.html" class="link-admin-logo">
-          <img src="./images/admin_logo.png" alt="그린대학교 학사관리시스템">
+          <img src="/Green/resource/images/admin_logo.png" alt="그린대학교 학사관리시스템">
         </a>
       </div>
 
@@ -229,7 +229,7 @@
           <!-- 1. 환경설정 -->
           <div class="aside-item item-1">
             <div class="aside-link">
-              <img src="./images/ico-admin-setting.png" alt="환경설정" class="aside-icon">
+              <img src="/Green/resource/images/ico-admin-setting.png" alt="환경설정" class="aside-icon">
               <div class="aside-title title-1">환경설정</div>
               <div class="aside-ordered-list ordered-1">
                 <a href="#" class="ordered-link">기본환경정보</a>
@@ -241,7 +241,7 @@
           <!-- 2. 학사운영 -->
           <div class="aside-item item-2">
             <div class="aside-link">
-              <img src="./images/ico-admin-academic.png" alt="학사운영" class="aside-icon">
+              <img src="/Green/resource/images/ico-admin-academic.png" alt="학사운영" class="aside-icon">
               <div class="aside-title title-2">학사운영</div>
               <div class="aside-ordered-list ordered-2">
                 <a href="./교육운영현황.html" class="ordered-link">교육 운영 현황</a>
@@ -257,7 +257,7 @@
           <!-- 3. 인사관리 -->
           <div class="aside-item item-3">
             <div class="aside-link">
-              <img src="./images/ico-admin-persons.png" alt="인사관리" class="aside-icon">
+              <img src="/Green/resource/images/ico-admin-persons.png" alt="인사관리" class="aside-icon">
               <div class="aside-title title-3">인사관리</div>
               <div class="aside-ordered-list ordered-3">
                 <a href="학생목록.html" class="ordered-link">학생 목록 및 등록</a>
@@ -270,7 +270,7 @@
           <!-- 4. 대학 및 학과 -->
           <div class="aside-item item-4">
             <div class="aside-link">
-              <img src="./images/ico-admin-college.png" alt="대학 및 학과" class="aside-icon">
+              <img src="/Green/resource/images/ico-admin-college.png" alt="대학 및 학과" class="aside-icon">
               <div class="aside-title title-4">대학 및 학과</div>
               <div class="aside-ordered-list ordered-4">
                 <a href="학과목록.html" class="ordered-link">대학 및 학과 목록</a>
@@ -282,7 +282,7 @@
           <!-- 5. 게시판 관리 -->
           <div class="aside-item item-5">
             <div class="aside-link">
-              <img src="./images/ico-admin-board.png" alt="게시판 관리" class="aside-icon">
+              <img src="/Green/resource/images/ico-admin-board.png" alt="게시판 관리" class="aside-icon">
               <div class="aside-title title-5">게시판 관리</div>
               <div class="aside-ordered-list ordered-5">
                 <a href="#" class="ordered-link">입학안내 공지사항</a>
@@ -324,7 +324,7 @@
               <div class="content">
                 <div class="panel">
                   <div class="heading4">
-                    <img src="./images/bullet-h4.png" alt="">
+                    <img src="/Green/resource/images/bullet-h4.png" alt="">
                     <div>대학 정보 입력</div>                    
                   </div>
 
@@ -340,9 +340,9 @@
                       </tr>   
                       <tr>
                         <th>대학 소개</th>
-                          <td colspan="3">                         
+                        <td colspan="3">                         
                             <input type="text" placeholder="대학 소개 제목입력" class="ip"> <br><br>
-                            <textarea type="text" placeholder="대학 소개 내용입력" class="ipu"></textarea>
+                            <textarea placeholder="대학 소개 내용입력" class="ipu"></textarea>
                             <div style="clear: both;">
                               <input type="file" class="fileb">
                               <span style="color:#BC2E13; font-size:12px; float: left; position: relative; top: 17px; left: 5px;">
@@ -352,63 +352,69 @@
                           </td>                          
                       </tr>
                       <tr class="btn-row">
-                        <tr style="border: none;">
+                        
                           <td colspan="4" style="padding: 0px; border: none; padding-top: 15px;"><input type="submit" value="등록" class="등록버튼"></td>
-                        </tr> 
-                      </tr>  
+                        
+                      </tr> 
                     </table>
                   </form>                  
                   <div class="heading4">
-                    <img src="./images/bullet-h4.png" alt="">
+                    <img src="/Green/resource/images/bullet-h4.png" alt="">
                     <div>수업정보 입력</div>                    
                   </div>
-                  <form action="">
+                  <form action="/Green/department/register.do" method="post">
                     <table class="table">
                       <tr>
                         <th class="bordertop">학과 번호</th>                        
-                          <td class="bordertop" style="text-align:left; padding-left: 16px;">
-                            <span class="spt">고유 2자리 숫자 자동생성</span>
-                          </td>
+                         <td class="bordertop" style="text-align:left;">
+                           <input type="number" name="dep_no" class="inp" placeholder="학과 번호 입력">
+                         </td>
                         <th class="bordertop">단과대학</th>
-                          <td class="bordertop">
-                            <select name="" id="" class="iput">
-                              <option value="">선택</option>
+                        <td class="bordertop">
+                            <select name="college" id="" class="iput">
+                              <option value="" >선택</option>
+                              <option value="인문사회대학" >인문사회대학</option>
+                              <option value="자연과학대학" >자연과학대학</option>
+                              <option value="공과대학" >공과대학</option>
+                              <option value="사범대학" >사범대학</option>
+                              <option value="대학원" >대학원</option>
                             </select>                           
-                          </td>
+                        </td>
                       </tr>
                       <tr>
                         <th>학과명</th>
                           <td>
-                            <input type="text" class="inp" placeholder="학과명 입력">
+                            <input type="text" name="dep_name" class="inp" placeholder="학과명 입력">
                         </td>
                         <th>영문명</th>
                           <td>
-                            <input type="text" class="inp" placeholder="학과 공식 영문 이름">
+                            <input type="text" name="dep_eng_name" class="inp" placeholder="학과 공식 영문 이름">
                           </td>
                       </tr>
                       <tr>
                         <th>설립연도</th>
                           <td>
-                            <input type="date" class="inp">
+                            <input type="date" name="dep_est_date" class="inp">
                           </td>
                         <th>학과장</th>
                           <td>
-                            <select name="" class="iput">
-                              <option value="">선택</option>
-                            </select>                           
+                            <input type="text" name="dep_king" class="inp" placeholder="학과장 이름 입력">                          
                           </td>
+                      </tr>
                       <tr>
                         <th>학과 연락처</th>
                         <td>
-                          <input type="text" placeholder="학과 연락처 입력" class="inp">
+                          <input type="text" name="dep_hp" placeholder="학과 연락처 입력" class="inp">
                         </td>
                         <th>학과 사무실</th>
                         <td>
-                          <input type="text" placeholder="인문관 3층 306호" class="inp">
+                          <input type="text" name="dep_office" placeholder="인문관 3층 306호" class="inp">
                         </td>
                       </tr>
                       <tr style="border: none;">
-                          <td colspan="4" style="padding: 0px; border: none; padding-top: 15px;"><input type="submit" value="등록" class="등록버튼"></td>
+                          <td colspan="4" style="padding: 0px; border: none; padding-top: 15px;">
+                          	<input type="submit" value="등록" class="등록버튼"/>
+                          </td>
                       </tr>                   
                     </table>                    
 
@@ -433,7 +439,7 @@
         Copyright ©Green University All rights reserved. ADMINISTRATOR Version 1.4.1
       </p>
     </div>
-  </div>
+  
 </body>
 </html>
 
