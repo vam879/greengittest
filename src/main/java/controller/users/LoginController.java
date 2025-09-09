@@ -1,10 +1,12 @@
-package controller.users;
+package controller.users.login;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.SQLException;
 
-import dao.UserDAO;
-import dto.LoginDTO;
+import dao.StudentDAO;
+import dao.ProfessorDAO;
+import dao.UsersDAO;
 import util.DBHelper;
 
 import jakarta.servlet.ServletException;
@@ -14,8 +16,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
+@WebServlet("/login")
 public class LoginController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
         
@@ -23,35 +27,41 @@ public class LoginController extends HttpServlet {
         
         String userId = request.getParameter("id");
         String userPw = request.getParameter("pw");
+        String loginType = request.getParameter("login_type");
         
-        
-        // DTO에 데이터 담기
-        LoginDTO user = new LoginDTO();
-        try {
-            user.setUs_id(Integer.parseInt(userId));  
-            user.setUs_pass(userPw);
-        } catch (NumberFormatException e) {
-            // id가 숫자가 아닐 경우 바로 로그인 실패 처리
-            response.sendRedirect("login.jsp?error=invalid");
+        boolean isLoginSuccess = false;
+
+        if (userId == null || userId.isEmpty() || userPw == null || userPw.isEmpty() || loginType == null) {
+            response.sendRedirect("login.jsp?error=missing_info");
             return;
         }
 
-        // DB 연결은 별도 유틸로 가져온다고 가정 (ex: DBUtil.getConnection())
-
-        try {
-            Connection conn = DBHelper.getConnection(); // 네 환경에 맞는 DB 연결 코드 필요
-            UserDAO dao = new UserDAO(conn);
-
-            boolean isLoginSuccess = dao.checkLogin(user);
+        try (Connection conn = DBHelper.getConnection()) {
+            
+            if ("student".equals(loginType)) {
+                StudentDAO studentDao = new StudentDAO(conn);
+                isLoginSuccess = studentDao.checkLogin(userId, userPw);
+            } else if ("staff".equals(loginType)) {
+                ProfessorDAO professorDao = new ProfessorDAO(conn);
+                isLoginSuccess = professorDao.checkLogin(userId, userPw);
+            } else if ("general".equals(loginType)) {
+                UsersDAO userDao = new UsersDAO(conn);
+                isLoginSuccess = userDao.checkLogin(userId, userPw);
+            }
 
             if (isLoginSuccess) {
+                // 로그인 성공 시 세션에 단순 상태만 저장
                 HttpSession session = request.getSession();
-                session.setAttribute("loggedInUser", user);
+                session.setAttribute("isLoggedIn", true); 
                 response.sendRedirect("main.jsp");
             } else {
                 response.sendRedirect("login.jsp?error=invalid");
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            response.sendRedirect("login.jsp?error=db_error");
         } catch (Exception e) {
+            e.printStackTrace();
             throw new ServletException(e);
         }
     }
