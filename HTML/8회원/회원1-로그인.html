@@ -181,16 +181,16 @@
             <form action="" class="login-form">
                 
                 <div class="check-box">
-                    <input type="checkbox" name="" id="" value="학부생">
-                    <label for="">학부생</label>
+                    <input type="radio" name="login_type" id="student" value="학부생">
+                    <label for="student">학부생</label>
                 </div>
                 <div class="check-box">
-                    <input type="checkbox" name="" id="" value="교직원">
-                    <label for="">교직원</label>
+                    <input type="radio" name="login_type" id="staff" value="교직원">
+                    <label for="staff">교직원</label>
                 </div>
                 <div class="check-box">
-                    <input type="checkbox" name="" id="" value="일반인">
-                    <label for="">일반인</label>
+                    <input type="radio" name="login_type" id="general" value="일반인">
+                    <label for="general">일반인</label>
                 </div>
                 
 
@@ -255,6 +255,23 @@
         </div>
         <p class="copyright">copyright © Green University All rights reserved.</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('.login-form .check-box input[type="checkbox"]');
+
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    if (this.checked) {
+                        checkboxes.forEach(otherCheckbox => {
+                            if (otherCheckbox !== this) {
+                                otherCheckbox.checked = false;
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
 
