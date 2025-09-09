@@ -29,7 +29,8 @@ public class LoginController extends HttpServlet {
         String userPw = request.getParameter("pw");
         String loginType = request.getParameter("login_type");
         
-        boolean isLoginSuccess = false;
+        // 모든 DTO를 담을 수 있는 상위 타입 변수
+        Object loggedInUser = null; 
 
         if (userId == null || userId.isEmpty() || userPw == null || userPw.isEmpty() || loginType == null) {
             response.sendRedirect("login.jsp?error=missing_info");
@@ -39,20 +40,20 @@ public class LoginController extends HttpServlet {
         try (Connection conn = DBHelper.getConnection()) {
             
             if ("student".equals(loginType)) {
-                StudentDAO studentDao = new StudentDAO(conn);
-                isLoginSuccess = studentDao.checkLogin(userId, userPw);
+                StudentDAO studentDao = StudentDAO.getInstance(conn);
+                loggedInUser = studentDao.loginAndGetInfo(userId, userPw);
             } else if ("staff".equals(loginType)) {
-                ProfessorDAO professorDao = new ProfessorDAO(conn);
-                isLoginSuccess = professorDao.checkLogin(userId, userPw);
+                ProfessorDAO professorDao = ProfessorDAO.getInstance(conn);
+                loggedInUser = professorDao.loginAndGetInfo(userId, userPw);
             } else if ("general".equals(loginType)) {
-                UsersDAO userDao = new UsersDAO(conn);
-                isLoginSuccess = userDao.checkLogin(userId, userPw);
+                UsersDAO userDao = UsersDAO.getInstance(conn);
+                loggedInUser = userDao.loginAndGetInfo(userId, userPw);
             }
 
-            if (isLoginSuccess) {
-                // 로그인 성공 시 세션에 단순 상태만 저장
+            if (loggedInUser != null) {
                 HttpSession session = request.getSession();
-                session.setAttribute("isLoggedIn", true); 
+                // 로그인 성공 시 DTO 객체를 세션에 저장
+                session.setAttribute("loggedInUser", loggedInUser);
                 response.sendRedirect("main.jsp");
             } else {
                 response.sendRedirect("login.jsp?error=invalid");
