@@ -33,10 +33,35 @@ public class DepartmentDAO extends DBHelper {
 				dtoList.add(dto);
 			}
 			
+			closeAll();
+			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 		
 		return dtoList;
+	}
+	
+	
+	public void insert(DepartmentDTO dto) {
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(Sql.DEPARTMENT_INSERT);
+			psmt.setInt(1, dto.getDep_no());
+			psmt.setString(2, dto.getCollege());
+			psmt.setString(3, dto.getDep_name());
+			psmt.setString(4, dto.getDep_eng_name());
+			psmt.setString(5, dto.getDep_est_date());
+			psmt.setString(6, dto.getDep_king());
+			psmt.setString(7, dto.getDep_hp());
+			psmt.setString(8, dto.getDep_office());
+			
+			psmt.executeUpdate();
+			
+			closeAll();
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

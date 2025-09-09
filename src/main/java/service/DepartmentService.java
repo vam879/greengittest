@@ -11,7 +11,9 @@ public enum DepartmentService {
 	
 	public List<DepartmentDTO> findByCollege(String college){
 		return dao.selectByCollege(college);
-		
-		
+	}
+	
+	public void register(DepartmentDTO dto) {
+		dao.insert(dto);
 	}
 }
