@@ -96,4 +96,8 @@ public enum ArticleService {
 	public int countPage(int wdist, String searchType, String keyword) {
 		return dao.countArts(wdist, searchType, keyword);
 	}
+	
+	public ArticleDTO findAricleWithFile(String ano) {
+		return dao.selectArticleWithFile(ano);
+	}
 }

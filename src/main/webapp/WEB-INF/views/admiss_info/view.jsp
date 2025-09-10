@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
-    
+
 <%@ include file="./header.jsp" %>
-<body>
+
+
+        <body>
     <div class="header">
         <div class="topbar">
         <a href="../main.html">HOME</a>
@@ -110,73 +112,45 @@
             </ul>
         </aside>
         <main class="content">
-            <h2>공지사항</h2>
-            <hr style="border: none; border-top: 3px solid #000; margin: 5px 0 20px 0;">                         
-                <div class="search-container">
-                    <div class="search-div">
-                        <select name="category">
-                            <option value="all">전체</option>
-                            <option value="title">제목</option>
-                            <option value="author">작성자</option>
-                        </select>
-                        <input type="text" name="keyword" placeholder="검색어를 입력하세요">
-                        <button type="submit">검색</button>
-                    </div>
-                </div>
+            <section class="view">
+               
+            	                     
                 <div class="notice-list-wrapper">
-                    <div class="notice-list">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>번호</th>
-                                    <th>제목</th>
-                                    <th>작성자</th>
-                                    <th>작성일</th>
-                                    <th>조회</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            <c:forEach var="dto" items="${dtoList}" varStatus="status">
-                                <tr>
-                                    <td>${totalCount - ((page - 1) * pageSize) - status.index}</td>
-                                    <td class="left-list">
-                                    	<a href="/Green/article/view.do?ano=${dto.ano}" class="new-link">
-                                    		<img src="/Green/resource/images/ico-new01.gif" style="width:18px; height:18px; vertical-align:middle; padding-bottom:2px; margin-right:4px;">
-                                    	 	${dto.title}
-                                    	</a>
-                                    </td>
-                                    <td>${dto.writer}</td>
-                                    <td>${dto.wdate}</td>
-                                    <td>${dto.hit_cnt}</td>
-
-                                </tr>
-                                
-                                </c:forEach>
-                            </tbody>
-                        </table>
-                    </div>
+                	<div class="notice-list">
+                		<table border="0" style="border-top:none">                    
+				            <tr>
+				                <th>제목</th>
+				                <td >${articleDTO.title}</td>
+				            </tr>
+				            <tr>
+				                <th>작성자</th>
+				                <td>${articleDTO.writer}</td>
+				            </tr>
+				            
+				            <tr>
+				                <th>내용</th>
+				                <td>
+				                    ${articleDTO.content}
+				                </td>
+				            </tr>                    
+				        </table>
+                	
+                	</div>
+                
+                
                 </div>
-                <div class="page-wrapper">
-                    <div class="page">
-                        <c:if test="${page > 1}">
-					        <a href="?page=1&wdist=2"><img src="/Green/resource/images/btn-first-page.png" alt="첫 페이지" class="pagination-arrow first" style="margin-top: 4px"></a>
-					        <a href="?page=${page-1}&wdist=2"><img src="/Green/resource/images/btn-prev-page.png" alt="이전 페이지" class="pagination-arrow prev" style="margin-top: 4px"></a>
-					    </c:if>
-					
-					    <c:forEach var="i" begin="1" end="${totalPages}">
-					        <a href="?page=${i}&wdist=2" >
-					            <button class="${i == page ? 'active' : ''} page-btn">${i}</button>
-					        </a>
-					    </c:forEach>
-					
-					    <c:if test="${page < totalPages}">
-					        <a href="?page=${page+1}&wdist=2"><img src="/Green/resource/images/btn-next-page.png" alt="다음 페이지" class="pagination-arrow next" style="margin-top: 5px"></a>
-					        <a href="?page=${totalPages}&wdist=2"><img src="/Green/resource/images/btn-last-page.png" alt="마지막 페이지" class="pagination-arrow last" style="margin-top: 4px"></a>
-					    </c:if>
-                    </div>
-                </div>            
-            
-            </div>
+                
+                <div>
+                	<c:if test="${sessUser.usid eq articleDTO.writer }">
+			            <a href="/jboard/article/delete.do?ano=${articleDTO.ano }" class="btn btnRemove">삭제</a>
+			            <a href="/jboard/article/modify.do" class="btn btnModify">수정</a>
+		            </c:if>
+		           
+		        </div>
+		
+		       
+
+            </section>
         </main>
     </div>
 
@@ -216,19 +190,5 @@
         <p class="copyright">copyright © Green University All rights reserved.</p>
     </footer>
     
-    
-    
-    <script>
-		document.addEventListener("DOMContentLoaded", function() {
-		    document.querySelectorAll(".new-link").forEach(function(link) {
-		        link.addEventListener("click", function() {
-		            let icon = this.querySelector("img");
-		            if (icon) {
-		                icon.style.display = "none";
-		            }
-		        });
-		    });
-		});
-	</script>
 </body>
 </html>
