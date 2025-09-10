@@ -1,63 +1,73 @@
-package dao;
+package dao.login;
 
 import dto.ProfessorDTO;
+import util.DBHelper;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ProfessorDAO {
+public class ProfessorDAO extends DBHelper {
     private static ProfessorDAO instance;
-    private Connection conn;
 
-    private ProfessorDAO(Connection conn) { this.conn = conn; }
-    public static ProfessorDAO getInstance(Connection conn) {
+    private ProfessorDAO() {}
+    public static ProfessorDAO getInstance() {
         if (instance == null) {
-            instance = new ProfessorDAO(conn);
+            instance = new ProfessorDAO();
+            
         }
         return instance;
     }
 
     // 로그인 성공 시 ProfessorDTO 객체 전체를 반환
-    public ProfessorDTO loginAndGetInfo(String professorId, String password) throws SQLException {
+    public ProfessorDTO loginAndGetInfo(String professorId, String password) {
+    	
         // 모든 필드를 가져오는 SQL 쿼리. DB의 실제 컬럼명과 일치하는지 확인하세요.
-        String sql = "SELECT pro_no, pro_jumin, pro_name, pro_eng_name, pro_gen, pro_nation, pro_hp, pro_email, pro_addr, pro_univ, pro_grad_date, pro_degree, pro_appint_date, pro_position, pro_status, pro_seq, dep_no FROM professor_info WHERE pro_no = ? AND pro_pass = ?";
+    	
+    	
+        String sql = "SELECT * FROM professor WHERE pro_no = ? AND substr(pro_jumin, 1, 6) = ?";
+        ProfessorDTO dto = null;
+   
         
-        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, proNo);
+        try {
+        	
+        	conn = getConnection();
+        	psmt = conn.prepareStatement(sql);
+            psmt.setString(1, professorId);
+            psmt.setString(2, password);
             
-            // Java 코드 수정: 주민등록번호 앞 6자리 추출
-            String juminPrefix = proJumin;
-            if (proJumin.length() >= 6) {
-                juminPrefix = proJumin.substring(0, 6);
-            }
-            pstmt.setString(2, juminPrefix + "%");
             
-            try (ResultSet rs = pstmt.executeQuery()) {
-                if (rs.next()) {
-                    // ProfessorDTO의 모든 필드를 매핑하여 객체 생성 후 반환
-                    return new ProfessorDTO(
-                        rs.getInt("pro_no"),
-                        rs.getString("pro_jumin"),
-                        rs.getString("pro_name"),
-                        rs.getString("pro_eng_name"),
-                        rs.getString("pro_gen"),
-                        rs.getString("pro_nation"),
-                        rs.getString("pro_hp"),
-                        rs.getString("pro_email"),
-                        rs.getString("pro_addr"),
-                        rs.getString("pro_univ"),
-                        rs.getString("pro_grad_date"),
-                        rs.getString("pro_degree"),
-                        rs.getString("pro_appint_date"),
-                        rs.getString("pro_position"),
-                        rs.getString("pro_status"),
-                        rs.getInt("pro_seq"),
-                        rs.getInt("dep_no")
-                    );
-                }
+            rs = psmt.executeQuery();
+            
+            if (rs.next()) {
+                // ProfessorDTO의 모든 필드를 매핑하여 객체 생성 후 반환
+            	
+            	dto = new ProfessorDTO();
+            	
+            	dto.setPro_no(rs.getInt(1));
+            	dto.setPro_jumin(rs.getString(2));
+            	dto.setPro_name(rs.getString(3));
+            	dto.setPro_eng_name(rs.getString(4));
+            	dto.setPro_gen(rs.getString(5));
+            	dto.setPro_nation(rs.getString(6));
+            	dto.setPro_hp(rs.getString(7));
+            	dto.setPro_email(rs.getString(8));
+            	dto.setPro_addr(rs.getString(9));
+            	dto.setPro_univ(rs.getString(10));
+            	dto.setDep_no(rs.getInt(11));
+            	dto.setPro_grad_date(rs.getString(12));
+            	dto.setPro_degree(rs.getString(13));
+            	dto.setPro_appint_date(rs.getString(14));
+            	dto.setPro_position(rs.getString(15));
+            	dto.setPro_status(rs.getString(16));
+            	dto.setPro_seq(rs.getInt(17));
+            	
             }
+           
+        } catch(Exception e) {
+        	e.printStackTrace();
         }
-        return null;
+        return dto;
     }
 }

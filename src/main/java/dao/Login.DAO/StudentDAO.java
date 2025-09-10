@@ -1,62 +1,65 @@
-package dao;
+package dao.login;
 
 import dto.StudentDTO;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import util.DBHelper;
+
 import java.sql.SQLException;
 
-public class StudentDAO {
+public class StudentDAO extends DBHelper {
     private static StudentDAO instance;
-    private Connection conn;
 
-    private StudentDAO(Connection conn) { this.conn = conn; }
-    public static StudentDAO getInstance(Connection conn) {
+
+    private StudentDAO() {}
+    public static StudentDAO getInstance() {
         if (instance == null) {
-            instance = new StudentDAO(conn);
+            instance = new StudentDAO();
         }
         return instance;
     }
 
-    // 로그인 성공 시 StudentDTO 객체 전체를 반환
-    public StudentDTO loginAndGetInfo(String studentId, String password) throws SQLException {
-        // 모든 필드를 가져오는 SQL 쿼리. DB의 실제 컬럼명과 일치하는지 확인하세요.
-        String sql = "SELECT std_no, std_jumin, std_name, std_eng_name, std_gen, std_nation, std_hp, std_email, std_addr, std_seq, std_ent, std_ent_grade, std_ent_sem, std_status, dep_no, pro_no FROM student_info WHERE std_no = ? AND std_pass = ?";
+
+    public StudentDTO loginAndGetInfo(String studentId, String password) {
+    	
+    	StudentDTO dto = null;
+
         
-        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, studentId);
-            
-            // Java 코드 수정: 주민등록번호 앞 6자리 추출
-            String juminPrefix = password;
-            if (password.length() >= 6) {
-                juminPrefix = password.substring(0, 6);
-            }
-            pstmt.setString(2, juminPrefix + "%");
-            
-            try (ResultSet rs = pstmt.executeQuery()) {
-                if (rs.next()) {
-                    // StudentDTO의 모든 필드를 매핑하여 객체 생성 후 반환
-                    return new StudentDTO(
-                        rs.getString("std_no"),
-                        rs.getString("std_jumin"),
-                        rs.getString("std_name"),
-                        rs.getString("std_eng_name"),
-                        rs.getString("std_gen"),
-                        rs.getString("std_nation"),
-                        rs.getString("std_hp"),
-                        rs.getString("std_email"),
-                        rs.getString("std_addr"),
-                        rs.getInt("std_seq"),
-                        rs.getInt("std_ent"),
-                        rs.getInt("std_ent_grade"),
-                        rs.getInt("std_ent_sem"),
-                        rs.getString("std_status"),
-                        rs.getInt("dep_no"),
-                        rs.getInt("pro_no")
-                    );
+        
+        try {
+        	String sql = "SELECT * FROM student WHERE std_no = ? AND substr(std_jumin, 1, 6) = ?";
+        	
+        	conn = getConnection();
+        	psmt = conn.prepareStatement(sql);
+        	psmt.setString(1, studentId);
+        	psmt.setString(2, password);
+        	
+        	rs = psmt.executeQuery();
+        	
+        	if (rs.next()) {
+                                   	
+        		dto = new StudentDTO();
+                	
+               	dto.setStd_no(rs.getString(1));
+               	dto.setStd_jumin(rs.getString(2));
+               	dto.setStd_name(rs.getString(3));
+               	dto.setStd_eng_name(rs.getString(4));
+               	dto.setStd_gen(rs.getString(5));
+               	dto.setStd_nation(rs.getString(6));
+               	dto.setStd_hp(rs.getString(7));
+               	dto.setStd_email(rs.getString(8));
+                dto.setStd_addr(rs.getString(9));
+                dto.setDep_no(rs.getInt(10));
+                dto.setPro_no(rs.getInt(11));
+                dto.setStd_seq(rs.getInt(12));
+                dto.setStd_ent(rs.getInt(13));
+                dto.setStd_ent_grade(rs.getInt(14));
+                dto.setStd_ent_sem(rs.getInt(15));
+                dto.setStd_status(rs.getString(16));
+                	
                 }
-            }
+        } catch(Exception e) {
+        	e.printStackTrace();
         }
-        return null;
-    }
+        return dto;
+
+	}
 }
