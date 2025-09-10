@@ -36,7 +36,7 @@
                 </li>
                 <li>입학안내
                     <ul>
-                        <li><a href="../2입학안내/입학안내1-공지사항.html">공지사항</a></li>
+                        <li><a href="/Green/notice/list.do?wdist=2">공지사항</a></li>
                         <li><a href="../2입학안내/입학안내2-수시모집.html">수시모집</a></li>
                         <li><a href="../2입학안내/입학안내3-정시모집.html">정시모집</a></li>
                         <li><a href="../2입학안내/입학안내4-편입학.html">편입학</a></li>
