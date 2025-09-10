@@ -1,4 +1,4 @@
-package controller.introduce.hi;
+package controller.introduce;
 
 import java.io.IOException;
 
@@ -9,14 +9,14 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/#.do")
+@WebServlet("/introduce/history.do")
 public class HistoryController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/#.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/introduce/history.jsp");
 		dispatcher.forward(req, resp);
 	}
 	@Override
