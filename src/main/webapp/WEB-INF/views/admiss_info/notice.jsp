@@ -1,24 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
     
 <%@ include file="./header.jsp" %>
-
 <body>
-    <div class="topbar">
+    <div class="header">
+        <div class="topbar">
         <a href="../main.html">HOME</a>
         <a href="../main.html">사이트맵</a>
         <a href="../8회원/회원1-로그인.html">로그인</a>
         <a href="../7학생지원/학생지원1-수강신청.html">학생지원</a>
-    </div>
-
-    <header>
-        <div class="logo">
-            <span><img src="./images/header_logo.png" alt="그린대학교 로고"></span>
         </div>
-        <nav>
-            <ul>
-                <li>대학소개
+
+        <header>
+            <div class="logo">
+                <span><img src="/Green/resource/images/header_logo.png" alt="그린대학교 로고"></span>
+            </div>
+            <nav>
+                <ul>
+                    <li>대학소개
                     <ul>
                     <li><a href="../1대학소개/대학소개1-총장인사말.html">총장 인사말</a></li>
                     <li><a href="../1대학소개/대학소개2-교육이념.html">교육이념</a></li>
@@ -47,12 +47,12 @@
                 </li>
                 <li>학사안내
                     <ul>
-                        <li><a href="./학사안내1-공지사항.html">공지사항</a></li>
-                        <li><a href="./학사안내2-학사일정.html">학사일정</a></li>
-                        <li><a href="./학사안내3-수강신청.html">수강신청</a></li>
-                        <li><a href="./학사안내4-성적.html">성적</a></li>
-                        <li><a href="./학사안내5-수료및졸업.html">수료 및 졸업</a></li>
-                        <li><a href="./학사안내6-자주하는질문.html">자주하는질문</a></li>
+                        <li><a href="../4학사안내/학사안내1-공지사항.html">공지사항</a></li>
+                        <li><a href="../4학사안내/학사안내2-학사일정.html">학사일정</a></li>
+                        <li><a href="../4학사안내/학사안내3-수강신청.html">수강신청</a></li>
+                        <li><a href="../4학사안내/학사안내4-성적.html">성적</a></li>
+                        <li><a href="../4학사안내/학사안내5-수료 및 졸업.html">수료 및 졸업</a></li>
+                        <li><a href="../4학사안내/학사안내6-자주하는질문.html">자주하는질문</a></li>
                     </ul>
                 </li>
                 <li>대학생활
@@ -71,27 +71,27 @@
                         <li><a href="../6커뮤니티/커뮤티니4-질문과 답변.html">질문 및 답변</a></li>
                         <li><a href="../6커뮤니티/커뮤티니5-자료실.html">자료실</a></li>
                     </ul>
-                </li>
-            </ul>
-        </nav>
-    </header>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
     <div class="breadcrumb-bar">
         <div class="breadcrumb-content">
             <span class="home-icon">
-                <a href="../mainpage/main.html">
-                    <svg xmlns="./images/ico-home.png" height="16" viewBox="0 -960 960 960" width="16" fill="#333333">
+                <a href="#">
+                    <svg xmlns="/Green/resource/images/ico-home.png" height="16" viewBox="0 -960 960 960" width="16" fill="#333333">
                         <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/>
                     </svg>
                 </a>
             </span>
             <span class="path-divider"> > </span>
-            <br>
-            <a href="./학사안내1-공지사항.html">학사안내</a>
-            <br>
+            <p></p>
+            <a href="#">입학안내</a>
+            <p></p>
             <span class="path-divider"> > </span>
-            <br>
-            <a href="">공지사항</a>
+            <p></p>
+            <a href="#">공지사항</a>
         </div>
     </div>
 
@@ -100,101 +100,100 @@
     ============================ -->
     <div class="container">
         <aside class="sidebar">
-            <h2>학사안내</h2>
-            <ul>
-                <a href="./학사안내1-공지사항.html"><li  class="highlight">공지사항</li></a>
-                <a href="./학사안내2-학사일정.html"><li>학사일정</li></a>
-                <a href="./학사안내3-수강신청.html"><li>수강신청</li></a>
-                <a href="./학사안내4-성적.html"><li>성적</li></a>
-                <a href="./학사안내5-수료 및 졸업.html"><li>수료 및 졸업</li></a>
-                <a href="./학사안내6-자주하는질문.html"><li>자주하는 질문</li></a>
+            <h2>입학안내</h2>
+            <ul>                
+                <a href="./입학안내1-공지사항.html"><li class="highlight">공지사항</li></a>
+                <a href="./입학안내2-수시모집.html"><li>수시모집</li></a>
+                <a href="./입학안내3-정시모집.html"><li>정시모집</li></a>
+                <a href="./입학안내4-편입학.html"><li>편입학</li></a>
+                <a href="./입학안내5-입학상담.html"><li>입학상담</li></a>
             </ul>
         </aside>
         <main class="content">
             <h2>공지사항</h2>
-            <hr style="border: none; border-top: 3px solid #000; margin: 5px 0 20px 0;">
-            
-            <div class="search-container">
-                <div class="search-div">
-                    <select name="category">
-                        <option value="all">전체</option>
-                        <option value="title">제목</option>
-                        <option value="author">작성자</option>
-                    </select>
-                    <input type="text" name="keyword" placeholder="검색어를 입력하세요">
-                    <button type="submit">검색</button>
+            <hr style="border: none; border-top: 3px solid #000; margin: 5px 0 20px 0;">                         
+                <div class="search-container">
+                    <div class="search-div">
+                        <select name="category">
+                            <option value="all">전체</option>
+                            <option value="title">제목</option>
+                            <option value="author">작성자</option>
+                        </select>
+                        <input type="text" name="keyword" placeholder="검색어를 입력하세요">
+                        <button type="submit">검색</button>
+                    </div>
                 </div>
-            </div>
-            <div class="notice-list-wrapper">
-                <div class="notice-list">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>번호</th>
-                                <th>제목</th>
-                                <th>작성자</th>
-                                <th>작성일</th>
-                                <th>조회</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>3</td>
-                                <td>2025학년도 신입학 2차 추가모집 모집요강 및 모집...</td>
-                                <td>담당자</td>
-                                <td>24.04.09</td>
-                                <td>160</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>2025학년도 신입학 2차 추가모집 모집요강 및 모집...</td>
-                                <td>담당자</td>
-                                <td>24.04.09</td>
-                                <td>160</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2025학년도 신입학 추가모집 모집요강 및 모집인원 공지</td>
-                                <td>담당자</td>
-                                <td>24.04.09</td>
-                                <td>160</td>
-                            </tr>                            
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="page-wrapper">
-                <div class="page">
-                    <img src="./images/btn-first-page.png" alt="첫 페이지" class="pagination-arrow first">
-                    <img src="./images/btn-prev-page.png" alt="이전 페이지" class="pagination-arrow prev">
-                    <button class="page-btn active">1</button>
-                    <button class="page-btn">2</button>
-                    <button class="page-btn">3</button>
-                    <img src="./images/btn-next-page.png" alt="다음 페이지" class="pagination-arrow next">
-                    <img src="./images/btn-last-page.png" alt="마지막 페이지" class="pagination-arrow last">
-                    <p></p>
-                </div>
-            </div>         
+                <div class="notice-list-wrapper">
+                    <div class="notice-list">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>제목</th>
+                                    <th>작성자</th>
+                                    <th>작성일</th>
+                                    <th>조회</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <c:forEach var="dto" items="${dtoList}" varStatus="status">
+                                <tr>
+                                    <td>${totalCount - ((page - 1) * pageSize) - status.index}</td>
+                                    <td class="left-list">
+                                    	<a href="#" class="new-link">
+                                    		<img src="/Green/resource/images/ico-new01.gif" style="width:18px; height:18px; vertical-align:middle; padding-bottom:2px; margin-right:4px;">
+                                    	 	${dto.title}
+                                    	</a>
+                                    </td>
+                                    <td>${dto.writer}</td>
+                                    <td>${dto.wdate}</td>
+                                    <td>${dto.hit_cnt}</td>
 
+                                </tr>
+                                
+                                </c:forEach>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="page-wrapper">
+                    <div class="page">
+                        <c:if test="${page > 1}">
+					        <a href="?page=1&wdist=2"><img src="/Green/resource/images/btn-first-page.png" alt="첫 페이지" class="pagination-arrow first" style="margin-top: 4px"></a>
+					        <a href="?page=${page-1}&wdist=2"><img src="/Green/resource/images/btn-prev-page.png" alt="이전 페이지" class="pagination-arrow prev" style="margin-top: 4px"></a>
+					    </c:if>
+					
+					    <c:forEach var="i" begin="1" end="${totalPages}">
+					        <a href="?page=${i}&wdist=2" >
+					            <button class="${i == page ? 'active' : ''} page-btn">${i}</button>
+					        </a>
+					    </c:forEach>
+					
+					    <c:if test="${page < totalPages}">
+					        <a href="?page=${page+1}&wdist=2"><img src="/Green/resource/images/btn-next-page.png" alt="다음 페이지" class="pagination-arrow next" style="margin-top: 5px"></a>
+					        <a href="?page=${totalPages}&wdist=2"><img src="/Green/resource/images/btn-last-page.png" alt="마지막 페이지" class="pagination-arrow last" style="margin-top: 4px"></a>
+					    </c:if>
+                    </div>
+                </div>            
+            
+            </div>
         </main>
     </div>
-    
-    
 
     <footer>
         <div class="footer-top">
             <ul>
                 <li><a href="#">개인정보처리방침</a></li>
                 <li><a href="#">통합정보시스템</a></li>
-                <li><a href="./학사안내2-학사일정.html ">학사일정</a></li>
+                <li><a href="../4학사안내/학사안내2-학사일정.html">학사일정</a></li>
                 <li><a href="#">주요업무 연락</a></li>
-                <li><a href="./학사안내1-공지사항.html">교내공지사항</a></li>
+                <li><a href="../4학사안내/학사안내1-공지사항.html">교내공지사항</a></li>
             </ul>
-        </div> 
+        </div>
         <div class="footer-mid">
             <div class="footer-info">
                 <div class="logo">
-                    <img src="./images/footer_logo.png" alt="그린대학교 로고">
+                    <img src="/Green/resource/images/footer_logo.png" alt="그린대학교 로고">
                 </div>
                 <div class="address-info">
                     <span>그린대학교</span>
@@ -208,7 +207,7 @@
                     <div class="arrow"></div>
                 </div>
                 <ul class="family-site-list">
-                    <li><a href="../mainpage/main.html">그린대학교</a></li>
+                    <li><a href="#">그린대학교</a></li>
                     <li><a href="#">컴퓨터과학과</a></li>
                     <li><a href="#">학생지원센터</a></li>
                 </ul>
@@ -216,5 +215,20 @@
         </div>
         <p class="copyright">copyright © Green University All rights reserved.</p>
     </footer>
+    
+    
+    
+    <script>
+		document.addEventListener("DOMContentLoaded", function() {
+		    document.querySelectorAll(".new-link").forEach(function(link) {
+		        link.addEventListener("click", function() {
+		            let icon = this.querySelector("img");
+		            if (icon) {
+		                icon.style.display = "none";
+		            }
+		        });
+		    });
+		});
+	</script>
 </body>
 </html>
