@@ -140,7 +140,7 @@
                                 <tr>
                                     <td>${totalCount - ((page - 1) * pageSize) - status.index}</td>
                                     <td class="left-list">
-                                    	<a href="#">
+                                    	<a href="#" class="new-link">
                                     		<img src="/Green/resource/images/ico-new01.gif" style="width:18px; height:18px; vertical-align:middle; padding-bottom:2px; margin-right:4px;">
                                     	 	${dto.title}
                                     	</a>
@@ -159,19 +159,19 @@
                 <div class="page-wrapper">
                     <div class="page">
                         <c:if test="${page > 1}">
-					        <a href="?page=1"><button>«</button></a>
-					        <a href="?page=${page-1}"><button>‹</button></a>
+					        <a href="?page=1&wdist=2"><img src="/Green/resource/images/btn-first-page.png" alt="첫 페이지" class="pagination-arrow first" style="margin-top: 4px"></a>
+					        <a href="?page=${page-1}&wdist=2"><img src="/Green/resource/images/btn-prev-page.png" alt="이전 페이지" class="pagination-arrow prev" style="margin-top: 4px"></a>
 					    </c:if>
 					
 					    <c:forEach var="i" begin="1" end="${totalPages}">
-					        <a href="?page=${i}">
-					            <button class="${i == page ? 'active' : ''}">${i}</button>
+					        <a href="?page=${i}&wdist=2" >
+					            <button class="${i == page ? 'active' : ''} page-btn">${i}</button>
 					        </a>
 					    </c:forEach>
 					
 					    <c:if test="${page < totalPages}">
-					        <a href="?page=${page+1}"><button>›</button></a>
-					        <a href="?page=${totalPages}"><button>»</button></a>
+					        <a href="?page=${page+1}&wdist=2"><img src="/Green/resource/images/btn-next-page.png" alt="다음 페이지" class="pagination-arrow next" style="margin-top: 5px"></a>
+					        <a href="?page=${totalPages}&wdist=2"><img src="/Green/resource/images/btn-last-page.png" alt="마지막 페이지" class="pagination-arrow last" style="margin-top: 4px"></a>
 					    </c:if>
                     </div>
                 </div>            
@@ -215,5 +215,20 @@
         </div>
         <p class="copyright">copyright © Green University All rights reserved.</p>
     </footer>
+    
+    
+    
+    <script>
+		document.addEventListener("DOMContentLoaded", function() {
+		    document.querySelectorAll(".new-link").forEach(function(link) {
+		        link.addEventListener("click", function() {
+		            let icon = this.querySelector("img");
+		            if (icon) {
+		                icon.style.display = "none";
+		            }
+		        });
+		    });
+		});
+	</script>
 </body>
 </html>
