@@ -2,7 +2,7 @@ package dto;
 
 public class CourseDTO {
 	
-	private int cs_id;
+	private long cs_id;
 	private int dep_no;
 	private int cs_grade;
 	private int cs_credit;
@@ -20,10 +20,22 @@ public class CourseDTO {
 	private int cs_max;
 	private int cs_seq;
 	
-	public int getCs_id() {
+	/* 추가 필드 */
+	private String pro_name;
+	private String dep_name;
+	private int cs_std_now;	// 현재 수강인원
+	private int en_no;
+	
+	public int getCs_std_now() {
+		return cs_std_now;
+	}
+	public void setCs_std_now(int cs_std_now) {
+		this.cs_std_now = cs_std_now;
+	}
+	public long getCs_id() {
 		return cs_id;
 	}
-	public void setCs_id(int cs_id) {
+	public void setCs_id(long cs_id) {
 		this.cs_id = cs_id;
 	}
 	public int getDep_no() {
@@ -122,6 +134,28 @@ public class CourseDTO {
 	public void setCs_seq(int cs_seq) {
 		this.cs_seq = cs_seq;
 	}
+	
+	/* 추가 */
+	public String getPro_name() {
+		return pro_name;
+	}
+	public void setPro_name(String pro_name) {
+		this.pro_name = pro_name;
+	}
+	public String getDep_name() {
+		return dep_name;
+	}
+	public void setDep_name(String dep_name) {
+		this.dep_name = dep_name;
+	}	
+	
+	public int getEn_no() {
+		return en_no;
+	}
+	public void setEn_no(int en_no) {
+		this.en_no = en_no;
+	}
+	
 	@Override
 	public String toString() {
 		return "CourseDTO [cs_id=" + cs_id + ", dep_no=" + dep_no + ", cs_grade=" + cs_grade + ", cs_credit="
