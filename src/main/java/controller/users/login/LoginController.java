@@ -27,11 +27,11 @@ public class LoginController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
 
-
+    	String loginType = request.getParameter("login_type");
+    			
 
         String userId = request.getParameter("id");
         String userPw = request.getParameter("pw");
-	@@ -33,37 +37,37 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
         Object loggedInUser = null; 
 
         if (userId == null || userId.isEmpty() || userPw == null || userPw.isEmpty() || loginType == null) {
@@ -64,4 +64,5 @@ public class LoginController extends HttpServlet {
                 response.sendRedirect("/Green/login.do");
 
             }
-
+    }
+}
