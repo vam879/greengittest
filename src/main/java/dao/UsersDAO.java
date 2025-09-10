@@ -1,0 +1,122 @@
+package dao;
+
+
+import dto.UsersDTO;
+import util.DBHelper;
+import util.Sql;
+
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class UsersDAO extends DBHelper{
+	
+	public final static UsersDAO INSTANCE = new UsersDAO(); 
+	
+	public static UsersDAO getInstance() {
+		return INSTANCE;
+	}
+	
+	private UsersDAO() {}
+	
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
+	
+	
+	
+	
+	
+
+    
+    // 회원가입
+    public void insert(UsersDTO dto) {
+		
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(Sql.INSERT_USERS);
+			psmt.setInt(1, dto.getUs_id());
+			psmt.setString(2, dto.getUs_pass());
+			psmt.setString(3, dto.getUs_name());
+			psmt.setString(4, dto.getUs_hp());
+			psmt.setString(5, dto.getUs_email());
+			psmt.setString(6, dto.getUs_addr());
+			
+			psmt.executeUpdate();
+			closeAll();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+    // 중복 체크 ( 아이디, 휴대폰, 이메일)
+	public int selectCount(String col, String value) {
+		
+		int count = 0;
+		
+		try {
+			conn = getConnection();
+			
+			StringBuilder sql = new StringBuilder(Sql.SELECT_COUNT);
+			
+			if(col.equals("user_id")) {
+				sql.append(Sql.WHERE_US_ID);
+			}else if(col.equals("user_hp")) {
+				sql.append(Sql.WHERE_US_HP);
+			}else if(col.equals("user_email")) {
+				sql.append(Sql.WHERE_US_EMAIL);
+			}
+			psmt = conn.prepareStatement(sql.toString());
+			psmt.setString(1, value);
+			
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				count = rs.getInt(1);
+			}
+			closeAll();
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return count;
+	
+	}
+	
+
+	public UsersDTO selectCount(UsersDTO dto) {
+		
+		return null;
+	}	
+	
+	// 로그인 할 때 DB 사용자 정보 비교
+	/*public UsersDTO select(UsersDTO dto) {
+		
+		UsersDTO userDTO = null;
+		
+		try {
+			
+			conn = getConnection();
+			psmt = conn.prepareStatement(Sql.SELECT_USERS_BY_PASS);
+			psmt.setInt(1, dto.getUs_id());
+			psmt.setString(2, dto.getUs_pass());
+			
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+			userDTO = new UsersDTO();
+			userDTO.setUs_id(rs.getInt(1));
+			userDTO.setUs_pass(rs.getString(2));
+			userDTO.setUs_name(rs.getString(3));
+			userDTO.setUs_hp(rs.getString(4));
+			userDTO.setUs_email(rs.getString(5));
+			userDTO.setUs_addr(rs.getString(6));
+			}
+			closeAll();
+		}catch (Exception e) {
+			logger.error(e.getMessage());
+						
+		}
+		return userDTO;
+	}
+    */
+}
