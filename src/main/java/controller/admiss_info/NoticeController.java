@@ -12,9 +12,9 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import service.Admiss_info_noticeService;
 
-
-@WebServlet("/#.do")
+@WebServlet("/admiss_info/notice.do")
 public class NoticeController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -41,12 +41,13 @@ public class NoticeController extends HttpServlet {
 		req.setAttribute("dtoList", dtoList);
 		req.setAttribute("pagenationDTO", pagenationDTO);		
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/#.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/admiss_info/notice.jsp");
 		dispatcher.forward(req, resp);
 	}
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		super.doPost(req, resp);
+		doGet(req, resp);
 	}
+
 }
