@@ -81,42 +81,44 @@ public class UsersDAO extends DBHelper{
 		return count;
 	
 	}
-	
+	// 로그인 성공 시 UsersDTO 객체 전체를 반환
+    public UsersDTO loginAndGetInfo(String userId, String password) {
+      
+        String sql = "SELECT * FROM users WHERE us_id = ? AND us_pass = ?";
+        UsersDTO dto = null;
+        
+        
+        try {
+        	
+        	conn = getConnection();
+	        psmt = conn.prepareStatement(sql);
+	        psmt.setString(1, userId);
+	        psmt.setString(2, password);
+	            
+	        rs = psmt.executeQuery();
+	        if (rs.next()) {
+	            
+	         	dto = new UsersDTO();
+	             	
+	            dto.setUs_id(rs.getInt(1));
+	            dto.setUs_pass(rs.getString(2));
+	            dto.setUs_name(rs.getString(3));
+	            dto.setUs_hp(rs.getString(4));
+	            dto.setUs_email(rs.getString(5));
+	            dto.setUs_addr(rs.getString(6));
+                        
+            }
+                
+        } catch(Exception e) {
+          	e.printStackTrace();
+        }
+        return dto;
+    }
+
 
 	public UsersDTO selectCount(UsersDTO dto) {
 		
 		return null;
 	}	
 	
-	// 로그인 할 때 DB 사용자 정보 비교
-	/*public UsersDTO select(UsersDTO dto) {
-		
-		UsersDTO userDTO = null;
-		
-		try {
-			
-			conn = getConnection();
-			psmt = conn.prepareStatement(Sql.SELECT_USERS_BY_PASS);
-			psmt.setInt(1, dto.getUs_id());
-			psmt.setString(2, dto.getUs_pass());
-			
-			rs = psmt.executeQuery();
-			
-			if(rs.next()) {
-			userDTO = new UsersDTO();
-			userDTO.setUs_id(rs.getInt(1));
-			userDTO.setUs_pass(rs.getString(2));
-			userDTO.setUs_name(rs.getString(3));
-			userDTO.setUs_hp(rs.getString(4));
-			userDTO.setUs_email(rs.getString(5));
-			userDTO.setUs_addr(rs.getString(6));
-			}
-			closeAll();
-		}catch (Exception e) {
-			logger.error(e.getMessage());
-						
-		}
-		return userDTO;
-	}
-    */
 }
