@@ -24,8 +24,14 @@ public class ProfessorDAO {
         String sql = "SELECT pro_no, pro_jumin, pro_name, pro_eng_name, pro_gen, pro_nation, pro_hp, pro_email, pro_addr, pro_univ, pro_grad_date, pro_degree, pro_appint_date, pro_position, pro_status, pro_seq, dep_no FROM professor_info WHERE pro_no = ? AND pro_pass = ?";
         
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, professorId);
-            pstmt.setString(2, password);
+            pstmt.setString(1, proNo);
+            
+            // Java 코드 수정: 주민등록번호 앞 6자리 추출
+            String juminPrefix = proJumin;
+            if (proJumin.length() >= 6) {
+                juminPrefix = proJumin.substring(0, 6);
+            }
+            pstmt.setString(2, juminPrefix + "%");
             
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
