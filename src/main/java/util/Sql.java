@@ -47,4 +47,27 @@ public class Sql {
 			
 		
 	public static final String DEPARTMENT_COUNT = "SELECT COUNT(*) FROM department";
+	
+	// ID MAX 구하기
+    public static final String SELECT_ADMISS_NOTICE_MAX_ID = "SELECT MAX(ID) FROM TB_ADMISS_NOTICE";
+    // 글 삽입
+    public static final String INSERT_ADMISS_NOTICE = "INSERT INTO TB_ADMISS_NOTICE (TITLE, CONTENT, WRITER, CREATED_AT, VIEWS) VALUES (?, ?, ?, CURDATE(), 0)";
+    // 모든 글 가져오기
+    public static final String SELECT_ADMISS_NOTICE_ALL = "SELECT * FROM TB_ADMISS_NOTICE "
+                                                            + "ORDER BY ID DESC "
+                                                            + "LIMIT 3 OFFSET ?;";
+    // 글 개수 구하기
+    public static final String SELECT_ADMISS_NOTICE_COUNT_TOTAL = "SELECT COUNT(*) FROM TB_ADMISS_NOTICE";
+    public static final String SELECT_ADMISS_NOTICE_COUNT_BY_DIST = "SELECT COUNT(*) FROM Article where wdist=? ";
+
+    // 검색
+    public static final String SELECT_ADMISS_NOTICE_SEARCH = "SELECT * FROM Article WHERE wdist=? ";
+    public static final String SELECT_ADMISS_NOTICE_COUNT_SEARCH = "SELECT COUNT(*) FROM Article ";
+    public static final String SEARCH_WHERE_TITLE = "and TITLE LIKE ? ";
+    public static final String SEARCH_WHERE_CONTENT = "and CONTENT LIKE ? ";
+    public static final String SEARCH_WHERE_WRITER = "and WRITER LIKE ? ";
+    public static final String SEARCH_ORDER_ID = "ORDER BY ano DESC ";
+    public static final String SEARCH_OFFSET_ROW = "LIMIT ? OFFSET ?";
+	
+	
 }
