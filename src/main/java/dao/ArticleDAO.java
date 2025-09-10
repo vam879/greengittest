@@ -1,6 +1,5 @@
 package dao;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,7 +7,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import dto.ArticleDTO;
-import dto.DepartmentDTO;
 import util.DBHelper;
 import util.Sql;
 
@@ -291,6 +289,42 @@ public class ArticleDAO extends DBHelper{
 	        e.printStackTrace();
 	    }
 	    return count;
+	}
+	
+	
+public ArticleDTO selectArticleWithFile(String ano) {
+		
+		ArticleDTO dto = null;
+		
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(Sql.SELECT_ARTICLE_WITH_FILE);
+			psmt.setString(1, ano);
+			
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				dto = new ArticleDTO();
+				dto.setAno(rs.getInt(1));
+				dto.setTitle(rs.getString(2));
+				dto.setContent(rs.getString(3));
+				dto.setFile_cnt(rs.getInt(4));
+				dto.setHit_cnt(rs.getInt(5));
+				dto.setWriter(rs.getString(6));
+				
+				dto.setWdate(rs.getString(7));
+				
+									
+			}// while 끝
+			
+			
+			closeAll();
+			
+		}catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return dto;
 	}
 
 }

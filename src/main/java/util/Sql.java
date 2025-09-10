@@ -73,7 +73,8 @@ public class Sql {
     // 모든 글 가져오기
     public static final String SELECT_ADMISS_NOTICE_ALL = "SELECT * FROM TB_ADMISS_NOTICE "
                                                             + "ORDER BY ID DESC "
-                                                            + "LIMIT 3 OFFSET ?;";
+                                                            + "LIMIT 3 OFFSET ?";
+	public static final String SELECT_ARTICLE_WITH_FILE = "SELECT * FROM article WHERE ano=?";
     // 글 개수 구하기
     public static final String SELECT_ADMISS_NOTICE_COUNT_TOTAL = "SELECT COUNT(*) FROM TB_ADMISS_NOTICE";
     public static final String SELECT_ADMISS_NOTICE_COUNT_BY_DIST = "SELECT COUNT(*) FROM Article where wdist=? ";
