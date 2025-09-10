@@ -47,4 +47,21 @@ public class Sql {
 			
 		
 	public static final String DEPARTMENT_COUNT = "SELECT COUNT(*) FROM department";
+	
+	
+	
+	
+	
+	// users - register 회원가입 
+	public static final String INSERT_USERS = "INSERT INTO users (US_ID, US_PASS, US_NAME, US_HP, US_EMAIL, US_ADDR) " 
+			+ "VALUES (?,  SHA2(?, 256), ?, ?, ?, ?)"; 
+	
+	public static final String SELECT_COUNT = "SELECT COUNT(*) FROM USERS";
+	public static final String WHERE_US_ID = "WHERE US_ID=?";
+	public static final String WHERE_US_HP = "WHERE US_HP=?";
+	public static final String WHERE_US_EMAIL = "WHERE US_EMAIL=?";
+	
+	public static final String SELECT_USERS_BY_PASS = "SELECT * FROM USERS WHERE US_ID=? AND US_PASS=STANDARD_HASH(?, 'SHA256')";
+
+
 }
