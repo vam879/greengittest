@@ -13,7 +13,11 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
+<<<<<<< Updated upstream:src/main/java/controller/users/LoginController.java
 @WebServlet("/login.do")
+=======
+@WebServlet("/Green/login.do")
+>>>>>>> Stashed changes:src/main/java/controller/users/login/LoginController.java
 public class LoginController extends HttpServlet {
     private static final long serialVersionUID = 1L;
     
