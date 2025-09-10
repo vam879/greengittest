@@ -25,7 +25,13 @@ public class StudentDAO {
         
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, studentId);
-            pstmt.setString(2, password);
+            
+            // Java 코드 수정: 주민등록번호 앞 6자리 추출
+            String juminPrefix = password;
+            if (password.length() >= 6) {
+                juminPrefix = password.substring(0, 6);
+            }
+            pstmt.setString(2, juminPrefix + "%");
             
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
