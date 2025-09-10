@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
     
     
 <%@ include file="./header.jsp" %>
@@ -14,7 +15,7 @@
 
     <header>
         <div class="logo">
-            <span><img src="./images/header_logo.png" alt="그린대학교 로고"></span>
+            <span><img src="/Green/resource/images/header_logo.png" alt="그린대학교 로고"></span>
         </div>
         <nav>
             <ul>
@@ -80,7 +81,7 @@
         <div class="breadcrumb-content">
             <span class="home-icon">
                 <a href="../mainpage/main.html">
-                    <svg xmlns="./images/ico-home.png" height="16" viewBox="0 -960 960 960" width="16" fill="#333333">
+                    <svg xmlns="/Green/resource/images/ico-home.png" height="16" viewBox="0 -960 960 960" width="16" fill="#333333">
                         <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/>
                     </svg>
                 </a>
@@ -138,42 +139,44 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>3</td>
-                                <td>2025학년도 신입학 2차 추가모집 모집요강 및 모집...</td>
-                                <td>담당자</td>
-                                <td>24.04.09</td>
-                                <td>160</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>2025학년도 신입학 2차 추가모집 모집요강 및 모집...</td>
-                                <td>담당자</td>
-                                <td>24.04.09</td>
-                                <td>160</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>2025학년도 신입학 추가모집 모집요강 및 모집인원 공지</td>
-                                <td>담당자</td>
-                                <td>24.04.09</td>
-                                <td>160</td>
-                            </tr>                            
+                            <c:forEach var="dto" items="${dtoList}" varStatus="status">
+                                <tr>
+                                    <td style="text-align: center;">${totalCount - ((page - 1) * pageSize) - status.index}</td>
+                                    <td class="left-list">
+                                    	<a href="#" class="new-link">
+                                    		<img src="/Green/resource/images/ico-new01.gif" style="width:18px; height:18px; vertical-align:middle; padding-bottom:2px; margin-right:4px;">
+                                    	 	${dto.title}
+                                    	</a>
+                                    </td>
+                                    <td style="text-align: center;">${dto.writer}</td>
+                                    <td style="text-align: center;">${dto.wdate}</td>
+                                    <td style="text-align: center;">${dto.hit_cnt}</td>
+
+                                </tr>
+                                
+                                </c:forEach>                        
                         </tbody>
                     </table>
                 </div>
             </div>
             <div class="page-wrapper">
                 <div class="page">
-                    <img src="./images/btn-first-page.png" alt="첫 페이지" class="pagination-arrow first">
-                    <img src="./images/btn-prev-page.png" alt="이전 페이지" class="pagination-arrow prev">
-                    <button class="page-btn active">1</button>
-                    <button class="page-btn">2</button>
-                    <button class="page-btn">3</button>
-                    <img src="./images/btn-next-page.png" alt="다음 페이지" class="pagination-arrow next">
-                    <img src="./images/btn-last-page.png" alt="마지막 페이지" class="pagination-arrow last">
-                    <p></p>
-                </div>
+                        <c:if test="${page > 1}">
+					        <a href="?page=1&wdist=1"><img src="/Green/resource/images/btn-first-page.png" alt="첫 페이지" class="pagination-arrow first" style="margin-top: 4px"></a>
+					        <a href="?page=${page-1}&wdist=1"><img src="/Green/resource/images/btn-prev-page.png" alt="이전 페이지" class="pagination-arrow prev" style="margin-top: 4px"></a>
+					    </c:if>
+					
+					    <c:forEach var="i" begin="1" end="${totalPages}">
+					        <a href="?page=${i}&wdist=1" >
+					            <button class="${i == page ? 'active' : ''} page-btn">${i}</button>
+					        </a>
+					    </c:forEach>
+					
+					    <c:if test="${page < totalPages}">
+					        <a href="?page=${page+1}&wdist=1"><img src="/Green/resource/images/btn-next-page.png" alt="다음 페이지" class="pagination-arrow next" style="margin-top: 5px"></a>
+					        <a href="?page=${totalPages}&wdist=1"><img src="/Green/resource/images/btn-last-page.png" alt="마지막 페이지" class="pagination-arrow last" style="margin-top: 4px"></a>
+					    </c:if>
+                    </div>
             </div>         
 
         </main>
@@ -194,7 +197,7 @@
         <div class="footer-mid">
             <div class="footer-info">
                 <div class="logo">
-                    <img src="./images/footer_logo.png" alt="그린대학교 로고">
+                    <img src="/Green/resource/images/footer_logo.png" alt="그린대학교 로고">
                 </div>
                 <div class="address-info">
                     <span>그린대학교</span>
@@ -216,5 +219,19 @@
         </div>
         <p class="copyright">copyright © Green University All rights reserved.</p>
     </footer>
+    
+    
+    <script>
+		document.addEventListener("DOMContentLoaded", function() {
+		    document.querySelectorAll(".new-link").forEach(function(link) {
+		        link.addEventListener("click", function() {
+		            let icon = this.querySelector("img");
+		            if (icon) {
+		                icon.style.display = "none";
+		            }
+		        });
+		    });
+		});
+	</script>
 </body>
 </html>

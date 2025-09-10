@@ -46,12 +46,17 @@ public class NoticeController extends HttpServlet {
 		req.setAttribute("dtoList", dtoList);
 		req.setAttribute("page", page);
 		req.setAttribute("totalPages", totalPages);		
+		req.setAttribute("totalCount", totalCount);
+		req.setAttribute("pageSize", pageSize);
 		
 		String src = "/Green/";
 		// dist별로 수정 필요
 		if (wdist==2) {
 			src = "/WEB-INF/views/admiss_info/notice.jsp";
+		}else if (wdist==1) {
+			src = "/WEB-INF/views/academic/notice.jsp";
 		}
+
 		
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher(src);
