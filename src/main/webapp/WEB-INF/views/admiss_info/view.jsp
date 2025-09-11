@@ -132,19 +132,26 @@
 				                <td>
 				                    ${articleDTO.content}
 				                </td>
-				            </tr>                    
+				            </tr>  
+				            <tr>
+				                <c:if test="${loggedInUser.us_name eq articleDTO.writer }">
+						            <td colspan="2" style="padding:0px; height:40px">
+						            	<a href="#" style="float: right; width: 60px; height:35px; line-height:35px; background-color: #3F97F6; color: white; margin-left:5px">삭제</a>
+						            	<a href="#" style="float: right; width: 60px; height:35px; line-height:35px; background-color: #3F97F6; color: white">수정</a>
+						            </td>
+						            
+					            </c:if>
+				            </tr>                  
 				        </table>
                 	
                 	</div>
                 
                 
                 </div>
+               
                 
                 <div>
-                	<c:if test="${sessUser.usid eq articleDTO.writer }">
-			            <a href="/jboard/article/delete.do?ano=${articleDTO.ano }" class="btn btnRemove">삭제</a>
-			            <a href="/jboard/article/modify.do" class="btn btnModify">수정</a>
-		            </c:if>
+                	
 		           
 		        </div>
 		
