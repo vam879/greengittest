@@ -50,7 +50,7 @@ public class RegisterController extends HttpServlet{
 		
 		
 		UsersDTO dto = new UsersDTO();
-		dto.setUs_id(us_id);
+		dto.setUs_id(Integer.parseInt(us_id));
 		dto.setUs_pass(us_pass);
 		dto.setUs_name(us_name);
 		dto.setUs_hp(us_hp);

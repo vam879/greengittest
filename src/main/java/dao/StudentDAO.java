@@ -3,7 +3,6 @@ package dao;
 import dto.StudentDTO;
 import util.DBHelper;
 
-import java.sql.SQLException;
 
 public class StudentDAO extends DBHelper {
     private static StudentDAO instance;
@@ -38,7 +37,7 @@ public class StudentDAO extends DBHelper {
                                    	
         		dto = new StudentDTO();
                 	
-               	dto.setStd_no(rs.getString(1));
+               	dto.setStd_no(rs.getInt(1));
                	dto.setStd_jumin(rs.getString(2));
                	dto.setStd_name(rs.getString(3));
                	dto.setStd_eng_name(rs.getString(4));
@@ -49,11 +48,11 @@ public class StudentDAO extends DBHelper {
                 dto.setStd_addr(rs.getString(9));
                 dto.setDep_no(rs.getInt(10));
                 dto.setPro_no(rs.getInt(11));
-                dto.setStd_seq(rs.getInt(12));
-                dto.setStd_ent(rs.getInt(13));
-                dto.setStd_ent_grade(rs.getInt(14));
-                dto.setStd_ent_sem(rs.getInt(15));
-                dto.setStd_status(rs.getString(16));
+
+                dto.setStd_ent(rs.getInt(12));
+                dto.setStd_ent_grade(rs.getInt(13));
+                dto.setStd_ent_sem(rs.getInt(14));
+                dto.setStd_status(rs.getString(15));
                 	
                 }
         } catch(Exception e) {

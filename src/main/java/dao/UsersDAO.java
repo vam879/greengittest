@@ -5,10 +5,6 @@ import dto.UsersDTO;
 import util.DBHelper;
 import util.Sql;
 
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class UsersDAO extends DBHelper{
 	
 	public final static UsersDAO INSTANCE = new UsersDAO(); 
@@ -19,14 +15,6 @@ public class UsersDAO extends DBHelper{
 	
 	private UsersDAO() {}
 	
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
-	
-	
-	
-	
-	
-
-    
     // 회원가입
     public void insert(UsersDTO dto) {
 		

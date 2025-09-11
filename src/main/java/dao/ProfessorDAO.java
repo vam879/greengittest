@@ -3,10 +3,7 @@ package dao;
 import dto.ProfessorDTO;
 import util.DBHelper;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+
 
 public class ProfessorDAO extends DBHelper {
     private static ProfessorDAO instance;

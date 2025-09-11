@@ -2,9 +2,9 @@ package controller.users.login;
 
 import java.io.IOException;
 
-import dao.login.StudentDAO;
-import dao.login.ProfessorDAO;
-import dao.login.UsersDAO;
+import dao.StudentDAO;
+import dao.ProfessorDAO;
+import dao.UsersDAO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
