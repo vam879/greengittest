@@ -1,4 +1,4 @@
-package controller.admiss_info;
+package controller.article;
 
 import java.io.IOException;
 

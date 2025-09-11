@@ -1,4 +1,4 @@
-package controller.admiss_info;
+package controller.article;
 
 import java.io.IOException;
 import java.util.List;
@@ -6,13 +6,15 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import dto.entrance.E_noticeDTO;
+import dto.ArticleDTO;
+
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import service.ArticleService;
 
 
 @WebServlet("/#.do")
@@ -39,7 +41,7 @@ public class WriteController extends HttpServlet {
 		String content = req.getParameter("content");
 		String writer = req.getParameter("writer");
 		
-		E_noticeDTO dto = new E_noticeDTO();s
+		ArticleDTO dto = new ArticleDTO();
 		dto.setTitle(title);
 		dto.setContent(content);
 		dto.setWriter(writer);

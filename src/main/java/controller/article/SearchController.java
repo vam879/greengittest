@@ -1,4 +1,4 @@
-package controller.admiss_info;
+package controller.article;
 
 import java.io.IOException;
 import java.util.List;
@@ -6,12 +6,15 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import dto.ArticleDTO;
+import dto.PagenationDTO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import service.ArticleService;
 
 
 @WebServlet("/#.do")
@@ -20,7 +23,7 @@ public class SearchController extends HttpServlet {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
-	private ArticleService  articleService = ArticleService.INSTANCE;	
+	private ArticleService noticeService = ArticleService.INSTANCE;	
 	
 
 	@Override
@@ -31,12 +34,12 @@ public class SearchController extends HttpServlet {
 		String searchType = req.getParameter("searchType");
 		String keyword = req.getParameter("keyword");
 		
-		PagenationDTO pagenationDTO = articleService.getPagenationDTO(pg, searchType, keyword);
+		PagenationDTO pagenationDTO = noticeService.getPagenationDTO(pg, searchType, keyword);
 		logger.debug(pagenationDTO.toString());
 		
 		int start = pagenationDTO.getStart();
 		
-		List<ArticleDTO> dtoList = articleService.findAllSearch(start, searchType, keyword);
+		List<ArticleDTO> dtoList = noticeService.findAllSearch(start, searchType, keyword);
 		
 		req.setAttribute("dtoList", dtoList);
 		req.setAttribute("searchType", searchType);
