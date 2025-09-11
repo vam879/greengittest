@@ -1,20 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <%@ include file="./header.jsp" %>
 
 <body>
     <div class="topbar">
 
-        <a href="../main.html">HOME</a>
+        <a href="/Green/">HOME</a>
         <a href="../main.html">사이트맵</a>
-        <a href="../8회원/회원1-로그인.html">로그인</a>
+        <c:choose>
+        	<c:when test="${empty loggedInUser }">
+        		<a href="/Green/login.do">로그인</a>
+        	</c:when>
+        	<c:otherwise>
+        		<a href="/Green/logout.do">로그아웃</a>
+        	</c:otherwise>
+        	
+        </c:choose>
         <a href="../7학생지원/학생지원1-수강신청.html">학생지원</a>
     </div>
 
     <header>
         <div class="logo">
-            <span><img src="./images/header_logo.png" alt="그린대학교 로고"></span>
+            <span><img src="/Green/resource/images/header_logo.png" alt="그린대학교 로고"></span>
         </div>
         <nav>
             <ul>
@@ -81,7 +90,7 @@
         <div class="breadcrumb-content">
             <span class="home-icon">
                 <a href="#">
-                    <svg xmlns="./images/ico-home.png" height="16" viewBox="0 -960 960 960" width="16" fill="#333333">
+                    <svg xmlns="/Green/resource/images/ico-home.png" height="16" viewBox="0 -960 960 960" width="16" fill="#333333">
                         <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/>
                     </svg>
                 </a>
@@ -128,7 +137,7 @@
         <div class="footer-mid">
             <div class="footer-info">
                 <div class="logo">
-                    <img src="./images/footer_logo.png" alt="그린대학교 로고">
+                    <img src="/Green/resource/images/footer_logo.png" alt="그린대학교 로고">
                 </div>
                 <div class="address-info">
                     <span>그린대학교</span>

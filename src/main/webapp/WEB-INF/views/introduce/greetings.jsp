@@ -1,13 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
     
     
 <%@ include file="./header.jsp" %>
 <body>
     <div class="topbar">
-        <a href="../main.html">HOME</a>
+        <a href="/Green/">HOME</a>
         <a href="../main.html">사이트맵</a>
-        <a href="../8회원/회원1-로그인.html">로그인</a>
+        <c:choose>
+        	<c:when test="${empty loggedInUser }">
+        		<a href="/Green/login.do">로그인</a>
+        	</c:when>
+        	<c:otherwise>
+        		<a href="/Green/logout.do">로그아웃</a>
+        	</c:otherwise>
+        	
+        </c:choose>
 
         <a href="../7학생지원/학생지원1-수강신청.html ">학생지원</a>
 
@@ -15,14 +24,14 @@
 
     <header>
         <div class="logo">
-            <span><img src="./images/header_logo.png" alt="그린대학교 로고"></span>
+            <span><img src="/Green/resource/images/header_logo.png" alt="그린대학교 로고"></span>
         </div>
         <nav>
             <ul>
                 <li>대학소개
                     <ul>
-                        <a href="./대학소개1-총장인사말.html"><li>총장 인사말</li></a>
-                        <a href="./대학소개2-교육이념.html"><li>교육이념</li></a>
+                        <a href="/Green/introduce/greetings.do"><li>총장 인사말</li></a>
+                        <a href="/Green/introduce/ideology.do"><li>교육이념</li></a>
                         <a href="./대학소개3-연혁.html"><li>연혁</li></a>
                         <a href="./대학소개4-조직도.html"><li>조직도</li></a>
                         <a href="./대학소개5-오시는길.html"><li>오시는길</li></a>
@@ -30,7 +39,7 @@
                 </li>
                 <li>입학안내
                     <ul>
-                        <li><a href="../2입학안내/입학안내1-공지사항.html">공지사항</a></li>
+                        <li><a href="/Green/notice/list.do?wdist=2">공지사항</a></li>
                         <li><a href="../2입학안내/입학안내2-수시모집.html">수시모집</a></li>
                         <li><a href="../2입학안내/입학안내3-정시모집.html">정시모집</a></li>
                         <li><a href="../2입학안내/입학안내4-편입학.html">편입학</a></li>
@@ -39,11 +48,11 @@
                 </li>
                 <li>대학·대학원
                     <ul>
-                        <li><a href="../3대학.대학원/대학대학원1-인문사회대학.html">인문사회대학</a></li>
-                        <li><a href="../3대학.대학원/대학대학원2-자연과학대학.html">자연과학대학</a></li>
-                        <li><a href="../3대학.대학원/대학대학원3-공과대학.html">공과대학</a></li>
-                        <li><a href="../3대학.대학원/대학대학원4-사범대학.html">사범대학</a></li>
-                        <li><a href="../3대학.대학원/대학대학원5-대학원.html">대학원</a></li>
+                        <li><a href="/Green/department/view.do?college=인문사회대학">인문사회대학</a></li>
+                        <li><a href="/Green/department/view.do?college=자연과학대학">자연과학대학</a></li>
+                        <li><a href="/Green/department/view.do?college=공과대학">공과대학</a></li>
+                        <li><a href="/Green/department/view.do?college=사범대학">사범대학</a></li>
+                        <li><a href="/Green/department/view.do?college=대학원">대학원</a></li>
                     </ul>
                 </li>
                 <li>학사안내
@@ -66,7 +75,7 @@
                 </li>
                 <li>커뮤니티
                     <ul>
-                        <li><a href="../6커뮤니티/커뮤티니1-공지사항.html">공지사항</a></li>
+                        <li><a href="/Green/notice/list.do?wdist=1">공지사항</a></li>
                         <li><a href="../6커뮤니티/커뮤티니2-뉴스 및 칼럼.html">뉴스 및 칼럼</a></li>
                         <li><a href="../6커뮤니티/커뮤티니3-취업정보.html"></a>취업정보</li>
    		                <li><a href="../6커뮤니티/커뮤티니4-자유게시판.html"></a>자유게시판</li>
@@ -81,8 +90,8 @@
     <div class="breadcrumb-bar">
         <div class="breadcrumb-content">
             <span class="home-icon">
-                <a href="#">
-                    <svg xmlns="./images/ico-home.png" height="16" viewBox="0 -960 960 960" width="16" fill="#333333">
+                <a href="/Green/">
+                    <svg xmlns="/Green/resource/images/ico-home.png" height="16" viewBox="0 -960 960 960" width="16" fill="#333333">
                         <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/>
                     </svg>
                 </a>
@@ -100,10 +109,12 @@
     <div class="container">
         <aside class="sidebar">
             <h2>대학소개</h2>
+            <hr style="border: none; border-top: 3px solid #000; margin: 5px 0 0px 0;">
             <ul>
-                <hr style="border: none; border-top: 3px solid #000; margin: 5px 0 0px 0;">
-                <a href="./대학소개1-총장인사말.html"><li>총장 인사말</li></a>
-                <a href="./대학소개2-교육이념.html"><li>교육이념</li></a>
+                
+                
+                <a href="/Green/introduce/greetings.do"><li>총장 인사말</li></a>
+                <a href="/Green/introduce/ideology.do"><li>교육이념</li></a>
                 <a href="./대학소개3-연혁.html"><li>연혁</li></a>
                 <a href="./대학소개4-조직도.html"><li>조직도</li></a>
                 <a href="./대학소개5-오시는길.html"><li>오시는길</li></a>
@@ -129,7 +140,7 @@
         <div class="footer-mid">
             <div class="footer-info">
                 <div class="logo">
-                    <img src="./images/footer_logo.png" alt="그린대학교 로고">
+                    <img src="/Green/resource/images/footer_logo.png" alt="그린대학교 로고">
                 </div>
                 <div class="address-info">
                     <span>그린대학교</span>
