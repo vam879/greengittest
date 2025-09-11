@@ -59,7 +59,7 @@
                         <li><a href="/Green/admiss/early.do">수시모집</a></li>
                         <li><a href="/Green/admiss/regular.do">정시모집</a></li>
                         <li><a href="/Green/admiss/transfer.do">편입학</a></li>
-                        <li><a href="../2입학안내/입학안내5-입학상담.html">입학상담</a></li>
+                        <li><a href="${pageContext.request.contextPath}/admiss_info/counsel.do">입학상담</a></li>
                     </ul>
                 </li>
                 <li>대학·대학원
