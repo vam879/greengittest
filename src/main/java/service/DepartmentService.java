@@ -28,4 +28,8 @@ public enum DepartmentService {
 		return dao.countDeps();
 	}
 	
+	public List<DepartmentDTO> findDepNameNo(){
+		return dao.selectDepNameNo();
+	}
+	
 }

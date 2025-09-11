@@ -108,5 +108,5 @@ public class Sql {
 	public static final String SELECT_PROFESSOR_LIST = "select pro_no, pro_name, pro_jumin, pro_hp, pro_email, d.dep_name, pro_position, pro_status, pro_appoint_date "
 			+ "from professor p join department d on p.dep_no = d.dep_no";
 	
-	
+	public static final String INSERT_PROFESSOR = "insert into professor (pro_jumin, pro_name, pro_eng_name, pro_gen, pro_nation, pro_hp, pro_email, pro_addr, pro_univ, pro_grad_date, pro_degree, dep_no, pro_appoint_date) values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
 }
