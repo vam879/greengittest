@@ -106,15 +106,15 @@
             <ul>
                 <a href="./커뮤니티1-공지사항.html"><li>공지사항</li></a>
                 <a href="./커뮤니티2-뉴스 및 칼럼.html"><li>뉴스 및 칼럼</li></a>
-                <a href="./커뮤니티3-취업정보.html"><li class="highlight">취업정보</li></a>
-                <a href="./커뮤니티4-자유게시판.html"><li>자유게시판</li></a>
+                <a href="./커뮤니티3-취업정보.html"><li>취업정보</li></a>
+                <a href="./커뮤니티4-자유게시판.html"><li class="highlights">자유게시판</li></a>
                 <a href="./커뮤니티5-질문과 답변.html"><li>질문과 답변</li></a>
                 <a href="./커뮤니티6-자료실.html"><li>자료실</li></a>
             </ul>
         </aside>
         <div class="content">
 				<div class="content">
-                <h2>취업정보</h2> <hr style="border: none; border-top: 3px solid #000; margin: 5px 0 20px 0;">
+                <h2>자유게시판</h2> <hr style="border: none; border-top: 3px solid #000; margin: 5px 0 20px 0;">
 
                 <div class="job-info-section"> <div class="search-box">
                         <select name="search-filter" id="search-filter">
@@ -131,9 +131,8 @@
                             
                             <tr>
                                 <th>번호</th>
-                                <th>상태</th>
-                                <th>업체</th>
-                                <th>채용정보</th>
+                                <th>제목</th>
+                                <th>작성자</th>
                                 <th>작성일</th>
                                 <th>조회</th>
                             </tr>
@@ -141,26 +140,23 @@
                         <tbody>
                             <tr>
                                 <td>3</td>
-                                <td><span class="category3">모집중</span></td>
-                                <td>정석수학학원</td>
-                                <td>고등 1학년 수학 (공동수학)만 지도 가능한...</td>
-                                <td>24.04.09.12:00</td>
+                                <td>2024 하반기 도서관 이용자 만족도 조사(추첨을 통해 모...</td>
+                                <td>홍길동</td>
+                                <td>24.04.09</td>
                                 <td>160</td>
                             </tr>
                             <tr>
-                                <td>3</td>
-                                <td><span class="category3">모집중</span></td>
-                                <td>(주)삼성전자</td>
-                                <td>2025 상반기 (주)삼성전자 대학원(석사) 신...</td>
-                                <td>24.04.09.12:00</td>
+                                <td>2</td>
+                                <td>2024 하반기 도서관 이용자 만족도 조사(추첨을 통해 모...</td>
+                                <td>홍길동</td>
+                                <td>24.04.09</td>
                                 <td>160</td>
                             </tr>
                             <tr>
-                                <td>3</td>
-                                <td><span class="category4">마감</span></td>
-                                <td>(주)삼성전자</td>
-                                <td>2025 상반기 (주)삼성전자 대학원(석사) 신...</td>
-                                <td>24.04.09.12:00</td>
+                                <td>1</td>
+                                <td>2024 하반기 도서관 이용자 만족도 조사(추첨을 통해 모...</td>
+                                <td>홍길동</td>
+                                <td>24.04.09</td>
                                 <td>160</td>
                             </tr>
                         </tbody>
