@@ -16,7 +16,15 @@
     <div class="topbar">
         <a href="/Green/">HOME</a>
         <a href="#">사이트맵</a>
-        <a href="/Green/login.do">로그인</a>
+        <c:choose>
+        	<c:when test="${empty loggedInUser }">
+        		<a href="/Green/login.do">로그인</a>
+        	</c:when>
+        	<c:otherwise>
+        		<a href="/Green/logout.do">로그아웃</a>
+        	</c:otherwise>
+        	
+        </c:choose>
         <c:choose>
         	<c:when test="${not empty prefixx and prefixx eq 'sys'}">
         		<a href="/Green/management/main.do">학사관리시스템</a>
