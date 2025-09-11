@@ -1,4 +1,4 @@
-<style>
+
         /* ===========================
           전체 공통
         ============================ */
@@ -149,11 +149,10 @@
           본문 (사이드바 + 콘텐츠)
         ============================ */
         .container {
-            width: 1080px;
-            margin: 30px auto;
             display: flex;
-            gap: 60px;
-            text-align: left;
+            padding: 30px 60px;
+            margin-left: 200px;
+            margin-right: 200px;
         }
         .sidebar {
             width: 210px;
@@ -175,9 +174,6 @@
         .content {
             flex: 1;
             padding: 0 30px;
-            display: flex;
-            flex-direction: column;
-            margin-left: -50px;
         }
         .content h2 {
             margin-top: 0;
@@ -307,12 +303,15 @@
             border-color: #0056b3;
         }
         main {
-        width: 100%;
-        height: auto;
+        		
+		        width: 100%;
+		        height: auto;
         }
+        
 
         main>div>* {
-            width: 1100px;
+        	
+            width: 900px;
             height: 100%;
             margin: 0 auto;
         }
@@ -512,4 +511,110 @@
         .family-site-wrap:hover .family-site-list {
             display: block;
         }
-    </style>
+
+        
+        .notice-list-wrapper {
+
+			max-width: 100%;
+			margin: 10px 0 15px 0;
+			border-top: 2px solid black;
+			width: 100%;
+			box-sizing: border-box;
+            
+		}
+
+		.notice-list table {
+			width: 100%;
+			border-collapse: collapse;
+			text-align: center;
+		}
+
+		.notice-list thead th {
+			background-color: #f0f0f0;
+			padding: 12px 8px;
+			border-bottom: 1px solid #ccc;
+			font-weight: 600;
+		}
+        .notice-list tbody td {
+			padding: 12px 8px;
+			border-bottom: 1px solid #eee;
+			vertical-align: middle;
+			word-break: break-word;
+			text-align: center;
+			
+			
+			/* 제목 등 긴 텍스트 줄바꿈 */
+		}
+        .left-list{
+            text-align: left;
+        }
+
+		/* 페이징 컨테이너 최상위  */
+		.page-wrapper {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding-top: 15px;
+			margin-top: 30px;
+			gap: 5px;
+		}
+
+		/* 페이징 요소들을 감싸는 실제 컨테이너 (버튼, 이미지 정렬) */
+		main .page-wrapper .page {
+			display: flex;
+			gap: 5px;
+			align-items: center;
+		}
+
+		main .page-wrapper .page-btn.active {
+			background-color: #4a90e2;
+			color: white;
+			border-color: #4a90e2;
+			font-weight: bold;
+			cursor: default;
+		}
+
+		main .page-wrapper .page-btn:hover:not(.active) {
+			background-color: #f2f2f2;
+		}
+
+		/* 페이징 버튼 (1, 2, 3...) */
+		main .page-wrapper .page-btn {
+			width: 32px;
+			height: 32px;
+			border: 1px solid #dedede;
+			background-color: white;
+			color: #333;
+			font-size: 14px;
+			font-weight: normal;
+			cursor: pointer;
+			border-radius: 3px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			box-sizing: border-box;
+			
+			
+		}
+
+		/* 페이징 화살표 이미지 (<<, <, >, >>) */
+		main .page-wrapper .pagination-arrow {
+			width: 32px;
+			height: 32px;
+			border: 1px solid #dedede;
+			box-sizing: border-box;
+			cursor: pointer;
+			border-radius: 3px;
+			object-fit: contain;
+			padding: 10px;
+		}
+
+		/* 비활성화된 화살표 이미지 (예: 첫 페이지에서 '이전' 버튼) */
+		main .page-wrapper .pagination-arrow.disabled {
+			opacity: 0.5;
+			/* 투명도 낮춰 비활성 표시 */
+			cursor: not-allowed;
+			/* 클릭 불가 마우스 모양 */
+			background-color: #f8f8f8;
+			/* 배경색 살짝 어둡게 */
+		}

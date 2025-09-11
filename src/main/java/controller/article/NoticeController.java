@@ -6,7 +6,6 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
 import dto.ArticleDTO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -23,7 +22,7 @@ public class NoticeController extends HttpServlet {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
-	private ArticleService articleService = ArticleService.INSTANCE;		
+	private ArticleService articleService = ArticleService.INSTANCE;	
 	
 
 	@Override
@@ -46,7 +45,7 @@ public class NoticeController extends HttpServlet {
 		// request 공유참조(JSP 출력)
 		req.setAttribute("dtoList", dtoList);
 		req.setAttribute("page", page);
-		req.setAttribute("totalPages", totalPages);
+		req.setAttribute("totalPages", totalPages);		
 		req.setAttribute("totalCount", totalCount);
 		req.setAttribute("pageSize", pageSize);
 		
@@ -56,7 +55,10 @@ public class NoticeController extends HttpServlet {
 			src = "/WEB-INF/views/admiss_info/notice.jsp";
 		}else if (wdist==1) {
 			src = "/WEB-INF/views/academic/notice.jsp";
+		}else if (wdist==3) {
+			src = "/WEB-INF/views/community/board.jsp";
 		}
+
 		
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher(src);
