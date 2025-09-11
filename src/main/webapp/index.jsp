@@ -27,20 +27,20 @@
             <ul>
                 <li>대학소개
                     <ul>
-                    <li><a href="/Green/1대학소개/대학소개1-총장인사말.do">총장 인사말</a></li>
-                    <li><a href="/Green/1대학소개/대학소개2-교육이념.do">교육이념</a></li>
-                    <li><a href="../1대학소개/대학소개3-연혁.html">연혁</a></li>
-                    <li><a href="../1대학소개/대학소개4-조직도.html">조직도</a></li>
-                    <li><a href="../1대학소개/대학소개5-오시는길.html">오시는길</a></li>
+                    <li><a href="${pageContext.request.contextPath}/introduce/greetings.do">총장 인사말</a></li>
+                    <li><a href="${pageContext.request.contextPath}/introduce/ideology.do">교육이념</a></li>
+                    <li><a href="${pageContext.request.contextPath}/introduce/history.do">연혁</a></li>
+                    <li><a href="${pageContext.request.contextPath}/introduce/organization.do">조직도</a></li>
+                    <li><a href="${pageContext.request.contextPath}/introduce/direction.do">오시는길</a></li>                   
                     </ul>
                 </li>
                 <li>입학안내
                     <ul>
                         <li><a href="/Green/notice/list.do?wdist=2">공지사항</a></li>
-                        <li><a href="../2입학안내/입학안내2-수시모집.html">수시모집</a></li>
-                        <li><a href="../2입학안내/입학안내3-정시모집.html">정시모집</a></li>
-                        <li><a href="../2입학안내/입학안내4-편입학.html">편입학</a></li>
-                        <li><a href="../2입학안내/입학안내5-입학상담.html">입학상담</a></li>
+                        <li><a href="${pageContext.request.contextPath}/admiss_info/early_admiss.do">수시모집</a></li>
+                        <li><a href="${pageContext.request.contextPath}/admiss_info/regular_admiss.do">정시모집</a></li>
+                        <li><a href="${pageContext.request.contextPath}/admiss_info/transfer.do">편입학</a></li>
+                        <li><a href="${pageContext.request.contextPath}/admiss_info/counsel.do">입학상담</a></li>
                     </ul>
                 </li>
                 <li>대학·대학원

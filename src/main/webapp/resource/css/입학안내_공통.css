@@ -294,6 +294,18 @@
 			margin-top: 30px;
 			gap: 5px;
 		}
+		.counsel {
+			width: 80px;      
+	        height: 45px;     
+	        font-size: 15px;  
+	        font-weight: bold;
+	        border: none;
+	        border-radius: 3px;
+	        cursor: pointer;
+	        background: #3F97F6 !important;
+		    color: #fff !important;		
+		    display: inline-block; margin-right: auto;   
+		}
 
 		/* 페이징 요소들을 감싸는 실제 컨테이너 (버튼, 이미지 정렬) */
 		main .page-wrapper .page {

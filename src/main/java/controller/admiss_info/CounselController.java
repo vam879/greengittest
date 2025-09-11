@@ -43,6 +43,8 @@ public class CounselController extends HttpServlet {
 		req.setAttribute("totalCount", totalCount);
 		req.setAttribute("pageSize", pageSize);
 
+		
+
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/admiss_info/counsel.jsp");
 		dispatcher.forward(req, resp);
 	}

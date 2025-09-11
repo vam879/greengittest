@@ -87,6 +87,25 @@ public class Sql {
     public static final String SEARCH_WHERE_WRITER = "and WRITER LIKE ? ";
     public static final String SEARCH_ORDER_ID = "ORDER BY ano DESC ";
     public static final String SEARCH_OFFSET_ROW = "LIMIT ? OFFSET ?";
+    
+ // 입학상담
+    public static final String INSERT_COUNSEL =
+    	    "INSERT INTO counsel (title, content, writer, wdate, wdist) VALUES (?, ?, ?, CURDATE(), ?)";
+
+
+    public static final String SELECT_COUNSEL_ALL =
+    	    "SELECT * FROM counsel ORDER BY ano DESC LIMIT ? OFFSET ?";
+
+    public static final String SELECT_COUNSEL_COUNT =
+    	    "SELECT COUNT(*) FROM counsel";
+
+
+    public static final String SELECT_COUNSEL_PAGE =
+    	    "SELECT ano, wdist, content, hit_cnt, title, writer, wdate, status " +
+    	    "FROM counsel ORDER BY ano DESC LIMIT ? OFFSET ?";
+
+    public static final String SELECT_COUNSEL_ONE =
+        "SELECT * FROM counsel WHERE ano=?";
 
 	/* 수강신청 */
 	public static final String SELECT_COURSES =

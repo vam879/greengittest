@@ -6,43 +6,43 @@
 
 <body>
     <div class="topbar">
-        <a href="/Green/">HOME</a>
-        <a href="#">사이트맵</a>
+        <a href="../main.html">HOME</a>
+        <a href="../main.html">사이트맵</a>
         <a href="../8회원/회원1-로그인.html">로그인</a>
         <a href="../7학생지원/학생지원1-수강신청.html">학생지원</a>
     </div>
 
     <header>
         <div class="logo">
-            <span><img src="/Green/resource/images/header_logo.png" alt="그린대학교 로고"></span>
+            <span><img src="./images/header_logo.png" alt="그린대학교 로고"></span>
         </div>
         <nav>
             <ul>
                 <li>대학소개
                     <ul>
-                    <li><a href="/Green/introduce/greetings.do">총장 인사말</a></li>
-                    <li><a href="/Green/introduce/ideology.do">교육이념</a></li>
-                    <li><a href="/Green/introduce/history.do">연혁</a></li>
-                    <li><a href="/Green/introduce/organization.do">조직도</a></li>
-                    <li><a href="/Green/introduce/direction.do">오시는길</a></li>
+                    <li><a href="../1대학소개/대학소개1-총장인사말.html">총장 인사말</a></li>
+                    <li><a href="../1대학소개/대학소개2-교육이념.html">교육이념</a></li>
+                    <li><a href="../1대학소개/대학소개3-연혁.html">연혁</a></li>
+                    <li><a href="../1대학소개/대학소개4-조직도.html">조직도</a></li>
+                    <li><a href="../1대학소개/대학소개5-오시는길.html">오시는길</a></li>
                     </ul>
                 </li>
                 <li>입학안내
                     <ul>
-                        <li><a href="/Green/notice/list.do?wdist=2">공지사항</a></li>
-                        <li><a href="/Green/admiss/early.do">수시모집</a></li>
-                        <li><a href="/Green/admiss/regular.do">정시모집</a></li>
-                        <li><a href="/Green/admiss/transfer.do">편입학</a></li>
-                        <li><a href="${pageContext.request.contextPath}/admiss_info/counsel.do">입학상담</a></li>
+                        <li><a href="../2입학안내/입학안내1-공지사항.html">공지사항</a></li>
+                        <li><a href="../2입학안내/입학안내2-수시모집.html">수시모집</a></li>
+                        <li><a href="../2입학안내/입학안내3-정시모집.html">정시모집</a></li>
+                        <li><a href="../2입학안내/입학안내4-편입학.html">편입학</a></li>
+                        <li><a href="../2입학안내/입학안내5-입학상담.html">입학상담</a></li>
                     </ul>
                 </li>
                 <li>대학·대학원
                     <ul>
-                        <li><a href="/Green/department/view.do?college=인문사회대학">인문사회대학</a></li>
-                        <li><a href="/Green/department/view.do?college=자연과학대학">자연과학대학</a></li>
-                        <li><a href="/Green/department/view.do?college=공과대학">공과대학</a></li>
-                        <li><a href="/Green/department/view.do?college=사범대학">사범대학</a></li>
-                        <li><a href="/Green/department/view.do?college=대학원">대학원</a></li>
+                        <li><a href="../3대학.대학원/대학대학원1-인문사회대학.html">인문사회대학</a></li>
+                        <li><a href="../3대학.대학원/대학대학원2-자연과학대학.html">자연과학대학</a></li>
+                        <li><a href="../3대학.대학원/대학대학원3-공과대학.html">공과대학</a></li>
+                        <li><a href="../3대학.대학원/대학대학원4-사범대학.html">사범대학</a></li>
+                        <li><a href="../3대학.대학원/대학대학원5-대학원.html">대학원</a></li>
                     </ul>
                 </li>
                 <li>학사안내
@@ -80,7 +80,7 @@
         <div class="breadcrumb-content">
             <span class="home-icon">
                 <a href="#">
-                    <svg xmlns="/Green/resource/images/ico-home.png" height="16" viewBox="0 -960 960 960" width="16" fill="#333333">
+                    <svg xmlns="./images/ico-home.png" height="16" viewBox="0 -960 960 960" width="16" fill="#333333">
                         <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/>
                     </svg>
                 </a>
@@ -102,56 +102,45 @@
         <aside class="sidebar">
             <h2>입학안내</h2>
             <ul>
-                <li><a href="${pageContext.request.contextPath}/introduce/greetings.do">총장 인사말</a></li>
-                 <li><a href="${pageContext.request.contextPath}/introduce/ideology.do">교육이념</a></li>
-                 <li><a href="${pageContext.request.contextPath}/introduce/history.do">연혁</a></li>
-                 <li><a href="${pageContext.request.contextPath}/introduce/organization.do">조직도</a></li>
-                 <li class="highlight"><a href="${pageContext.request.contextPath}/introduce/direction.do">오시는길</a></li>
+                <li><a href="./입학안내1-공지사항.html">공지사항</a></li>
+                <li><a href="./입학안내2-수시모집.html">수시모집</a></li>
+                <li><a href="./입학안내3-정시모집.html">정시모집</a></li>
+                <li><a href="./입학안내4-편입학.html">편입학</a></li>
+                <li class="highlight"><a href="./입학안내5-입학상담.html">입학상담</a></li>
             </ul>
         </aside>
         <main class="content">
             <h2>입학상담</h2>
-            <hr style="border: none; border-top: 3px solid #000; margin: 5px 0 20px 0;">
-                <div class="search-container">
-                    <div class="search-div">
-                        <select name="category">
-                            <option value="all">전체</option>
-                            <option value="title">제목</option>
-                            <option value="author">작성자</option>
-                        </select>
-                        <input type="text" name="keyword" placeholder="검색어를 입력하세요">
-                        <button type="submit">검색</button>
-                    </div>
-                </div>
-                <div class="notice-list-wrapper">
-                    <div class="notice-list">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>번호</th>
-                                    <th>구분</th>
-                                    <th>제목</th>
-                                    <th>작성자</th>
-                                    <th>작성일</th>
-                                    <th>상태</th>
-                                </tr>
-                            </thead>
-                           <tbody>
-						       <c:forEach var="dto" items="${dtoList}" varStatus="status">
-									<tr>
-										<td>${totalCount - ((page - 1) * pageSize) - status.index}</td>
-										<td>${dto.wdist == 1 ? '정시' : '수시'}</td>
-										<td><a href="/admiss_info/counsel.do?ano=${dto.ano}">${dto.title}</a></td>
-										<td>${dto.writer}</td>
-										<td>${dto.wdate}</td>
-										<td style="color:${dto.status == '답변완료' ? 'green' : 'red'}">${dto.status}</td>
-									</tr>
-								</c:forEach>
-								
-						    </tbody>
-						    </table>
-						</div>
-						<div class="page-wrapper">
+			            <hr style="border: none; border-top: 3px solid #000; margin: 5px 0 20px 0;">
+			               <form action="${pageContext.request.contextPath}/admiss_info/counselWrite.do" method="post">
+							    <div>
+							        <label>제목</label><br>
+							        <input type="text" name="title" required>
+							    </div>
+							    <div>
+							        <label>내용</label><br>
+							        <textarea name="content" rows="5" cols="50" required></textarea>
+							    </div>
+							    <div>
+							        <label>작성자</label><br>
+							        <input type="text" name="writer" required>
+							    </div>
+							    <div>
+							        <label>구분</label><br>
+							        <select name="wdist">
+							            <option value="1">수시</option>
+							            <option value="2">공지</option>
+							            <option value="3">정시</option>
+							        </select>
+							    </div>
+							    <div style="margin-top:10px;">
+							        <button type="submit" class="btn btn-primary">등록</button>
+							        <a href="${pageContext.request.contextPath}/admiss_info/counsel.do"><button type="button">취소</button></a>
+							    </div>
+				                        </table>
+						                    </div>
+				                </div>
+				                < <div class="page-wrapper">
 				                    <div class="page">
 				                        <c:if test="${page > 1}">
 									        <a href="?page=1&wdist=2"><img src="/Green/resource/images/btn-first-page.png" alt="첫 페이지" class="pagination-arrow first" style="margin-top: 4px"></a>
@@ -169,18 +158,11 @@
 									        <a href="?page=${totalPages}&wdist=2"><img src="/Green/resource/images/btn-last-page.png" alt="마지막 페이지" class="pagination-arrow last" style="margin-top: 4px"></a>
 									    </c:if>
 				                    </div>
+				                    <div style="text-align: right; margin-top: 20px;">
+										<a href="/admiss_info/counselWrite.do"><button class="btn btn-primary">문의하기</button></a>
+									</div>
 				                    
-				                    	<div class="button-wrapper" align="left">
-										  <form action="${pageContext.request.contextPath}/admiss_info/counselWrite.do" method="get">
-										    <button type="submit" class="counsel">문의하기</button>
-										  </form>
-										</div>				                   
-									</form>			                    
-				                </div>
-                        </table>
-		                    </div>
-				                </div>
-				                			   
+				                </div>   
 						</main>
 						</div>
 
