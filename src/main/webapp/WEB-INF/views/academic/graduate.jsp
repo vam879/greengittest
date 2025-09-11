@@ -15,7 +15,7 @@
 
     <header>
         <div class="logo">
-            <span><img src="./images/header_logo.png" alt="그린대학교 로고"></span>
+            <span><img src="/Green/resource/images/header_logo.png" alt="그린대학교 로고"></span>
         </div>
         <nav>
             <ul>

@@ -14,7 +14,7 @@
 
     <header>
         <div class="logo">
-            <span><img src="./images/header_logo.png" alt="그린대학교 로고"></span>
+            <span><img src="/Green/resource/images/header_logo.png" alt="그린대학교 로고"></span>
         </div>
         <nav>
             <ul>
@@ -80,7 +80,7 @@
         <div class="breadcrumb-content">
             <span class="home-icon">
                 <a href="#">
-                    <svg xmlns="./images/ico-home.png" height="16" viewBox="0 -960 960 960" width="16" fill="#333333">
+                    <svg xmlns="/Green/resource/images/ico-home.png" height="16" viewBox="0 -960 960 960" width="16" fill="#333333">
                         <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/>
                     </svg>
                 </a>
