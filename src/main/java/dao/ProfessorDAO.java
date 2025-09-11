@@ -1,12 +1,13 @@
 package dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import dto.ProfessorDTO;
 import util.DBHelper;
+import util.Sql;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+
 
 public class ProfessorDAO extends DBHelper {
     private static ProfessorDAO instance;
@@ -69,5 +70,41 @@ public class ProfessorDAO extends DBHelper {
         	e.printStackTrace();
         }
         return dto;
+    }
+    
+    
+    
+    public List<ProfessorDTO> selectAll(){
+    	List<ProfessorDTO> dtoList = new ArrayList<ProfessorDTO>();
+    	
+    	try {
+    		
+    		conn = getConnection();
+    		stmt = conn.createStatement();
+    		
+    		rs = stmt.executeQuery(Sql.SELECT_PROFESSOR_LIST);
+    		
+    		while (rs.next()) {
+    			ProfessorDTO dto = new ProfessorDTO();
+    			dto.setPro_no(rs.getInt(1));
+    			dto.setPro_name(rs.getString(2));
+    			dto.setPro_jumin(rs.getString(3));
+    			dto.setPro_hp(rs.getString(4));
+    			dto.setPro_email(rs.getString(5));
+    			dto.setDep_name(rs.getString(6));
+    			dto.setPro_position(rs.getString(7));
+    			dto.setPro_status(rs.getString(8));
+    			dto.setPro_appint_date(rs.getString(9));
+    			
+    			dtoList.add(dto);
+    		}
+    		
+    		closeAll();
+    		
+    	}catch(Exception e) {
+    		e.printStackTrace();
+    	}
+    	
+    	return dtoList;
     }
 }

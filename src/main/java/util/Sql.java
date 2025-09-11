@@ -102,6 +102,11 @@ public class Sql {
 		+ " FROM course c " 
 		+ " join department d on c.dep_no = d.dep_no "
 		+ " join professor p on c.pro_no = p.pro_no";	
+
+
+	// 교수
+	public static final String SELECT_PROFESSOR_LIST = "select pro_no, pro_name, pro_jumin, pro_hp, pro_email, d.dep_name, pro_position, pro_status, pro_appoint_date "
+			+ "from professor p join department d on p.dep_no = d.dep_no";
 	
 	
 }
