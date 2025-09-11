@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet("/admiss_info/transfer.do")
+@WebServlet("/admiss/transfer.do")
 public class TransferController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	

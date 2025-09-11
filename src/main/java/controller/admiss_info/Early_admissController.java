@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet("/admiss_info/early_admiss.do")
+@WebServlet("/admiss/early.do")
 public class Early_admissController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
