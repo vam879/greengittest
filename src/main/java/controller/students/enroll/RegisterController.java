@@ -5,12 +5,14 @@ import java.util.List;
 
 import dao.CourseDAO;
 import dto.CourseDTO;
+import dto.StudentDTO;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/students/course/register.do")
 public class RegisterController extends HttpServlet {
@@ -32,12 +34,28 @@ public class RegisterController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		// req.setCharacterEncoding("utf-8"); 수강신청 insert 로직 추가
-		
 		String csId = req.getParameter("cs_id");
-		System.out.println("수강 신청한 과목 ID: " + csId);
-		
-		resp.sendRedirect(req.getContextPath() + "/students/course/register.do");
+
+	    HttpSession session = req.getSession();
+	    StudentDTO student = (StudentDTO) session.getAttribute("loggedInUser");
+
+	    if (student == null) {
+	        resp.sendRedirect("/Green/login.do");
+	        return;
+	    }
+
+	    String stdNo = student.getStd_no();
+
+	    CourseDAO dao = CourseDAO.getInstance();
+	    int result = dao.insertEnrollment(Long.parseLong(csId), student.getStd_no());
+
+	    if (result > 0) {
+	        System.out.println("수강신청 완료: 학생=" + student.getStd_no() + ", 과목=" + csId);
+	    } else {
+	        System.out.println("수강신청 실패: 학생=" + student.getStd_no() + ", 과목=" + csId);
+	    }
+
+	    resp.sendRedirect("/Green/students/course/register.do");
 	}
 
 }

@@ -88,7 +88,7 @@ public class Sql {
     public static final String SEARCH_ORDER_ID = "ORDER BY ano DESC ";
     public static final String SEARCH_OFFSET_ROW = "LIMIT ? OFFSET ?";
 
-	/* 수강신청 */
+	// 수강신청
 	public static final String SELECT_COURSES =
 		"SELECT " 
 		+ " d.dep_name, "
@@ -102,6 +102,21 @@ public class Sql {
 		+ " FROM course c " 
 		+ " join department d on c.dep_no = d.dep_no "
 		+ " join professor p on c.pro_no = p.pro_no";	
+	
+	// 수강신청내역
+	public static final String SELECT_ENROLLMENTS =
+		    "SELECT "
+		  + " c.cs_id, "
+		  + " c.cs_name, "
+		  + " c.cs_grade, "
+		  + " p.pro_name, "
+		  + " c.cs_credit, "
+		  + " c.cs_dist, "
+		  + " c.cs_weekday, "
+		  + " c.cs_room "
+		  + "FROM enrollment e "
+		  + "JOIN course c ON e.cs_id = c.cs_id "
+		  + "JOIN professor p ON c.pro_no = p.pro_no";
 
 
 	// 교수
