@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>   
+    
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>학사관리시스템 메인</title>
-  <link rel="stylesheet" href="/greendae/resource/css/학사관리main.css">
+  <link rel="stylesheet" href="/Green/resource/css/학사관리main.css">
   <style>
         
 
@@ -261,7 +263,7 @@
 </head>
 <body>
 
-    <div class="site">
+    <div class="site" style="height: 900px;">
 
         <div class="header">
 
@@ -269,7 +271,7 @@
 
                 <a href="./학사관리main.html" class="link-admin-logo">
 
-                    <img src="./images/admin_logo.png" alt="그린대학교 학사관리시스템">
+                    <img src="/Green/resource/images/admin_logo.png" alt="그린대학교 학사관리시스템">
                 </a>
             </div>
 
@@ -302,7 +304,7 @@
                     <!-- 1. 환경설정 -->
                     <div class="aside-item item-1">
                         <div class="aside-link">
-                            <img src="./images/ico-admin-setting.png" alt="환경설정" class="aside-icon">
+                            <img src="/Green/resource/images/ico-admin-setting.png" alt="환경설정" class="aside-icon">
                             <div class="aside-title title-1">환경설정</div>
                             
                             <div class="aside-ordered-list ordered-1">
@@ -315,7 +317,7 @@
                     <!-- 2. 학사운영 -->
                     <div class="aside-item item-2">
                         <div class="aside-link">
-                            <img src="./images/ico-admin-academic.png" alt="학사운영" class="aside-icon">
+                            <img src="/Green/resource/images/ico-admin-academic.png" alt="학사운영" class="aside-icon">
                             <div class="aside-title title-2">학사운영</div>
                                 
                             <div class="aside-ordered-list ordered-2">
@@ -334,7 +336,7 @@
                     <!-- 3. 인사관리 -->
                     <div class="aside-item item-3">
                         <div class="aside-link">
-                            <img src="./images/ico-admin-persons.png" alt="인사관리" class="aside-icon">
+                            <img src="/Green/resource/images/ico-admin-persons.png" alt="인사관리" class="aside-icon">
                             <div class="aside-title title-3">인사관리</div>
 
                             <div class="aside-ordered-list ordered-3">
@@ -350,7 +352,7 @@
                     <!-- 4. 대학 및 학과 -->
                     <div class="aside-item item-4">
                         <div class="aside-link">
-                            <img src="./images/ico-admin-college.png" alt="대학 및 학과" class="aside-icon">
+                            <img src="/Green/resource/images/ico-admin-college.png" alt="대학 및 학과" class="aside-icon">
                             <div class="aside-title title-4">대학 및 학과</div>
 
                             <div class="aside-ordered-list ordered-4">
@@ -365,7 +367,7 @@
                     <!-- 5. 게시판 관리 -->
                     <div class="aside-item item-5">
                         <div class="aside-link">
-                            <img src="./images/ico-admin-board.png" alt="게시판 관리" class="aside-icon">
+                            <img src="/Green/resource/images/ico-admin-board.png" alt="게시판 관리" class="aside-icon">
                             <div class="aside-title title-5">게시판 관리</div>
 
                             <div class="aside-ordered-list ordered-5">
@@ -397,7 +399,7 @@
                             <div class="breadcrumb">
 
                                 <a href="#">인사관리</a> 
-                                <img src="./images/bg-link-arr-over.png" alt=""> 
+                                <img src="/Green/resource/images/bg-link-arr-over.png" alt=""> 
                                 <span class="current" style="color:rgba(20, 80, 116, 1) font-weight 350px;">교수목록</span>
 
 
@@ -426,50 +428,28 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>202001230</td><td>홍길동</td><td>900103-1234567</td><td>010-1234-1001</td>
-                                    <td>hong1001@naver.com</td><td>컴퓨터공학과</td><td>정교수</td><td class="status employed">재직중</td><td>2025-01-01</td>
-                                </tr>
-                                  <tr>
-                                    <td>202001230</td><td>홍길동</td><td>900103-1234567</td><td>010-1234-1001</td>
-                                    <td>hong1001@naver.com</td><td>컴퓨터공학과</td><td>정교수</td><td class="status employed">재직중</td><td>2025-01-01</td>
-                                </tr>
-                                  <tr>
-                                    <td>202001230</td><td>홍길동</td><td>900103-1234567</td><td>010-1234-1001</td>
-                                    <td>hong1001@naver.com</td><td>컴퓨터공학과</td><td>정교수</td><td class="status employed">재직중</td><td>2025-01-01</td>
-                                </tr>
-                                  <tr>
-                                    <td>202001230</td><td>홍길동</td><td>900103-1234567</td><td>010-1234-1001</td>
-                                    <td>hong1001@naver.com</td><td>컴퓨터공학과</td><td>정교수</td><td class="status employed">재직중</td><td>2025-01-01</td>
-                                </tr>
-                                  <tr>
-                                    <td>202001230</td><td>홍길동</td><td>900103-1234567</td><td>010-1234-1001</td>
-                                    <td>hong1001@naver.com</td><td>컴퓨터공학과</td><td>정교수</td><td class="status employed">재직중</td><td>2025-01-01</td>
-                                </tr>
-                                  <tr>
-                                    <td>202001230</td><td>홍길동</td><td>900103-1234567</td><td>010-1234-1001</td>
-                                    <td>hong1001@naver.com</td><td>컴퓨터공학과</td><td>정교수</td><td class="status employed">재직중</td><td>2025-01-01</td>
-                                </tr>
-                                  <tr>
-                                    <td>202001230</td><td>홍길동</td><td>900103-1234567</td><td>010-1234-1001</td>
-                                    <td>hong1001@naver.com</td><td>컴퓨터공학과</td><td>정교수</td><td class="status employed">재직중</td><td>2025-01-01</td>
-                                </tr>
-                                  <tr>
-                                    <td>202001230</td><td>홍길동</td><td>900103-1234567</td><td>010-1234-1001</td>
-                                    <td>hong1001@naver.com</td><td>컴퓨터공학과</td><td>정교수</td><td class="status employed">재직중</td><td>2025-01-01</td>
-                                </tr>
-                                  <tr>
-                                    <td>202001230</td><td>홍길동</td><td>900103-1234567</td><td>010-1234-1001</td>
-                                    <td>hong1001@naver.com</td><td>컴퓨터공학과</td><td>정교수</td><td class="status leave">휴직</td><td>2025-01-01</td>
-                                </tr>
-                                  <tr>
-                                    <td>202001230</td><td>홍길동</td><td>900103-1234567</td><td>010-1234-1001</td>
-                                    <td>hong1001@naver.com</td><td>컴퓨터공학과</td><td>정교수</td><td class="status retired">퇴직</td><td>2025-01-01</td>
-                                </tr>
-                                  <tr>
-                                    <td>202001230</td><td>홍길동</td><td>900103-1234567</td><td>010-1234-1001</td>
-                                    <td>hong1001@naver.com</td><td>컴퓨터공학과</td><td>정교수</td><td class="status retired">퇴직</td><td>2025-01-01</td>
-                                </tr>
+            
+                                	<c:forEach var="dto" items="${dtoList }">
+                                	<tr>
+                                		<td>${dto.pro_no }</td>
+	                                	<td>${dto.pro_name }</td>
+	                                	<td>${dto.pro_jumin }</td>
+	                                	<td>${dto.pro_hp }</td>
+	                                	<td>${dto.pro_email }</td>
+	                                	<td>${dto.dep_name }</td>
+	                                	<td>${dto.pro_position }</td>
+	                                	<td class="<c:choose>
+										              <c:when test='${dto.pro_status eq "재직중"}'>status employed</c:when>
+										              <c:when test='${dto.pro_status eq "휴직"}'>status leave</c:when>
+										              <c:when test='${dto.pro_status eq "퇴직"}'>status retired</c:when>
+										           </c:choose>">
+										    ${dto.pro_status}
+										</td>
+	                                	<td>${dto.pro_appint_date }</td>
+                                	</tr>	
+                                	
+                                	</c:forEach>
+                                  
                                 
                                 </tbody>
                             </table>
@@ -479,13 +459,13 @@
                         <div class="pagination-wrap">
                         <!-- 페이지네이션 -->
                         <div class="pagination">
-                            <button><img src="./images/btn-first-page.png" alt="첫 페이지"></button>
-                            <button><img src="./images/btn-prev-page.png" alt="이전 페이지"></button>
+                            <button><img src="/Green/resource/images/btn-first-page.png" alt="첫 페이지"></button>
+                            <button><img src="/Green/resource/images/btn-prev-page.png" alt="이전 페이지"></button>
                             <button class="active">1</button>
                             <button>2</button>
                             <button>3</button>
-                            <button><img src="./images/btn-next-page.png" alt="다음 페이지"></button>
-                            <button><img src="./images/btn-last-page.png" alt="마지막 페이지"></button>
+                            <button><img src="/Green/resource/images/btn-next-page.png" alt="다음 페이지"></button>
+                            <button><img src="/Green/resource/images/btn-last-page.png" alt="마지막 페이지"></button>
                         </div>
 
                         <!-- 등록 버튼 -->
@@ -498,15 +478,16 @@
                         
 
                    
-                   
+                	</div>   
 
                 </div>
-
+                
+			</div>
             </section>
 
         </div>
 
-            <div class="footer" role="contentinfo">
+            <div class="footer" role="contentinfo" style="top:1000px;">
                 <p class="footer-text">
                     Copyright ©Green University All rights reserved. ADMINISTRATOR Version 1.4.1
                 </p>
