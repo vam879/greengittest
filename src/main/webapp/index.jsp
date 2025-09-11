@@ -76,9 +76,9 @@
                         <li><a href="/Green/notice/list.do?wdist=1">공지사항</a></li>
                         <li><a href="../4학사안내/학사안내2-학사일정.html">학사일정</a></li>
                         <li><a href="/Green/students/course/register.do">수강신청</a></li>
-                        <li><a href="../4학사안내/학사안내4-성적.html">성적</a></li>
-                        <li><a href="../4학사안내/학사안내5-수료및졸업.html">수료 및 졸업</a></li>
-                        <li><a href="../4학사안내/학사안내6-자주하는질문.html">자주하는질문</a></li>
+                        <li><a href="/Green/academic/grade_view.do">성적</a></li>
+                        <li><a href="/Green/academic/graduate.do">수료 및 졸업</a></li>
+                        <li><a href="/Green/academic/questions.do">자주하는질문</a></li>
                     </ul>
                 </li>
                 <li>대학생활
