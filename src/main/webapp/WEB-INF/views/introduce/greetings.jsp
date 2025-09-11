@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
     
     
 <%@ include file="./header.jsp" %>
@@ -30,19 +30,19 @@
             <ul>
                 <li>대학소개
                     <ul>
-                        <a href="/Green/introduce/greetings.do"><li>총장 인사말</li></a>
-                        <a href="/Green/introduce/ideology.do"><li>교육이념</li></a>
-                        <a href="./대학소개3-연혁.html"><li>연혁</li></a>
-                        <a href="./대학소개4-조직도.html"><li>조직도</li></a>
-                        <a href="./대학소개5-오시는길.html"><li>오시는길</li></a>
-                    </ul>>
+	                    <li><a href="/Green/introduce/greetings.do">총장 인사말</a></li>
+	                    <li><a href="/Green/introduce/ideology.do">교육이념</a></li>
+	                    <li><a href="/Green/introduce/history.do">연혁</a></li>
+	                    <li><a href="/Green/introduce/organization.do">조직도</a></li>
+	                    <li><a href="/Green/introduce/direction.do">오시는길</a></li>
+                    </ul>
                 </li>
                 <li>입학안내
                     <ul>
                         <li><a href="/Green/notice/list.do?wdist=2">공지사항</a></li>
-                        <li><a href="../2입학안내/입학안내2-수시모집.html">수시모집</a></li>
-                        <li><a href="../2입학안내/입학안내3-정시모집.html">정시모집</a></li>
-                        <li><a href="../2입학안내/입학안내4-편입학.html">편입학</a></li>
+                        <li><a href="/Green/admiss/early.do">수시모집</a></li>
+                        <li><a href="/Green/admiss/regular.do">정시모집</a></li>
+                        <li><a href="/Green/admiss/transfer.do">편입학</a></li>
                         <li><a href="../2입학안내/입학안내5-입학상담.html">입학상담</a></li>
                     </ul>
                 </li>
@@ -111,13 +111,11 @@
             <h2>대학소개</h2>
             <hr style="border: none; border-top: 3px solid #000; margin: 5px 0 0px 0;">
             <ul>
-                
-                
-                <a href="/Green/introduce/greetings.do"><li>총장 인사말</li></a>
+                <a href="/Green/introduce/greetings.do"><li style="background-color: #3F97F6;color: white;">총장 인사말</li></a>
                 <a href="/Green/introduce/ideology.do"><li>교육이념</li></a>
-                <a href="./대학소개3-연혁.html"><li>연혁</li></a>
-                <a href="./대학소개4-조직도.html"><li>조직도</li></a>
-                <a href="./대학소개5-오시는길.html"><li>오시는길</li></a>
+                <a href="/Green/introduce/history.do"><li>연혁</li></a>
+                <a href="/Green/introduce/organization.do"><li>조직도</li></a>
+                <a href="/Green/introduce/direction.do"><li>오시는길</li></a>
             </ul>
         </aside>
         <main class="content">

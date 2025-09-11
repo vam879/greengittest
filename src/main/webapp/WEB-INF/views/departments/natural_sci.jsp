@@ -8,9 +8,17 @@
 
 <body>
     <div class="topbar">
-        <a href="../main.html">HOME</a>
+        <a href="/Green/">HOME</a>
         <a href="../main.html">사이트맵</a>
-        <a href="../8회원/회원1-로그인.html">로그인</a>
+        <c:choose>
+        	<c:when test="${empty loggedInUser }">
+        		<a href="/Green/login.do">로그인</a>
+        	</c:when>
+        	<c:otherwise>
+        		<a href="/Green/logout.do">로그아웃</a>
+        	</c:otherwise>
+        	
+        </c:choose>
         <a href="../7학생지원/학생지원1-수강신청.html">학생지원</a>
     </div>
 
@@ -22,20 +30,20 @@
             <ul>
                 <li>대학소개
                     <ul>
-                    <li><a href="../1대학소개/대학소개1-총장인사말.html">총장 인사말</a></li>
-                    <li><a href="../1대학소개/대학소개2-교육이념.html">교육이념</a></li>
-                    <li><a href="../1대학소개/대학소개3-연혁.html">연혁</a></li>
-                    <li><a href="../1대학소개/대학소개4-조직도.html">조직도</a></li>
-                    <li><a href="../1대학소개/대학소개5-오시는길.html">오시는길</a></li>
+                    <li><a href="/Green/introduce/greetings.do">총장 인사말</a></li>
+                    <li><a href="/Green/introduce/ideology.do">교육이념</a></li>
+                    <li><a href="/Green/introduce/history.do">연혁</a></li>
+                    <li><a href="/Green/introduce/organization.do">조직도</a></li>
+                    <li><a href="/Green/introduce/direction.do">오시는길</a></li>
                     </ul>
                 </li>
                 <li>입학안내
                     <ul>
-                        <li><a href="../2입학안내/입사안내1-공지사항.html">공지사항</a></li>
-                        <li><a href="../2입학안내/입사안내2-수시모집.html">수시모집</a></li>
-                        <li><a href="../2입학안내/입사안내3-정시모집.html">정시모집</a></li>
-                        <li><a href="../2입학안내/입사안내4-편입학.html">편입학</a></li>
-                        <li><a href="../2입학안내/입사안내5-입학상담.html">입학상담</a></li>
+                        <li><a href="/Green/notice/list.do?wdist=2">공지사항</a></li>
+                        <li><a href="/Green/admiss/early.do">수시모집</a></li>
+                        <li><a href="/Green/admiss/regular.do">정시모집</a></li>
+                        <li><a href="/Green/admiss/transfer.do">편입학</a></li>
+                        <li><a href="../2입학안내/입학안내5-입학상담.html">입학상담</a></li>
                     </ul>
                 </li>
                 <li>대학·대학원

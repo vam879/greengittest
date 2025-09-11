@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet("/admiss_info/regular_admiss.do")
+@WebServlet("/admiss/regular.do")
 public class Regular_admissController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
