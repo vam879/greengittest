@@ -50,6 +50,7 @@ public class DepartmentDAO extends DBHelper {
 	    int offset = (page - 1) * pageSize;
 
 	    try {
+	    	
 	        conn = getConnection();
 	        psmt = conn.prepareStatement(Sql.DEPARTMENT_FIND_PAGE);
 	        psmt.setInt(1, pageSize);
@@ -102,6 +103,7 @@ public class DepartmentDAO extends DBHelper {
 		List<DepartmentDTO> dtoList = new ArrayList<DepartmentDTO>();
 		
 		try {
+			
 			conn = getConnection();
 			psmt = conn.prepareStatement(Sql.SELECT_DEPARTMENTS_BY_COLLEGE);
 			psmt.setString(1, college);
@@ -147,5 +149,32 @@ public class DepartmentDAO extends DBHelper {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public List<DepartmentDTO> selectDepNameNo(){
+		List<DepartmentDTO> dtoList = new ArrayList<DepartmentDTO>();
+		
+		try {
+			String sql = "select dep_no, dep_name, college from department";
+			conn = getConnection();
+			stmt = conn.createStatement();
+			
+			rs = stmt.executeQuery(sql);
+			while (rs.next()) {
+				DepartmentDTO dto = new DepartmentDTO();
+				
+				dto.setDep_no(rs.getInt(1));
+				dto.setDep_name(rs.getString(2));
+				dto.setCollege(rs.getString(3));
+				
+				dtoList.add(dto);
+			}
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return dtoList;
 	}
 }
