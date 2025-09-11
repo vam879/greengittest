@@ -44,8 +44,6 @@ public class RegisterController extends HttpServlet {
 	        return;
 	    }
 
-	    String stdNo = student.getStd_no();
-
 	    CourseDAO dao = CourseDAO.getInstance();
 	    int result = dao.insertEnrollment(Long.parseLong(csId), student.getStd_no());
 
@@ -59,3 +57,4 @@ public class RegisterController extends HttpServlet {
 	}
 
 }
+
