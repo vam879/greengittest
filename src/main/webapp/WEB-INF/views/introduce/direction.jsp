@@ -1,13 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
+    
 <%@ include file="./header.jsp" %>
 <body>
     <div class="topbar">
-        <a href="../main.html">HOME</a>
+        <a href="/Green/">HOME</a>
         <a href="../main.html">사이트맵</a>
 
-        <a href="../8회원/회원1-로그인.html">로그인</a>
+        <c:choose>
+        	<c:when test="${empty loggedInUser }">
+        		<a href="/Green/login.do">로그인</a>
+        	</c:when>
+        	<c:otherwise>
+        		<a href="/Green/logout.do">로그아웃</a>
+        	</c:otherwise>
+        	
+        </c:choose>
         <a href="../7학생지원/학생지원1-수강신청.html">학생지원</a>
     </div>
 
@@ -19,34 +28,50 @@
             <ul>
                 <li>대학소개
                     <ul>
+<<<<<<< HEAD
                     <li><a href="${pageContext.request.contextPath}/introduce/greetings.do">총장 인사말</a></li>
                     <li><a href="${pageContext.request.contextPath}/introduce/ideology.do">교육이념</a></li>
                     <li><a href="${pageContext.request.contextPath}/introduce/history.do">연혁</a></li>
                     <li><a href="${pageContext.request.contextPath}/introduce/organization.do">조직도</a></li>
                     <li><a href="${pageContext.request.contextPath}/introduce/direction.do">오시는길</a></li>  
                     </ul>>
+=======
+	                    <li><a href="/Green/introduce/greetings.do">총장 인사말</a></li>
+	                    <li><a href="/Green/introduce/ideology.do">교육이념</a></li>
+	                    <li><a href="/Green/introduce/history.do">연혁</a></li>
+	                    <li><a href="/Green/introduce/organization.do">조직도</a></li>
+	                    <li><a href="/Green/introduce/direction.do">오시는길</a></li>
+                    </ul>
+>>>>>>> 7e0c680a2f10692327b68697a67ffa1b48b4ee18
                 </li>
                 <li>입학안내
                     <ul>
                         <li><a href="/Green/notice/list.do?wdist=2">공지사항</a></li>
+<<<<<<< HEAD
                         <li><a href="${pageContext.request.contextPath}/admiss_info/early_admiss.do">수시모집</a></li>
                         <li><a href="${pageContext.request.contextPath}/admiss_info/regular_admiss.do">정시모집</a></li>
                         <li><a href="${pageContext.request.contextPath}/admiss_info/transfer.do">편입학</a></li>
                         <li><a href="${pageContext.request.contextPath}/admiss_info/counsel.do">입학상담</a></li>
+=======
+                        <li><a href="/Green/admiss/early.do">수시모집</a></li>
+                        <li><a href="/Green/admiss/regular.do">정시모집</a></li>
+                        <li><a href="/Green/admiss/transfer.do">편입학</a></li>
+                        <li><a href="../2입학안내/입학안내5-입학상담.html">입학상담</a></li>
+>>>>>>> 7e0c680a2f10692327b68697a67ffa1b48b4ee18
                     </ul>
                 </li>
                 <li>대학·대학원
                     <ul>
-                        <li><a href="../3대학.대학원/대학대학원1-인문사회대학.html">인문사회대학</a></li>
-                        <li><a href="../3대학.대학원/대학대학원2-자연과학대학.html">자연과학대학</a></li>
-                        <li><a href="../3대학.대학원/대학대학원3-공과대학.html">공과대학</a></li>
-                        <li><a href="../3대학.대학원/대학대학원4-사범대학.html">사범대학</a></li>
-                        <li><a href="../3대학.대학원/대학대학원5-대학원.html">대학원</a></li>
+                        <li><a href="/Green/department/view.do?college=인문사회대학">인문사회대학</a></li>
+                        <li><a href="/Green/department/view.do?college=자연과학대학">자연과학대학</a></li>
+                        <li><a href="/Green/department/view.do?college=공과대학">공과대학</a></li>
+                        <li><a href="/Green/department/view.do?college=사범대학">사범대학</a></li>
+                        <li><a href="/Green/department/view.do?college=대학원">대학원</a></li>
                     </ul>
                 </li>
                 <li>학사안내
                     <ul>
-                        <li><a href="../4학사안내/학사안내1-공지사항.html">공지사항</a></li>
+                        <li><a href="/Green/notice/list.do?wdist=1">공지사항</a></li>
                         <li><a href="../4학사안내/학사안내2-학사일정.html">학사일정</a></li>
                         <li><a href="../4학사안내/학사안내3-수강신청.html">수강신청</a></li>
                         <li><a href="../4학사안내/학사안내4-성적.html">성적</a></li>
@@ -99,11 +124,19 @@
         <aside class="sidebar">
             <h2>대학소개</h2>
             <ul>
+<<<<<<< HEAD
                 <li><a href="${pageContext.request.contextPath}/introduce/greetings.do">총장 인사말</a></li>
                  <li><a href="${pageContext.request.contextPath}/introduce/ideology.do">교육이념</a></li>
                  <li><a href="${pageContext.request.contextPath}/introduce/history.do">연혁</a></li>
                  <li><a href="${pageContext.request.contextPath}/introduce/organization.do">조직도</a></li>
                  <li class="highlight"><a href="${pageContext.request.contextPath}/introduce/direction.do">오시는길</a></li>
+=======
+                <a href="/Green/introduce/greetings.do"><li>총장 인사말</li></a>
+                <a href="/Green/introduce/ideology.do"><li>교육이념</li></a>
+                <a href="/Green/introduce/history.do"><li>연혁</li></a>
+                <a href="/Green/introduce/organization.do"><li>조직도</li></a>
+                <a href="/Green/introduce/direction.do"><li style="background-color: #3F97F6;color: white;">오시는길</li></a>
+>>>>>>> 7e0c680a2f10692327b68697a67ffa1b48b4ee18
             </ul>
         </aside>
         <main class="content">
@@ -126,7 +159,7 @@
         <div class="footer-mid">
             <div class="footer-info">
                 <div class="logo">
-                    <img src="./images/footer_logo.png" alt="그린대학교 로고">
+                    <img src="/Green/resource/images/footer_logo.png" alt="그린대학교 로고">
                 </div>
                 <div class="address-info">
                     <span>그린대학교</span>

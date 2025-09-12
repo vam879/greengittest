@@ -102,7 +102,7 @@
         <aside class="sidebar">
             <h2>입학안내</h2>
             <ul>
-                <li><a href="${pageContext.request.contextPath}/introduce/greetings.do">총장 인사말</a></li>
+                <li><a href="${pageContext.request.contextPath}/admiss_info/greetings.do">총장 인사말</a></li>
                  <li><a href="${pageContext.request.contextPath}/introduce/ideology.do">교육이념</a></li>
                  <li><a href="${pageContext.request.contextPath}/introduce/history.do">연혁</a></li>
                  <li><a href="${pageContext.request.contextPath}/introduce/organization.do">조직도</a></li>

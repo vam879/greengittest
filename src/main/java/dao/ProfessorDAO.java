@@ -107,4 +107,31 @@ public class ProfessorDAO extends DBHelper {
     	
     	return dtoList;
     }
+    
+    public void insert(ProfessorDTO dto) {
+    	try {
+    		conn = getConnection();
+    		psmt = conn.prepareStatement(Sql.INSERT_PROFESSOR);
+    		psmt.setString(1, dto.getPro_jumin());
+    		psmt.setString(2, dto.getPro_name());
+    		psmt.setString(3, dto.getPro_eng_name());
+    		psmt.setString(4, dto.getPro_gen());
+    		psmt.setString(5, dto.getPro_nation());
+    		psmt.setString(6, dto.getPro_hp());
+    		psmt.setString(7, dto.getPro_email());
+    		psmt.setString(8, dto.getPro_addr());
+    		psmt.setString(9, dto.getPro_univ());
+    		psmt.setString(10, dto.getPro_grad_date());
+    		psmt.setString(11, dto.getPro_degree());
+    		psmt.setInt(12, dto.getDep_no());
+    		psmt.setString(13, dto.getPro_appint_date());
+    		
+    		psmt.executeUpdate();
+    		
+    		closeAll();
+    		
+    	} catch(Exception e) {
+    		e.printStackTrace();
+    	}
+    }
 }

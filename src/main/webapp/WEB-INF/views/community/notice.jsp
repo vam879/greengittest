@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 
 <%@ include file="./header.jsp" %>
@@ -114,7 +114,7 @@
             </ul>
         </aside>
         <div class="content">
-				<div class="content">
+				<main>
                 <h2>공지사항</h2> <hr style="border: none; border-top: 3px solid #000; margin: 5px 0 20px 0;">
 
                 <div class="job-info-section"> <div class="search-box">
@@ -127,51 +127,61 @@
                         <button>검색</button>
                     </div>
 
-                    <table class="notice-table">
-                        <thead>
-                            
-                            <tr>
-                                <th>번호</th>
-                                <th>제목</th>
-                                <th>작성자</th>
-                                <th>작성일</th>
-                                <th>조회</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>3</td>
-                                <td><span class="lock"><img src="./images/ico-new01.gif" alt="new"></span>2025학년도 1학기 그린장학회 장학생 신청 안내</td>
-                                <td>학사지원실</td>
-                                <td>24.04.09</td>
-                                <td>160</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td><span class="lock"><img src="./images/ico-new01.gif" alt="new"></span>제42회 학위수여식 안내</td>
-                                <td>학사지원실</td>
-                                <td>24.04.09</td>
-                                <td>160</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td><span class="lock"><img src="./images/ico-new01.gif" alt="new"></span>의료,인공지능 융합인재 양성사업단 사업설명회</td>
-                                <td>학사지원실</td>
-                                <td>24.04.09</td>
-                                <td>160</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <div class="pagination">
-                        <a href="#">&lt;</a>
-                        <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#">&gt;</a>
+                    <div class="notice-list-wrapper">
+                    <div class="notice-list">
+	                    <table >
+	                        <thead>
+	                            
+	                            <tr>
+	                                <th>번호</th>
+	                                <th>제목</th>
+	                                <th>작성자</th>
+	                                <th>작성일</th>
+	                                <th>조회</th>
+	                            </tr>
+	                        </thead>
+	                        <tbody>
+	                            <c:forEach var="dto" items="${dtoList}" varStatus="status">
+	                                <tr>
+	                                    <td>${totalCount - ((page - 1) * pageSize) - status.index}</td>
+	                                    <td class="left-list">
+	                                    	<a href="/Green/article/view.do?ano=${dto.ano}" class="new-link">
+	                                    		<img src="/Green/resource/images/ico-new01.gif" style="width:18px; height:18px; vertical-align:middle; padding-bottom:2px; margin-right:4px;">
+	                                    	 	${dto.title}
+	                                    	</a>
+	                                    </td>
+	                                    <td>${dto.writer}</td>
+	                                    <td>${dto.wdate}</td>
+	                                    <td>${dto.hit_cnt}</td>
+	
+	                                </tr>
+	                                
+	                                </c:forEach>
+	                        </tbody>
+	                    </table>
+	                 </div>
+					</div>
+                    <div class="page-wrapper">
+                    <div class="page">
+                        <c:if test="${page > 1}">
+					        <a href="?page=1&wdist=2"><img src="/Green/resource/images/btn-first-page.png" alt="첫 페이지" class="pagination-arrow first" style="margin-top: 4px"></a>
+					        <a href="?page=${page-1}&wdist=2"><img src="/Green/resource/images/btn-prev-page.png" alt="이전 페이지" class="pagination-arrow prev" style="margin-top: 4px"></a>
+					    </c:if>
+					
+					    <c:forEach var="i" begin="1" end="${totalPages}">
+					        <a href="?page=${i}&wdist=2" >
+					            <button class="${i == page ? 'active' : ''} page-btn">${i}</button>
+					        </a>
+					    </c:forEach>
+					
+					    <c:if test="${page < totalPages}">
+					        <a href="?page=${page+1}&wdist=2"><img src="/Green/resource/images/btn-next-page.png" alt="다음 페이지" class="pagination-arrow next" style="margin-top: 5px"></a>
+					        <a href="?page=${totalPages}&wdist=2"><img src="/Green/resource/images/btn-last-page.png" alt="마지막 페이지" class="pagination-arrow last" style="margin-top: 4px"></a>
+					    </c:if>
                     </div>
                 </div>
-            </div>   
+                </div>
+            </main>   
         </div>
     </div>
 

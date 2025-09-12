@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -13,33 +14,65 @@
 
 <body>
     <div class="topbar">
-        <a href="main.html">HOME</a>
+        <a href="/Green/">HOME</a>
         <a href="#">사이트맵</a>
-        <a href="/Green/login.do">로그인</a>
-        <a href="./7학생지원/학생지원1-수강신청.html">학생지원</a>
+        <c:choose>
+        	<c:when test="${empty loggedInUser }">
+        		<a href="/Green/login.do">로그인</a>
+        	</c:when>
+        	<c:otherwise>
+        		<a href="/Green/logout.do">로그아웃</a>
+        	</c:otherwise>
+        	
+        </c:choose>
+        <c:choose>
+        	<c:when test="${not empty prefixx and prefixx eq 'sys'}">
+        		<a href="/Green/management/main.do">학사관리시스템</a>
+        	</c:when>
+        	<c:otherwise>
+        		<a href="./7학생지원/학생지원1-수강신청.html">학생지원</a>
+        	</c:otherwise>
+        
+        </c:choose>
+        
+     
     </div>
 
     <header>
         <div class="logo">
-            <span><img src="./images/header_logo.png" alt="그린대학교 로고"></span>
+            <span><a href="/Green/"><img src="/Green/resource/images/header_logo.png" alt="그린대학교 로고"></a></span>
         </div>
         <nav>
             <ul>
                 <li>대학소개
                     <ul>
+<<<<<<< HEAD
                     <li><a href="${pageContext.request.contextPath}/introduce/greetings.do">총장 인사말</a></li>
                     <li><a href="${pageContext.request.contextPath}/introduce/ideology.do">교육이념</a></li>
                     <li><a href="${pageContext.request.contextPath}/introduce/history.do">연혁</a></li>
                     <li><a href="${pageContext.request.contextPath}/introduce/organization.do">조직도</a></li>
                     <li><a href="${pageContext.request.contextPath}/introduce/direction.do">오시는길</a></li>                   
+=======
+                    <li><a href="/Green/introduce/greetings.do">총장 인사말</a></li>
+                    <li><a href="/Green/introduce/ideology.do">교육이념</a></li>
+                    <li><a href="/Green/introduce/history.do">연혁</a></li>
+                    <li><a href="/Green/introduce/organization.do">조직도</a></li>
+                    <li><a href="/Green/introduce/direction.do">오시는길</a></li>
+>>>>>>> 7e0c680a2f10692327b68697a67ffa1b48b4ee18
                     </ul>
                 </li>
                 <li>입학안내
                     <ul>
                         <li><a href="/Green/notice/list.do?wdist=2">공지사항</a></li>
+<<<<<<< HEAD
                         <li><a href="${pageContext.request.contextPath}/admiss_info/early_admiss.do">수시모집</a></li>
                         <li><a href="${pageContext.request.contextPath}/admiss_info/regular_admiss.do">정시모집</a></li>
                         <li><a href="${pageContext.request.contextPath}/admiss_info/transfer.do">편입학</a></li>
+=======
+                        <li><a href="/Green/admiss/early.do">수시모집</a></li>
+                        <li><a href="/Green/admiss/regular.do">정시모집</a></li>
+                        <li><a href="/Green/admiss/transfer.do">편입학</a></li>
+>>>>>>> 7e0c680a2f10692327b68697a67ffa1b48b4ee18
                         <li><a href="${pageContext.request.contextPath}/admiss_info/counsel.do">입학상담</a></li>
                     </ul>
                 </li>
@@ -72,9 +105,10 @@
                 </li>
                 <li>커뮤니티
                     <ul>
-                        <li><a href="../6커뮤니티/커뮤티니1-공지사항.html">공지사항</a></li>
+                        <li><a href="/Green/notice/list.do?wdist=3">공지사항</a></li>
                         <li><a href="../6커뮤니티/커뮤티니2-뉴스 및 칼럼.html">뉴스 및 칼럼</a></li>
                         <li><a href="../6커뮤니티/커뮤티니3-취업정보.html"></a>취업정보</li>
+                        <li><a href="/Green/notice/list.do?wdist=3"></a>자유게시판</li>
                         <li><a href="../6커뮤니티/커뮤티니4-질문과 답변.html">질문 및 답변</a></li>
                         <li><a href="../6커뮤니티/커뮤티니5-자료실.html">자료실</a></li>
                     </ul>
@@ -84,7 +118,7 @@
     </header>
 
     <section class="main-visual">
-        <img src="./images/bg-main-vi01.jpg" alt="배너">
+        <img src="/Green/resource/images/bg-main-vi01.jpg" alt="배너">
         <div class="text">
             <h2>IT 기술로 세상을 변화시키는 인재를 양성</h2>
             <h1>그린대학교 컴퓨터과학과</h1>
@@ -94,17 +128,17 @@
 
  
         <!-- 왼쪽 화살표 -->
-        <img src="./images/btn-prev01.png" alt="이전" class="custom-img left">
+        <img src="/Green/resource/images/btn-prev01.png" alt="이전" class="custom-img left">
         <!-- 오른쪽 화살표 -->
-        <img src="./images/btn-next01.png" alt="다음" class="custom-img right">
+        <img src="/Green/resource/images/btn-next01.png" alt="다음" class="custom-img right">
     </section>
 
     <div class="notice-wrap">
         <div class="board">
             <h3>학사안내</h3>
             <ul>
-                <li><span>교과목 폐지 및 신설 안내 <img src="./images/ico-new01.gif"></span> <span>2019.05.29</span></li>
-                <li><span>2019-2학기 진로취업 프로그램 <img src="./images/ico-new01.gif"></span> <span>2019.05.29</span></li>
+                <li><span>교과목 폐지 및 신설 안내 <img src="/Green/resource/images/ico-new01.gif"></span> <span>2019.05.29</span></li>
+                <li><span>2019-2학기 진로취업 프로그램 <img src="/Green/resource/images/ico-new01.gif"></span> <span>2019.05.29</span></li>
                 <li><span>제8회 KNDA 학술논문상 공모</span> <span>2019.05.29</span></li>
                 <li><span>대학 진로취업지원 현황 조사</span> <span>2019.05.29</span></li>
             </ul>
@@ -112,8 +146,8 @@
         <div class="board">
             <h4>공지사항</h4>
             <ul>
-                <li><span>교과목 폐지 및 신설 안내 <img src="./images/ico-new02.gif"></span> <span>2019.05.29</span></li>
-                <li><span>[진로취업특강] 유망직무 특강 <img src="./images/ico-new02.gif"></span> <span>2019.05.29</span></li>
+                <li><span>교과목 폐지 및 신설 안내 <img src="/Green/resource/images/ico-new02.gif"></span> <span>2019.05.29</span></li>
+                <li><span>[진로취업특강] 유망직무 특강 <img src="/Green/resource/images/ico-new02.gif"></span> <span>2019.05.29</span></li>
                 <li><span>제8회 KNDA 학술논문상 공모</span> <span>2019.05.29</span></li>
                 <li><span>대학 진로취업지원 현황 조사</span> <span>2019.05.29</span></li>
             </ul>
@@ -124,19 +158,19 @@
         <h3>PHOTO GALLERY</h3>
         <div class="gallery">
             <div class="gallery-item">
-                <img src="./images/gallary_sample1.jpg" alt="갤러리1">
+                <img src="/Green/resource/images/gallary_sample1.jpg" alt="갤러리1">
                 <div class="caption">갤러리1</div>
             </div>
             <div class="gallery-item">
-                <img src="./images/gallary_sample2.jpg" alt="갤러리2">
+                <img src="/Green/resource/images/gallary_sample2.jpg" alt="갤러리2">
                 <div class="caption">갤러리2</div>
             </div>
             <div class="gallery-item">
-                <img src="./images/gallary_sample3.jpg" alt="갤러리3">
+                <img src="/Green/resource/images/gallary_sample3.jpg" alt="갤러리3">
                 <div class="caption">갤러리3</div>
             </div>
             <div class="gallery-item">
-                <img src="./images/gallary_sample4.png" alt="갤러리4">
+                <img src="/Green/resource/images/gallary_sample4.png" alt="갤러리4">
                 <div class="caption">갤러리4</div>
             </div>
         </div>
@@ -166,32 +200,32 @@
                 <ul>
         <li>
             <div class="icon-wrapper">
-                <img src="./images/bg-main-link01.png" alt="입학안내">
+                <img src="/Green/resource/images/bg-main-link01.png" alt="입학안내">
                 <p>입학안내</p>
             </div>
 
         </li>
         <li>
             <div class="icon-wrapper">
-                <img src="./images/bg-main-link02.png" alt="학사일정">
+                <img src="/Green/resource/images/bg-main-link02.png" alt="학사일정">
                 <p>학사일정</p>
             </div>
         </li>
         <li>
             <div class="icon-wrapper">
-                <img src="./images/bg-main-link03.png" alt="학생회">
+                <img src="/Green/resource/images/bg-main-link03.png" alt="학생회">
                 <p>학생회</p>
             </div>
         </li>
         <li>
             <div class="icon-wrapper">
-                <img src="./images/bg-main-link04.png" alt="교과과정">
+                <img src="/Green/resource/images/bg-main-link04.png" alt="교과과정">
                 <p>교과과정</p>
             </div>
         </li>
         <li>
             <div class="icon-wrapper">
-                <img src="./images/bg-main-link05.png" alt="취업안내">
+                <img src="/Green/resource/images/bg-main-link05.png" alt="취업안내">
                 <p>취업안내</p>
             </div>
         </li>
@@ -211,7 +245,7 @@
         <div class="footer-mid">
             <div class="footer-info">
                 <div class="logo">
-                    <img src="./images/footer_logo.png" alt="그린대학교 로고">
+                    <img src="/Green/resource/images/footer_logo.png" alt="그린대학교 로고">
                 </div>
                 <div class="address-info">
                     <span>그린대학교</span>

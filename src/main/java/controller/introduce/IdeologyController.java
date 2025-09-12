@@ -9,10 +9,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-//수정:		전용준	
-//내용:		교육이념
-//수정일:		25.0909
-
 @WebServlet("/introduce/ideology.do")
 public class IdeologyController extends HttpServlet {
 	private static final long serialVersionUID = 1L;

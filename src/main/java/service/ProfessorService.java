@@ -13,4 +13,8 @@ public enum ProfessorService {
 		return dao.selectAll();
 	}
 	
+	public void register(ProfessorDTO dto) {
+		dao.insert(dto);
+	}
+	
 }

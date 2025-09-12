@@ -1,13 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
     
     
 <%@ include file="./header.jsp" %>
 <body>
     <div class="topbar">
-        <a href="../main.html">HOME</a>
+        <a href="/Green/">HOME</a>
         <a href="../main.html">사이트맵</a>
-        <a href="../8회원/회원1-로그인.html">로그인</a>
+        <c:choose>
+        	<c:when test="${empty loggedInUser }">
+        		<a href="/Green/login.do">로그인</a>
+        	</c:when>
+        	<c:otherwise>
+        		<a href="/Green/logout.do">로그아웃</a>
+        	</c:otherwise>
+        	
+        </c:choose>
 
         <a href="../7학생지원/학생지원1-수강신청.html ">학생지원</a>
 
@@ -21,20 +30,36 @@
             <ul>
                 <li>대학소개
                     <ul>
+<<<<<<< HEAD
                     <li><a href="${pageContext.request.contextPath}/introduce/greetings.do">총장 인사말</a></li>
                     <li><a href="${pageContext.request.contextPath}/introduce/ideology.do">교육이념</a></li>
                     <li><a href="${pageContext.request.contextPath}/introduce/history.do">연혁</a></li>
                     <li><a href="${pageContext.request.contextPath}/introduce/organization.do">조직도</a></li>
                     <li><a href="${pageContext.request.contextPath}/introduce/direction.do">오시는길</a></li>  
                     </ul>>
+=======
+	                    <li><a href="/Green/introduce/greetings.do">총장 인사말</a></li>
+	                    <li><a href="/Green/introduce/ideology.do">교육이념</a></li>
+	                    <li><a href="/Green/introduce/history.do">연혁</a></li>
+	                    <li><a href="/Green/introduce/organization.do">조직도</a></li>
+	                    <li><a href="/Green/introduce/direction.do">오시는길</a></li>
+                    </ul>
+>>>>>>> 7e0c680a2f10692327b68697a67ffa1b48b4ee18
                 </li>
                 <li>입학안내
                     <ul>
                         <li><a href="/Green/notice/list.do?wdist=2">공지사항</a></li>
+<<<<<<< HEAD
                         <li><a href="${pageContext.request.contextPath}/admiss_info/early_admiss.do">수시모집</a></li>
                         <li><a href="${pageContext.request.contextPath}/admiss_info/regular_admiss.do">정시모집</a></li>
                         <li><a href="${pageContext.request.contextPath}/admiss_info/transfer.do">편입학</a></li>
                         <li><a href="${pageContext.request.contextPath}/admiss_info/counsel.do">입학상담</a></li>
+=======
+                        <li><a href="/Green/admiss/early.do">수시모집</a></li>
+                        <li><a href="/Green/admiss/regular.do">정시모집</a></li>
+                        <li><a href="/Green/admiss/transfer.do">편입학</a></li>
+                        <li><a href="../2입학안내/입학안내5-입학상담.html">입학상담</a></li>
+>>>>>>> 7e0c680a2f10692327b68697a67ffa1b48b4ee18
                     </ul>
                 </li>
                 <li>대학·대학원
@@ -66,7 +91,7 @@
                 </li>
                 <li>커뮤니티
                     <ul>
-                        <li><a href="../6커뮤니티/커뮤티니1-공지사항.html">공지사항</a></li>
+                        <li><a href="/Green/notice/list.do?wdist=1">공지사항</a></li>
                         <li><a href="../6커뮤니티/커뮤티니2-뉴스 및 칼럼.html">뉴스 및 칼럼</a></li>
                         <li><a href="../6커뮤니티/커뮤티니3-취업정보.html"></a>취업정보</li>
    		                <li><a href="../6커뮤니티/커뮤티니4-자유게시판.html"></a>자유게시판</li>
@@ -81,7 +106,11 @@
     <div class="breadcrumb-bar">
         <div class="breadcrumb-content">
             <span class="home-icon">
+<<<<<<< HEAD
                 <a href="#">
+=======
+                <a href="/Green/">
+>>>>>>> 7e0c680a2f10692327b68697a67ffa1b48b4ee18
                     <svg xmlns="/Green/resource/images/ico-home.png" height="16" viewBox="0 -960 960 960" width="16" fill="#333333">
                         <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/>
                     </svg>
@@ -100,13 +129,22 @@
     <div class="container">
         <aside class="sidebar">
             <h2>대학소개</h2>
+            <hr style="border: none; border-top: 3px solid #000; margin: 5px 0 0px 0;">
             <ul>
+<<<<<<< HEAD
                 <hr style="border: none; border-top: 3px solid #000; margin: 5px 0 0px 0;">
                  <li class="highlight"><a href="${pageContext.request.contextPath}/introduce/greetings.do">총장 인사말</a></li>
                  <li><a href="${pageContext.request.contextPath}/introduce/ideology.do">교육이념</a></li>
                  <li><a href="${pageContext.request.contextPath}/introduce/history.do">연혁</a></li>
                  <li><a href="${pageContext.request.contextPath}/introduce/organization.do">조직도</a></li>
                  <li><a href="${pageContext.request.contextPath}/introduce/direction.do">오시는길</a></li>
+=======
+                <a href="/Green/introduce/greetings.do"><li style="background-color: #3F97F6;color: white;">총장 인사말</li></a>
+                <a href="/Green/introduce/ideology.do"><li>교육이념</li></a>
+                <a href="/Green/introduce/history.do"><li>연혁</li></a>
+                <a href="/Green/introduce/organization.do"><li>조직도</li></a>
+                <a href="/Green/introduce/direction.do"><li>오시는길</li></a>
+>>>>>>> 7e0c680a2f10692327b68697a67ffa1b48b4ee18
             </ul>
         </aside>
         <main class="content">

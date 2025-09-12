@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>학사관리시스템 메인</title>
-  <link rel="stylesheet" href="/greendae/resource/css/학사관리main.css">
+  <link rel="stylesheet" href="/Green/resource/css/학사관리main.css">
   <style>
 
 /* ===== Search Bar (right aligned) ===== */
@@ -265,7 +265,7 @@ color: #333;
 
             <div class="header-bg">
                 <a href="#" class="link-admin-logo">
-                    <img src="./images/admin_logo.png" alt="그린대학교 학사관리시스템">
+                    <img src="/Green/resource/images/admin_logo.png" alt="그린대학교 학사관리시스템">
                 </a>
             </div>
 
@@ -275,7 +275,7 @@ color: #333;
                     
                     <div class="item-home">
                     <div class="divider"></div>
-                    <a href="#" class="link">HOME</a>
+                    <a href="/Green/" class="link">HOME</a>
                     </div>
 
                     
@@ -298,7 +298,7 @@ color: #333;
                     <!-- 1. 환경설정 -->
                     <div class="aside-item item-1">
                         <div class="aside-link">
-                            <img src="./images/ico-admin-setting.png" alt="환경설정" class="aside-icon">
+                            <img src="/Green/resource/images/ico-admin-setting.png" alt="환경설정" class="aside-icon">
                             <div class="aside-title title-1">환경설정</div>
                             
                             <div class="aside-ordered-list ordered-1">
@@ -311,7 +311,7 @@ color: #333;
                     <!-- 2. 학사운영 -->
                     <div class="aside-item item-2">
                         <div class="aside-link">
-                            <img src="./images/ico-admin-academic.png" alt="학사운영" class="aside-icon">
+                            <img src="/Green/resource/images/ico-admin-academic.png" alt="학사운영" class="aside-icon">
                             <div class="aside-title title-2">학사운영</div>
                                 
                             <div class="aside-ordered-list ordered-2">
@@ -328,7 +328,7 @@ color: #333;
                     <!-- 3. 인사관리 -->
                     <div class="aside-item item-3">
                         <div class="aside-link">
-                            <img src="./images/ico-admin-persons.png" alt="인사관리" class="aside-icon">
+                            <img src="/Green/resource/images/ico-admin-persons.png" alt="인사관리" class="aside-icon">
                             <div class="aside-title title-3">인사관리</div>
 
                             <div class="aside-ordered-list ordered-3">
@@ -342,7 +342,7 @@ color: #333;
                     <!-- 4. 대학 및 학과 -->
                     <div class="aside-item item-4">
                         <div class="aside-link">
-                            <img src="./images/ico-admin-college.png" alt="대학 및 학과" class="aside-icon">
+                            <img src="/Green/resource/images/ico-admin-college.png" alt="대학 및 학과" class="aside-icon">
                             <div class="aside-title title-4">대학 및 학과</div>
 
                             <div class="aside-ordered-list ordered-4">
@@ -355,7 +355,7 @@ color: #333;
                     <!-- 5. 게시판 관리 -->
                     <div class="aside-item item-5">
                         <div class="aside-link">
-                            <img src="./images/ico-admin-board.png" alt="게시판 관리" class="aside-icon">
+                            <img src="/Green/resource/images/ico-admin-board.png" alt="게시판 관리" class="aside-icon">
                             <div class="aside-title title-5">게시판 관리</div>
 
                             <div class="aside-ordered-list ordered-5">
@@ -402,7 +402,7 @@ color: #333;
                                 <!-- 대학 운영 현황 -->
                                 <section class="panel">
                                     <div class="heading4">
-                                        <img src="./images/bullet-h4.png" alt="">
+                                        <img src="/Green/resource/images/bullet-h4.png" alt="">
                                         <div>대학 운영 현황</div>
                                     </div>
                                     <div class="panel-body">
@@ -426,7 +426,7 @@ color: #333;
                                 <!-- 교육 운영 현황 -->
                                 <section class="panel">
                                     <div class="heading4">
-                                        <img src="./images/bullet-h4.png" alt="">
+                                        <img src="/Green/resource/images/bullet-h4.png" alt="">
                                         <div>교육 운영 현황</div>
                                     </div>
                                     <div class="panel-body">
@@ -471,7 +471,7 @@ color: #333;
                                     <!-- 학년별 학생 현황 -->
                                     <section class="panel">
                                     <div class="heading4">
-                                        <img src="./images/bullet-h4.png" alt="">
+                                        <img src="/Green/resource/images/bullet-h4.png" alt="">
                                         <div>학년별 학생 현황</div>
                                     </div>
                                     <div class="panel-body">
@@ -491,7 +491,7 @@ color: #333;
                                     <!-- 학과별 학생 현황 -->
                                     <section class="panel">
                                     <div class="heading4">
-                                        <img src="./images/bullet-h4.png" alt="">
+                                        <img src="/Green/resource/images/bullet-h4.png" alt="">
                                         <div>학과별 학생 현황</div>
                                     </div>
                                     <div class="panel-body">
@@ -513,7 +513,7 @@ color: #333;
                                   <!-- 학사안내 공지사항 -->
                                   <section class="panel">
                                   <div class="heading4">
-                                      <img src="./images/bullet-h4.png" alt="">
+                                      <img src="/Green/resource/images/bullet-h4.png" alt="">
                                       <div>학사안내 공지사항</div>
                                   </div>
                                   <div class="panel-body">
@@ -533,7 +533,7 @@ color: #333;
                                   <!-- 입학상담 -->
                                   <section class="panel">
                                   <div class="heading4">
-                                      <img src="./images/bullet-h4.png" alt="">
+                                      <img src="/Green/resource/images/bullet-h4.png" alt="">
                                       <div>입학상담</div>
                                   </div>
                                   <div class="panel-body">
